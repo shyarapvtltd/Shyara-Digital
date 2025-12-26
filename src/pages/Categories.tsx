@@ -105,8 +105,27 @@ const Categories = () => {
       <SEO
         title="Digital Invitation Categories | Wedding, Birthday, Pooja & More | Shyara Digital"
         description="Explore our collection of digital invitations for weddings, engagements, birthdays, pooja ceremonies, anniversaries, and special celebrations. Find the perfect invitation for every occasion."
-        keywords="wedding invitations, birthday invitations, pooja invitations, engagement cards, sangeet invitation, mehndi invitation, haldi ceremony card, grih pravesh invitation, anniversary cards"
+        keywords="wedding invitations, birthday invitations, pooja invitations, engagement cards, sangeet invitation, mehndi invitation, haldi ceremony card, grih pravesh invitation, anniversary cards, digital shaadi card"
         canonicalUrl="https://shyaradigital.com/categories"
+        pageType="category"
+        breadcrumbs={[
+          { name: "Home", url: "https://shyaradigital.com" },
+          { name: "Categories", url: "https://shyaradigital.com/categories" }
+        ]}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Digital Invitation Categories",
+          "description": "Browse all categories of digital invitations for weddings, religious ceremonies, birthdays, and special occasions",
+          "numberOfItems": 5,
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Wedding Invitations", "url": "https://shyaradigital.com/categories#weddings" },
+            { "@type": "ListItem", "position": 2, "name": "Pooja & Religious Invitations", "url": "https://shyaradigital.com/categories#pooja" },
+            { "@type": "ListItem", "position": 3, "name": "Birthday Invitations", "url": "https://shyaradigital.com/categories#birthdays" },
+            { "@type": "ListItem", "position": 4, "name": "Romantic Invitations", "url": "https://shyaradigital.com/categories#romantic" },
+            { "@type": "ListItem", "position": 5, "name": "Special Day Invitations", "url": "https://shyaradigital.com/categories#special" }
+          ]
+        }}
       />
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
