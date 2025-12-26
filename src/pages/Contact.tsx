@@ -197,7 +197,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-medium text-foreground">Chat with Us</h4>
-                      <p className="text-sm text-muted-foreground">WhatsApp: +91 98765 43210</p>
+                      <p className="text-sm text-muted-foreground">WhatsApp: +91 95846 61610</p>
                     </div>
                   </AnimatedCard>
 
@@ -217,7 +217,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-medium text-foreground">Call Us</h4>
-                      <p className="text-sm text-muted-foreground">+91 98765 43210</p>
+                      <p className="text-sm text-muted-foreground">+91 95846 61610</p>
                     </div>
                   </AnimatedCard>
                 </div>
