@@ -106,8 +106,15 @@ const Index = () => {
       <SEO
         title="Shyara Digital | Beautiful Digital Invitations for Weddings & Celebrations"
         description="Create stunning digital invitation cards and videos for weddings, birthdays, pooja ceremonies, and special celebrations. Invite with love, share with joy. Made in India."
-        keywords="digital invitations India, wedding invitation cards, video invitations, e-invitations, online wedding cards, shaadi cards, pooja invitation, birthday invitation, celebration cards"
+        keywords="digital invitations India, wedding invitation cards, video invitations, e-invitations, online wedding cards, shaadi cards, pooja invitation, birthday invitation, celebration cards, WhatsApp wedding invitation"
         canonicalUrl="https://shyaradigital.com"
+        pageType="home"
+        reviews={[
+          { author: "Priya & Rahul", rating: 5, reviewBody: "Our wedding invitation video was beyond beautiful! Every guest called to say how touched they were." },
+          { author: "Sunita Sharma", rating: 5, reviewBody: "The birthday invitation for my son was so creative and fun! Quick delivery and amazing quality!" },
+          { author: "Amit & Family", rating: 5, reviewBody: "We wanted something traditional yet modern for our housewarming. The invitation was elegant and heartfelt." },
+          { author: "Neha Gupta", rating: 5, reviewBody: "From the first message to final delivery, the experience was wonderful. Truly talented team!" },
+        ]}
         structuredData={{
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
@@ -129,7 +136,11 @@ const Index = () => {
             "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
             "opens": "09:00",
             "closes": "21:00"
-          }
+          },
+          "sameAs": [
+            "https://www.instagram.com/shyaradigital",
+            "https://www.facebook.com/shyaradigital"
+          ]
         }}
       />
       {/* Hero Section */}

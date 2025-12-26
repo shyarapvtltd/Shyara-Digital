@@ -1,0 +1,19 @@
+{
+  "name": "Shyara Digital",
+  "short_name": "Shyara",
+  "description": "Beautiful digital invitation cards and videos for weddings, celebrations, and moments that matter.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF5F7",
+  "theme_color": "#E8A4B8",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["business", "lifestyle", "social"],
+  "lang": "en-IN"
+}

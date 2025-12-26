@@ -27,8 +27,49 @@ const Formats = () => {
       <SEO
         title="Invitation Formats | Video Invitations & PDF Cards | Shyara Digital"
         description="Choose between stunning video invitations with motion graphics and music, or elegant PDF invitation cards. Both formats designed for easy sharing on WhatsApp, Instagram, and more."
-        keywords="video invitations, PDF invitation cards, digital invitation formats, WhatsApp invitation, Instagram invitation, animated wedding card, motion graphics invitation"
+        keywords="video invitations, PDF invitation cards, digital invitation formats, WhatsApp invitation, Instagram invitation, animated wedding card, motion graphics invitation, digital card delivery"
         canonicalUrl="https://shyaradigital.com/formats"
+        pageType="service"
+        breadcrumbs={[
+          { name: "Home", url: "https://shyaradigital.com" },
+          { name: "Formats", url: "https://shyaradigital.com/formats" }
+        ]}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "serviceType": "Digital Invitation Design",
+          "provider": {
+            "@type": "Organization",
+            "name": "Shyara Digital",
+            "url": "https://shyaradigital.com"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "India"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Digital Invitation Formats",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Video Invitation",
+                  "description": "Motion-rich invitation videos with music and animations, perfect for WhatsApp and Instagram sharing"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "PDF Invitation Card",
+                  "description": "Elegant printable digital invitation cards in PDF format, works on all devices"
+                }
+              }
+            ]
+          }
+        }}
       />
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">

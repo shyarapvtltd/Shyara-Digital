@@ -121,8 +121,25 @@ const Samples = () => {
       <SEO
         title="Sample Gallery | Video & PDF Invitation Examples | Shyara Digital"
         description="Browse our sample gallery of beautiful digital invitations. See examples of wedding videos, birthday cards, pooja invitations, and more. Get inspired for your celebration."
-        keywords="invitation samples, wedding video samples, digital card examples, invitation gallery, wedding invitation preview, birthday card samples"
+        keywords="invitation samples, wedding video samples, digital card examples, invitation gallery, wedding invitation preview, birthday card samples, invitation portfolio"
         canonicalUrl="https://shyaradigital.com/samples"
+        pageType="gallery"
+        breadcrumbs={[
+          { name: "Home", url: "https://shyaradigital.com" },
+          { name: "Samples", url: "https://shyaradigital.com/samples" }
+        ]}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Sample Gallery - Shyara Digital",
+          "description": "Browse our collection of beautiful digital invitation samples including wedding videos and PDF cards",
+          "url": "https://shyaradigital.com/samples",
+          "mainEntity": {
+            "@type": "ImageGallery",
+            "name": "Digital Invitation Samples",
+            "description": "Examples of video invitations and PDF invitation cards for weddings, birthdays, and celebrations"
+          }
+        }}
       />
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">

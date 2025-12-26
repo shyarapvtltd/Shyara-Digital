@@ -79,8 +79,46 @@ const Contact = () => {
       <SEO
         title="Contact Us | Shyara Digital - Create Your Perfect Invitation"
         description="Get in touch with Shyara Digital to create beautiful digital invitations for your wedding, birthday, pooja, or any special celebration. Contact us via WhatsApp, email, or phone."
-        keywords="contact shyara digital, digital invitation enquiry, wedding card contact, custom invitation India, event invitation order"
+        keywords="contact shyara digital, digital invitation enquiry, wedding card contact, custom invitation India, event invitation order, WhatsApp invitation order"
         canonicalUrl="https://shyaradigital.com/contact"
+        pageType="contact"
+        breadcrumbs={[
+          { name: "Home", url: "https://shyaradigital.com" },
+          { name: "Contact", url: "https://shyaradigital.com/contact" }
+        ]}
+        faqItems={[
+          { question: "How long does it take to create an invitation?", answer: "Most invitations are ready within 2-3 days after you share your details. For rush orders, we can deliver within 24 hours." },
+          { question: "What details do you need from me?", answer: "We'll need your event details (date, time, venue), names of the hosts/couple, any specific theme or color preferences, and photos if you'd like them included." },
+          { question: "Can I request changes after seeing the first design?", answer: "Absolutely! We offer revisions to make sure you're completely happy with your invitation." },
+          { question: "How do I share the invitation with my guests?", answer: "Once ready, we'll send you the final files (video or PDF) that you can easily share via WhatsApp, Instagram, Facebook, Email, or any platform you prefer." },
+          { question: "Do you create invitations for events outside India?", answer: "Yes! We've created invitations for families celebrating across the world. Distance is no barrier to beautiful memories." },
+          { question: "What if I have a unique or custom request?", answer: "We love creative challenges! Whether it's a unique theme, special animation, or something you've never seen before — just share your vision and we'll make it happen." }
+        ]}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contact Shyara Digital",
+          "description": "Get in touch with Shyara Digital to create beautiful digital invitations",
+          "url": "https://shyaradigital.com/contact",
+          "mainEntity": {
+            "@type": "LocalBusiness",
+            "name": "Shyara Digital",
+            "telephone": "+91-95846-61610",
+            "email": "shyaradigital@gmail.com",
+            "url": "https://shyaradigital.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "New Delhi",
+              "addressCountry": "IN"
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+              "opens": "09:00",
+              "closes": "21:00"
+            }
+          }
+        }}
       />
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
