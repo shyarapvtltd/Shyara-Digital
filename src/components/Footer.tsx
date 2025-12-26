@@ -91,13 +91,13 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-rose-light/30 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="border-t border-rose-light/30 pt-8 pb-16 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-muted-foreground text-sm text-center md:text-left">
             © {new Date().getFullYear()} Shyara Digital. Crafted with{" "}
             <Heart className="inline w-4 h-4 text-primary fill-primary animate-heart-pulse" />{" "}
             for your special moments.
           </p>
-          <p className="text-muted-foreground text-sm">
+          <p className="text-muted-foreground text-sm pr-20">
             A brand by{" "}
             <span className="text-primary font-medium">Shyara Tech Solutions</span>
           </p>
