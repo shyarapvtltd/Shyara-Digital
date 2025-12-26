@@ -3,7 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -74,25 +73,21 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Theme Toggle & CTA Button */}
-          <div className="hidden md:flex items-center gap-3">
-            <ThemeToggle />
+          {/* CTA Button */}
+          <div className="hidden md:block">
             <Button asChild className="rounded-full px-6 shadow-romantic hover:shadow-lg transition-all hover:-translate-y-0.5">
               <Link to="/contact">Get Started</Link>
             </Button>
           </div>
 
-          {/* Mobile Menu Button & Theme Toggle */}
-          <div className="flex md:hidden items-center gap-2">
-            <ThemeToggle />
-            <button
-              className="p-2 text-foreground"
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label="Toggle menu"
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2 text-foreground"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
       </nav>
 
