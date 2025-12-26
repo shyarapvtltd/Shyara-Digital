@@ -5,6 +5,7 @@ import Layout from "@/components/Layout";
 import AnimatedCard from "@/components/AnimatedCard";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
+import SEO from "@/components/SEO";
 
 const weddingEvents = [
   { name: "All Events Combined", icon: Heart, description: "Complete wedding invitation package" },
@@ -101,6 +102,12 @@ const CategorySection = ({ id, emoji, title, description, events, bgColor, delay
 const Categories = () => {
   return (
     <Layout>
+      <SEO
+        title="Digital Invitation Categories | Wedding, Birthday, Pooja & More | Shyara Digital"
+        description="Explore our collection of digital invitations for weddings, engagements, birthdays, pooja ceremonies, anniversaries, and special celebrations. Find the perfect invitation for every occasion."
+        keywords="wedding invitations, birthday invitations, pooja invitations, engagement cards, sangeet invitation, mehndi invitation, haldi ceremony card, grih pravesh invitation, anniversary cards"
+        canonicalUrl="https://shyaradigital.com/categories"
+      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
         <div className="absolute inset-0">

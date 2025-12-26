@@ -9,6 +9,7 @@ import { toast } from "@/hooks/use-toast";
 import Layout from "@/components/Layout";
 import AnimatedCard from "@/components/AnimatedCard";
 import ScrollReveal from "@/components/ScrollReveal";
+import SEO from "@/components/SEO";
 
 const eventTypes = [
   { value: "wedding", label: "Wedding" },
@@ -46,6 +47,12 @@ const Contact = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Contact Us | Shyara Digital - Create Your Perfect Invitation"
+        description="Get in touch with Shyara Digital to create beautiful digital invitations for your wedding, birthday, pooja, or any special celebration. Contact us via WhatsApp, email, or phone."
+        keywords="contact shyara digital, digital invitation enquiry, wedding card contact, custom invitation India, event invitation order"
+        canonicalUrl="https://shyaradigital.com/contact"
+      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
         <div className="absolute inset-0">
@@ -197,7 +204,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-medium text-foreground">Chat with Us</h4>
-                      <p className="text-sm text-muted-foreground">WhatsApp: +91 95846 61610</p>
+                      <a href="https://wa.me/919584661610" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">WhatsApp: +91 95846 61610</a>
                     </div>
                   </AnimatedCard>
 
@@ -207,7 +214,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-medium text-foreground">Email Us</h4>
-                      <p className="text-sm text-muted-foreground">hello@shyaradigital.com</p>
+                      <a href="mailto:shyaradigital@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">shyaradigital@gmail.com</a>
                     </div>
                   </AnimatedCard>
 
@@ -217,7 +224,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-medium text-foreground">Call Us</h4>
-                      <p className="text-sm text-muted-foreground">+91 95846 61610</p>
+                      <a href="tel:+919584661610" className="text-sm text-muted-foreground hover:text-primary transition-colors">+91 95846 61610</a>
                     </div>
                   </AnimatedCard>
                 </div>

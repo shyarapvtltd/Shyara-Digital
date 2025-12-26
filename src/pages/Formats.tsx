@@ -5,6 +5,7 @@ import Layout from "@/components/Layout";
 import AnimatedCard from "@/components/AnimatedCard";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
+import SEO from "@/components/SEO";
 
 const videoFeatures = [
   { icon: Play, title: "Motion Graphics", description: "Beautiful animated elements that bring your invitation to life" },
@@ -23,6 +24,12 @@ const cardFeatures = [
 const Formats = () => {
   return (
     <Layout>
+      <SEO
+        title="Invitation Formats | Video Invitations & PDF Cards | Shyara Digital"
+        description="Choose between stunning video invitations with motion graphics and music, or elegant PDF invitation cards. Both formats designed for easy sharing on WhatsApp, Instagram, and more."
+        keywords="video invitations, PDF invitation cards, digital invitation formats, WhatsApp invitation, Instagram invitation, animated wedding card, motion graphics invitation"
+        canonicalUrl="https://shyaradigital.com/formats"
+      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
         <div className="absolute inset-0">
