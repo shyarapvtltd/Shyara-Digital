@@ -1,15 +1,44 @@
 import { useState } from "react";
-import { Heart, Send, MessageCircle, Phone, Mail, Sparkles } from "lucide-react";
+import { Heart, Send, MessageCircle, Phone, Mail, Sparkles, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { toast } from "@/hooks/use-toast";
 import Layout from "@/components/Layout";
 import AnimatedCard from "@/components/AnimatedCard";
 import ScrollReveal from "@/components/ScrollReveal";
+import SectionHeading from "@/components/SectionHeading";
 import SEO from "@/components/SEO";
+
+const faqs = [
+  {
+    question: "How long does it take to create an invitation?",
+    answer: "Most invitations are ready within 2-3 days after you share your details. For rush orders, we can deliver within 24 hours — just let us know when you reach out!"
+  },
+  {
+    question: "What details do you need from me?",
+    answer: "We'll need your event details (date, time, venue), names of the hosts/couple, any specific theme or color preferences, and photos if you'd like them included. Don't worry — we'll guide you through everything!"
+  },
+  {
+    question: "Can I request changes after seeing the first design?",
+    answer: "Absolutely! We offer revisions to make sure you're completely happy with your invitation. Your satisfaction is our priority."
+  },
+  {
+    question: "How do I share the invitation with my guests?",
+    answer: "Once ready, we'll send you the final files (video or PDF) that you can easily share via WhatsApp, Instagram, Facebook, Email, or any platform you prefer."
+  },
+  {
+    question: "Do you create invitations for events outside India?",
+    answer: "Yes! We've created invitations for families celebrating across the world. Distance is no barrier to beautiful memories."
+  },
+  {
+    question: "What if I have a unique or custom request?",
+    answer: "We love creative challenges! Whether it's a unique theme, special animation, or something you've never seen before — just share your vision and we'll make it happen."
+  },
+];
 
 const eventTypes = [
   { value: "wedding", label: "Wedding" },
@@ -274,6 +303,47 @@ const Contact = () => {
               </div>
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 md:py-20">
+        <div className="container mx-auto px-4">
+          <SectionHeading
+            script="Common Questions"
+            title="Frequently Asked Questions"
+            subtitle="Everything you need to know about creating your perfect invitation"
+          />
+
+          <div className="max-w-3xl mx-auto mt-12">
+            <ScrollReveal>
+              <Accordion type="single" collapsible className="space-y-4">
+                {faqs.map((faq, index) => (
+                  <AccordionItem 
+                    key={index} 
+                    value={`item-${index}`}
+                    className="bg-white/60 border border-rose-light/30 rounded-2xl px-6 overflow-hidden data-[state=open]:shadow-romantic transition-shadow"
+                  >
+                    <AccordionTrigger className="text-left font-serif text-lg font-medium text-foreground hover:text-primary hover:no-underline py-5">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground leading-relaxed pb-5">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </ScrollReveal>
+
+            <ScrollReveal delay={200}>
+              <div className="text-center mt-10 p-6 bg-gradient-to-r from-rose-light/20 via-peach-light/20 to-lavender-light/20 rounded-2xl">
+                <p className="text-foreground font-medium mb-2">Still have questions?</p>
+                <p className="text-muted-foreground text-sm">
+                  Reach out to us on WhatsApp — we're always happy to help! 💕
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
     </Layout>
