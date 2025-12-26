@@ -1,11 +1,17 @@
 import { Link } from "react-router-dom";
-import { Heart, Flower2, Gift, Star, Sparkles, ArrowRight, Church, PartyPopper, Calendar, Music, Cake, Users, Home as HomeIcon, BookOpen } from "lucide-react";
+import { Heart, Flower2, Gift, Star, Sparkles, ArrowRight, Church, PartyPopper, Calendar, Music, Cake, Users, Home as HomeIcon, BookOpen, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import AnimatedCard from "@/components/AnimatedCard";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
 import SEO from "@/components/SEO";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const weddingEvents = [
   { name: "All Events Combined", icon: Heart, description: "Complete wedding invitation package" },
@@ -60,43 +66,61 @@ interface CategorySectionProps {
 }
 
 const CategorySection = ({ id, emoji, title, description, events, bgColor, delay = 0 }: CategorySectionProps) => (
-  <section id={id} className="py-16 md:py-20">
-    <div className="container mx-auto px-4">
-      <ScrollReveal delay={delay}>
-        <div className="flex items-center gap-4 mb-6">
-          <span className="text-4xl">{emoji}</span>
-          <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground">
-            {title}
-          </h2>
+  <ScrollReveal delay={delay}>
+    <AccordionItem 
+      value={id} 
+      id={id}
+      className="border-none"
+    >
+      <AccordionTrigger className="py-8 px-6 md:px-10 rounded-2xl bg-gradient-to-r from-white/60 via-white/40 to-white/60 backdrop-blur-sm border border-white/50 shadow-soft hover:shadow-romantic transition-all duration-500 hover:no-underline group data-[state=open]:rounded-b-none data-[state=open]:border-b-0">
+        <div className="flex items-center gap-5 text-left">
+          <span className="text-4xl md:text-5xl transition-transform duration-300 group-hover:scale-110 group-data-[state=open]:animate-bounce">
+            {emoji}
+          </span>
+          <div className="flex flex-col gap-1">
+            <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+              {title}
+            </h2>
+            <p className="text-sm md:text-base text-muted-foreground italic font-normal hidden sm:block">
+              {description}
+            </p>
+          </div>
         </div>
-        <p className="text-lg text-muted-foreground mb-10 max-w-2xl italic">
-          {description}
-        </p>
-      </ScrollReveal>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-        {events.map((event, index) => (
-          <ScrollReveal key={event.name} delay={delay + (index * 80)}>
-            <AnimatedCard className={`${bgColor} border-transparent h-full group cursor-pointer`} hoverEffect="lift">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-white/50 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                  <event.icon className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-serif text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-                    {event.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    {event.description}
-                  </p>
-                </div>
+      </AccordionTrigger>
+      <AccordionContent className="overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+        <div className={`${bgColor} rounded-b-2xl border border-t-0 border-white/50 p-6 md:p-10`}>
+          <p className="text-base text-muted-foreground italic mb-8 sm:hidden">
+            {description}
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-6">
+            {events.map((event, index) => (
+              <div 
+                key={event.name} 
+                className="opacity-0 animate-fade-in-up"
+                style={{ animationDelay: `${index * 80}ms`, animationFillMode: 'forwards' }}
+              >
+                <AnimatedCard className="bg-white/70 border-white/60 h-full group cursor-pointer shadow-soft hover:shadow-romantic" hoverEffect="lift">
+                  <div className="flex items-start gap-4 p-1">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-rose-light/50 to-peach-light/50 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                      <event.icon className="w-7 h-7 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-serif text-lg md:text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+                        {event.name}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed">
+                        {event.description}
+                      </p>
+                    </div>
+                  </div>
+                </AnimatedCard>
               </div>
-            </AnimatedCard>
-          </ScrollReveal>
-        ))}
-      </div>
-    </div>
-  </section>
+            ))}
+          </div>
+        </div>
+      </AccordionContent>
+    </AccordionItem>
+  </ScrollReveal>
 );
 
 const Categories = () => {
@@ -170,52 +194,49 @@ const Categories = () => {
         </div>
       </section>
 
-      {/* Category Sections */}
-      <CategorySection
-        id="weddings"
-        emoji="💍"
-        title="Wedding Invitations"
-        description="From the first promise to the final celebration — invite your loved ones beautifully at every step."
-        events={weddingEvents}
-        bgColor="bg-rose-light/20"
-        delay={0}
-      />
+      {/* Category Sections - Accordion */}
+      <section className="py-8 md:py-12">
+        <div className="container mx-auto px-4">
+          <Accordion type="single" collapsible className="space-y-6">
+            <CategorySection
+              id="weddings"
+              emoji="💍"
+              title="Wedding Invitations"
+              description="From the first promise to the final celebration — invite your loved ones beautifully at every step."
+              events={weddingEvents}
+              bgColor="bg-rose-light/30"
+              delay={0}
+            />
 
-      <div className="h-px bg-gradient-to-r from-transparent via-rose-light/50 to-transparent mx-auto max-w-4xl" />
+            <CategorySection
+              id="pooja"
+              emoji="🪔"
+              title="Pooja & Religious Invitations"
+              description="Sacred moments deserve graceful invitations filled with devotion and warmth."
+              events={poojaEvents}
+              bgColor="bg-gold-light/30"
+              delay={100}
+            />
 
-      <CategorySection
-        id="pooja"
-        emoji="🪔"
-        title="Pooja & Religious Invitations"
-        description="Sacred moments deserve graceful invitations filled with devotion and warmth."
-        events={poojaEvents}
-        bgColor="bg-gold-light/20"
-        delay={100}
-      />
+            <CategorySection
+              id="birthdays"
+              emoji="🎂"
+              title="Birthdays & Personal Celebrations"
+              description="Celebrate life's milestones with invitations as special as the moment itself."
+              events={birthdayEvents}
+              bgColor="bg-peach-light/30"
+              delay={200}
+            />
 
-      <div className="h-px bg-gradient-to-r from-transparent via-gold-light/50 to-transparent mx-auto max-w-4xl" />
-
-      <CategorySection
-        id="birthdays"
-        emoji="🎂"
-        title="Birthdays & Personal Celebrations"
-        description="Celebrate life's milestones with invitations as special as the moment itself."
-        events={birthdayEvents}
-        bgColor="bg-peach-light/20"
-        delay={100}
-      />
-
-      <div className="h-px bg-gradient-to-r from-transparent via-peach-light/50 to-transparent mx-auto max-w-4xl" />
-
-      <CategorySection
-        id="romantic"
-        emoji="❤️"
-        title="Relationships & Romantic Moments"
-        description="Because love deserves to be expressed beautifully."
-        events={romanticEvents}
-        bgColor="bg-rose-light/30"
-        delay={100}
-      />
+            <CategorySection
+              id="romantic"
+              emoji="❤️"
+              title="Relationships & Romantic Moments"
+              description="Because love deserves to be expressed beautifully."
+              events={romanticEvents}
+              bgColor="bg-rose-light/40"
+              delay={300}
+            />
 
       {/* Special Note about Proposal */}
       <ScrollReveal className="container mx-auto px-4 -mt-8 mb-16">
@@ -228,17 +249,18 @@ const Categories = () => {
         </div>
       </ScrollReveal>
 
-      <div className="h-px bg-gradient-to-r from-transparent via-lavender-light/50 to-transparent mx-auto max-w-4xl" />
-
-      <CategorySection
-        id="special"
-        emoji="🌼"
-        title="Special Days"
-        description="Small gestures, big emotions — made unforgettable."
-        events={specialDays}
-        bgColor="bg-lavender-light/20"
-        delay={100}
-      />
+            <CategorySection
+              id="special"
+              emoji="🌼"
+              title="Special Days"
+              description="Small gestures, big emotions — made unforgettable."
+              events={specialDays}
+              bgColor="bg-lavender-light/30"
+              delay={400}
+            />
+          </Accordion>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="py-20 md:py-28">
