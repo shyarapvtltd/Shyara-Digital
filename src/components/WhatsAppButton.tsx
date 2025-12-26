@@ -4,10 +4,30 @@ import { motion } from "framer-motion";
 const WhatsAppButton = () => {
   const phoneNumber = "919584661610";
   const message = "Hi! I'm interested in creating a digital invitation for my celebration.";
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  
+  // Using intent URL for Android and direct protocol for iOS/desktop
+  const getWhatsAppUrl = () => {
+    const encodedMessage = encodeURIComponent(message);
+    // This format works across devices without api.whatsapp.com
+    return `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+  };
+
+  const getMobileWhatsAppUrl = () => {
+    const encodedMessage = encodeURIComponent(message);
+    return `whatsapp://send?phone=${phoneNumber}&text=${encodedMessage}`;
+  };
 
   const handleClick = () => {
-    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    // Check if mobile device
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+      // Use whatsapp:// protocol for mobile - opens app directly
+      window.location.href = getMobileWhatsAppUrl();
+    } else {
+      // Use web.whatsapp.com for desktop
+      window.open(getWhatsAppUrl(), '_blank', 'noopener,noreferrer');
+    }
   };
 
   return (
