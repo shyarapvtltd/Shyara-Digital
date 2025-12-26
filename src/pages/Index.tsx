@@ -1,11 +1,42 @@
 import { Link } from "react-router-dom";
-import { Heart, Sparkles, ArrowRight, Gift, Calendar, PartyPopper, Flower2, Star } from "lucide-react";
+import { Heart, Sparkles, ArrowRight, Gift, Calendar, PartyPopper, Flower2, Star, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import AnimatedCard from "@/components/AnimatedCard";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
 import SEO from "@/components/SEO";
+
+const testimonials = [
+  {
+    name: "Priya & Rahul",
+    event: "Wedding",
+    rating: 5,
+    quote: "Our wedding invitation video was beyond beautiful! Every guest called to say how touched they were. Shyara Digital made our special day even more memorable.",
+    location: "Mumbai"
+  },
+  {
+    name: "Sunita Sharma",
+    event: "Son's Birthday",
+    rating: 5,
+    quote: "The birthday invitation for my son was so creative and fun! He loved showing it to all his friends. Quick delivery and amazing quality!",
+    location: "Delhi"
+  },
+  {
+    name: "Amit & Family",
+    event: "Grih Pravesh",
+    rating: 5,
+    quote: "We wanted something traditional yet modern for our housewarming. They understood exactly what we needed. The invitation was elegant and heartfelt.",
+    location: "Jaipur"
+  },
+  {
+    name: "Neha Gupta",
+    event: "Engagement",
+    rating: 5,
+    quote: "From the first message to final delivery, the experience was wonderful. Our engagement video had everyone emotional. Truly talented team!",
+    location: "Bangalore"
+  },
+];
 
 const invitationTypes = [
   {
@@ -259,6 +290,66 @@ const Index = () => {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 md:py-28 relative bg-gradient-to-b from-transparent via-lavender-light/10 to-transparent">
+        <div className="container mx-auto px-4">
+          <SectionHeading
+            script="Happy Families"
+            title="What Our Clients Say"
+            subtitle="Real stories from families who trusted us with their special moments"
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 max-w-5xl mx-auto">
+            {testimonials.map((testimonial, index) => (
+              <ScrollReveal key={testimonial.name} delay={index * 100}>
+                <AnimatedCard className="h-full relative" hoverEffect="glow">
+                  <Quote className="absolute top-6 right-6 w-8 h-8 text-rose-light/30" />
+                  
+                  {/* Rating */}
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-gold fill-gold" />
+                    ))}
+                  </div>
+                  
+                  {/* Quote */}
+                  <p className="text-foreground leading-relaxed mb-6 italic">
+                    "{testimonial.quote}"
+                  </p>
+                  
+                  {/* Author */}
+                  <div className="flex items-center gap-3 pt-4 border-t border-rose-light/20">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-rose-light to-peach-light flex items-center justify-center">
+                      <Heart className="w-5 h-5 text-primary fill-primary/30" />
+                    </div>
+                    <div>
+                      <p className="font-serif font-semibold text-foreground">{testimonial.name}</p>
+                      <p className="text-sm text-muted-foreground">{testimonial.event} • {testimonial.location}</p>
+                    </div>
+                  </div>
+                </AnimatedCard>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          {/* Trust Badge */}
+          <ScrollReveal delay={400}>
+            <div className="flex flex-wrap justify-center gap-8 mt-12 pt-8 border-t border-rose-light/20 max-w-3xl mx-auto">
+              {[
+                { number: "500+", label: "Happy Families" },
+                { number: "4.9★", label: "Average Rating" },
+                { number: "1000+", label: "Invitations Created" },
+              ].map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <div className="font-serif text-2xl md:text-3xl font-bold text-primary">{stat.number}</div>
+                  <p className="text-sm text-muted-foreground">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
