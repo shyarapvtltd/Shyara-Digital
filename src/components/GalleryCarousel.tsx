@@ -64,26 +64,32 @@ const galleryItems = [
 
 const GalleryCarousel = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [isPaused, setIsPaused] = useState(false);
+  const scrollPositionRef = useRef(0);
+  const isPausedRef = useRef(false);
+  const [, setForceRender] = useState(0);
+
+  const handlePause = (paused: boolean) => {
+    isPausedRef.current = paused;
+    setForceRender(prev => prev + 1);
+  };
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
 
     let animationId: number;
-    let scrollPosition = 0;
     const scrollSpeed = 0.5;
 
     const scroll = () => {
-      if (!isPaused && scrollContainer) {
-        scrollPosition += scrollSpeed;
+      if (!isPausedRef.current && scrollContainer) {
+        scrollPositionRef.current += scrollSpeed;
         
         // Reset scroll position when we've scrolled half the content (seamless loop)
-        if (scrollPosition >= scrollContainer.scrollWidth / 2) {
-          scrollPosition = 0;
+        if (scrollPositionRef.current >= scrollContainer.scrollWidth / 2) {
+          scrollPositionRef.current = 0;
         }
         
-        scrollContainer.scrollLeft = scrollPosition;
+        scrollContainer.scrollLeft = scrollPositionRef.current;
       }
       animationId = requestAnimationFrame(scroll);
     };
@@ -93,7 +99,7 @@ const GalleryCarousel = () => {
     return () => {
       cancelAnimationFrame(animationId);
     };
-  }, [isPaused]);
+  }, []);
 
   // Double the items for seamless infinite scroll
   const duplicatedItems = [...galleryItems, ...galleryItems];
@@ -115,10 +121,10 @@ const GalleryCarousel = () => {
         <div 
           ref={scrollRef}
           className="flex gap-6 overflow-x-hidden px-4"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-          onTouchStart={() => setIsPaused(true)}
-          onTouchEnd={() => setIsPaused(false)}
+          onMouseEnter={() => handlePause(true)}
+          onMouseLeave={() => handlePause(false)}
+          onTouchStart={() => handlePause(true)}
+          onTouchEnd={() => handlePause(false)}
         >
           {duplicatedItems.map((item, index) => (
             <div
