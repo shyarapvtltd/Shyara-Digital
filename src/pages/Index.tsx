@@ -6,6 +6,7 @@ import AnimatedCard from "@/components/AnimatedCard";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
 import SEO from "@/components/SEO";
+import GalleryCarousel from "@/components/GalleryCarousel";
 
 const testimonials = [
   {
@@ -225,6 +226,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Gallery Carousel */}
+      <GalleryCarousel />
 
       {/* Why Shyara Digital Section */}
       <section className="py-20 md:py-28 relative">
