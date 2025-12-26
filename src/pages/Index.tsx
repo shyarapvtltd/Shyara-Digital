@@ -5,6 +5,7 @@ import Layout from "@/components/Layout";
 import AnimatedCard from "@/components/AnimatedCard";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
+import SEO from "@/components/SEO";
 
 const invitationTypes = [
   {
@@ -70,6 +71,35 @@ const benefits = [
 const Index = () => {
   return (
     <Layout>
+      <SEO
+        title="Shyara Digital | Beautiful Digital Invitations for Weddings & Celebrations"
+        description="Create stunning digital invitation cards and videos for weddings, birthdays, pooja ceremonies, and special celebrations. Invite with love, share with joy. Made in India."
+        keywords="digital invitations India, wedding invitation cards, video invitations, e-invitations, online wedding cards, shaadi cards, pooja invitation, birthday invitation, celebration cards"
+        canonicalUrl="https://shyaradigital.com"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Shyara Digital",
+          "image": "https://shyaradigital.com/logo.png",
+          "description": "Create beautiful, emotional digital invitation cards and videos for weddings, celebrations, and moments that matter.",
+          "@id": "https://shyaradigital.com",
+          "url": "https://shyaradigital.com",
+          "telephone": "+91-95846-61610",
+          "email": "shyaradigital@gmail.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "New Delhi",
+            "addressCountry": "IN"
+          },
+          "priceRange": "$$",
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "09:00",
+            "closes": "21:00"
+          }
+        }}
+      />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-20 pb-16 overflow-hidden">
         {/* Background Decorations */}

@@ -7,6 +7,7 @@ import Layout from "@/components/Layout";
 import AnimatedCard from "@/components/AnimatedCard";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
+import SEO from "@/components/SEO";
 
 const videoSamples = [
   { id: 1, title: "Royal Wedding", category: "Wedding", gradient: "from-rose-light to-peach-light" },
@@ -117,6 +118,12 @@ const Samples = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Sample Gallery | Video & PDF Invitation Examples | Shyara Digital"
+        description="Browse our sample gallery of beautiful digital invitations. See examples of wedding videos, birthday cards, pooja invitations, and more. Get inspired for your celebration."
+        keywords="invitation samples, wedding video samples, digital card examples, invitation gallery, wedding invitation preview, birthday card samples"
+        canonicalUrl="https://shyaradigital.com/samples"
+      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
         <div className="absolute inset-0">
