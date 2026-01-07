@@ -175,7 +175,8 @@ const SEO = ({
       "email": "shyaradigital@gmail.com",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "New Delhi",
+        "addressLocality": "Patna",
+        "addressRegion": "Bihar",
         "addressCountry": "IN"
       },
       "priceRange": "$$",
@@ -197,8 +198,8 @@ const SEO = ({
       <meta name="revisit-after" content="7 days" />
       
       {/* Geo Tags for Local SEO */}
-      <meta name="geo.region" content="IN" />
-      <meta name="geo.placename" content="New Delhi" />
+      <meta name="geo.region" content="IN-BR" />
+      <meta name="geo.placename" content="Patna" />
       
       {/* Canonical URL */}
       <link rel="canonical" href={canonicalUrl} />

@@ -70,7 +70,8 @@ const Contact = () => {
             "url": "https://shyaradigital.com",
             "address": {
               "@type": "PostalAddress",
-              "addressLocality": "New Delhi",
+              "addressLocality": "Patna",
+              "addressRegion": "Bihar",
               "addressCountry": "IN"
             },
             "openingHoursSpecification": {

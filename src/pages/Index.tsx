@@ -136,7 +136,8 @@ const Index = () => {
           "email": "shyaradigital@gmail.com",
           "address": {
             "@type": "PostalAddress",
-            "addressLocality": "New Delhi",
+            "addressLocality": "Patna",
+            "addressRegion": "Bihar",
             "addressCountry": "IN"
           },
           "priceRange": "$$",
