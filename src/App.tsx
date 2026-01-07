@@ -7,8 +7,8 @@ import { AnimatePresence } from "framer-motion";
 import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import Categories from "./pages/Categories";
-import Formats from "./pages/Formats";
 import Samples from "./pages/Samples";
+import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -24,8 +24,8 @@ const AnimatedRoutes = () => {
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Index />} />
           <Route path="/categories" element={<Categories />} />
-          <Route path="/formats" element={<Formats />} />
           <Route path="/samples" element={<Samples />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Heart, Flower2, Gift, Star, Sparkles, ArrowRight, Church, PartyPopper, Calendar, Music, Cake, Users, Home as HomeIcon, BookOpen, ChevronDown } from "lucide-react";
+import { Heart, Flower2, Gift, Star, Sparkles, ArrowRight, Church, PartyPopper, Calendar, Music, Cake, Users, Home as HomeIcon, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import AnimatedCard from "@/components/AnimatedCard";
@@ -167,7 +167,7 @@ const Categories = () => {
               Invitations for Every <span className="text-gradient">Celebration</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed opacity-0 animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
-              From weddings to birthdays, from religious ceremonies to romantic moments — 
+              From weddings to birthdays, from religious ceremonies to romantic moments,
               find the perfect invitation for your special occasion
             </p>
           </div>
@@ -202,7 +202,7 @@ const Categories = () => {
               id="weddings"
               emoji="💍"
               title="Wedding Invitations"
-              description="From the first promise to the final celebration — invite your loved ones beautifully at every step."
+              description="From the first promise to the final celebration, invite your loved ones beautifully at every step."
               events={weddingEvents}
               bgColor="bg-rose-light/30"
               delay={0}
@@ -253,7 +253,7 @@ const Categories = () => {
               id="special"
               emoji="🌼"
               title="Special Days"
-              description="Small gestures, big emotions — made unforgettable."
+              description="Small gestures, big emotions, made unforgettable."
               events={specialDays}
               bgColor="bg-lavender-light/30"
               delay={400}
