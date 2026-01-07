@@ -6,7 +6,7 @@ import AnimatedCard from "@/components/AnimatedCard";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
 import SEO from "@/components/SEO";
-import GalleryCarousel from "@/components/GalleryCarousel";
+import YouTubeCarousel from "@/components/YouTubeCarousel";
 
 const testimonials = [
   {
@@ -91,13 +91,19 @@ const benefits = [
   {
     icon: Calendar,
     title: "Beautiful on Every Screen",
-    description: "From phones to tablets to desktops — always stunning",
+    description: "From phones to tablets to desktops, always stunning",
   },
   {
     icon: Heart,
     title: "Personalized for Every Story",
     description: "Your invitation, your story, your unique celebration",
   },
+];
+
+// Configure your YouTube videos here
+const homePageVideos = [
+  // Add your YouTube video IDs here like:
+  // { id: "dQw4w9WgXcQ", title: "Royal Wedding Invitation" },
 ];
 
 const Index = () => {
@@ -154,18 +160,10 @@ const Index = () => {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            {/* Script Text */}
-            <span 
-              className="inline-block font-script text-2xl md:text-3xl text-primary mb-4 opacity-0 animate-fade-in"
-              style={{ animationDelay: "0.2s" }}
-            >
-              Welcome to
-            </span>
-
             {/* Main Headline */}
             <h1 
               className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 opacity-0 animate-fade-in-up"
-              style={{ animationDelay: "0.4s" }}
+              style={{ animationDelay: "0.2s" }}
             >
               Invite with <span className="text-gradient">Love</span>,
               <br />
@@ -175,7 +173,7 @@ const Index = () => {
             {/* Subtitle */}
             <p 
               className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed opacity-0 animate-fade-in-up"
-              style={{ animationDelay: "0.6s" }}
+              style={{ animationDelay: "0.4s" }}
             >
               Digital invitation cards & videos for weddings, celebrations, 
               and moments that matter. Crafted with emotion, shared with ease.
@@ -184,7 +182,7 @@ const Index = () => {
             {/* CTA Buttons */}
             <div 
               className="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-in-up"
-              style={{ animationDelay: "0.8s" }}
+              style={{ animationDelay: "0.6s" }}
             >
               <Button 
                 asChild 
@@ -228,7 +226,7 @@ const Index = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in" style={{ animationDelay: "1.2s" }}>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in" style={{ animationDelay: "1s" }}>
           <div className="flex flex-col items-center gap-2 text-muted-foreground">
             <span className="text-sm font-medium">Scroll to explore</span>
             <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center pt-2">
@@ -238,15 +236,21 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Gallery Carousel */}
-      <GalleryCarousel />
+      {/* YouTube Carousel Section */}
+      <YouTubeCarousel 
+        videos={homePageVideos}
+        title="Our Creations"
+        subtitle="Watch our beautiful invitation videos that capture hearts and create excitement"
+        scriptText="Beautiful Invitations Gallery"
+        showPDFSection={true}
+      />
 
       {/* Why Shyara Digital Section */}
       <section className="py-20 md:py-28 relative">
         <div className="container mx-auto px-4">
           <SectionHeading
             script="Why Choose Us?"
-            title="Made with Love, Shared with Joy"
+            title="What Makes Us Special"
             subtitle="We believe every celebration deserves an invitation as special as the moment itself"
           />
 
@@ -342,7 +346,7 @@ const Index = () => {
                     </div>
                     <div>
                       <p className="font-serif font-semibold text-foreground">{testimonial.name}</p>
-                      <p className="text-sm text-muted-foreground">{testimonial.event} • {testimonial.location}</p>
+                      <p className="text-sm text-muted-foreground">{testimonial.event} - {testimonial.location}</p>
                     </div>
                   </div>
                 </AnimatedCard>

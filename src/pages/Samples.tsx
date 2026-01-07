@@ -1,125 +1,124 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Play, FileText, X, Sparkles, ArrowRight, Heart, Eye } from "lucide-react";
+import { Heart, Sparkles, ArrowRight, Play, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Layout from "@/components/Layout";
-import AnimatedCard from "@/components/AnimatedCard";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
 import SEO from "@/components/SEO";
+import type { VideoItem } from "@/components/YouTubeCarousel";
 
-const videoSamples = [
-  { id: 1, title: "Royal Wedding", category: "Wedding", gradient: "from-rose-light to-peach-light" },
-  { id: 2, title: "Golden Engagement", category: "Engagement", gradient: "from-gold-light to-peach-light" },
-  { id: 3, title: "Sangeet Night", category: "Sangeet", gradient: "from-lavender to-rose-light" },
-  { id: 4, title: "Birthday Bash", category: "Birthday", gradient: "from-peach to-gold-light" },
-  { id: 5, title: "Grih Pravesh", category: "Religious", gradient: "from-gold to-gold-light" },
-  { id: 6, title: "Valentine Special", category: "Romantic", gradient: "from-rose to-rose-light" },
+// Configurable video samples for each category
+// Add YouTube video IDs here to populate each section
+const sampleCategories = [
+  {
+    id: "wedding",
+    emoji: "💍",
+    title: "Wedding Invitations",
+    description: "Complete wedding invitation videos including Engagement, Mehndi, Haldi, Sangeet, Wedding, and Reception",
+    videos: [] as VideoItem[],
+  },
+  {
+    id: "engagement",
+    emoji: "💎",
+    title: "Engagement Invitations",
+    description: "Beautiful engagement ceremony invitation videos",
+    videos: [] as VideoItem[],
+  },
+  {
+    id: "birthday",
+    emoji: "🎂",
+    title: "Birthday Invitations",
+    description: "Fun and creative birthday invitation videos for all ages",
+    videos: [] as VideoItem[],
+  },
+  {
+    id: "anniversary",
+    emoji: "💕",
+    title: "Anniversary Invitations",
+    description: "Celebrate years of love with beautiful anniversary invitations",
+    videos: [] as VideoItem[],
+  },
+  {
+    id: "pooja",
+    emoji: "🪔",
+    title: "Pooja & Religious Invitations",
+    description: "Grih Pravesh, Jagran, Mata Ki Chowki, Ram Katha, Bhagwat Katha",
+    videos: [] as VideoItem[],
+  },
+  {
+    id: "romantic",
+    emoji: "❤️",
+    title: "Romantic Moments",
+    description: "Proposal Cards, Valentine's Day, Long-distance Surprises",
+    videos: [] as VideoItem[],
+  },
+  {
+    id: "special",
+    emoji: "🌼",
+    title: "Special Days",
+    description: "Father's Day, Mother's Day, Children's Day, Friendship Day",
+    videos: [] as VideoItem[],
+  },
 ];
 
-const cardSamples = [
-  { id: 1, title: "Elegant Wedding", category: "Wedding", gradient: "from-rose-light to-lavender-light" },
-  { id: 2, title: "Haldi Ceremony", category: "Haldi", gradient: "from-gold-light to-peach-light" },
-  { id: 3, title: "Mehndi Celebration", category: "Mehndi", gradient: "from-peach to-rose-light" },
-  { id: 4, title: "50th Birthday", category: "Birthday", gradient: "from-lavender to-rose-light" },
-  { id: 5, title: "Mother's Day", category: "Special Day", gradient: "from-rose-light to-peach" },
-  { id: 6, title: "Anniversary", category: "Anniversary", gradient: "from-gold to-rose-light" },
-];
+const VideoCarouselContent = ({ videos }: { videos: VideoItem[] }) => {
+  const handleWhatsAppClick = () => {
+    window.open("https://wa.me/919584661610?text=Hi! I would like to see some sample invitations.", "_blank");
+  };
 
-interface SampleModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  type: "video" | "card";
-  sample: { id: number; title: string; category: string } | null;
-}
-
-const SampleModal = ({ isOpen, onClose, type, sample }: SampleModalProps) => {
-  if (!sample) return null;
+  if (videos.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center py-10 px-6 bg-gradient-to-br from-white/60 to-rose-light/10 rounded-2xl border border-rose-light/20">
+        <div className="w-16 h-16 rounded-full bg-rose-light/30 flex items-center justify-center mb-4">
+          <Play className="w-8 h-8 text-primary" />
+        </div>
+        <h4 className="font-serif text-lg font-semibold text-foreground mb-2 text-center">
+          Samples Coming Soon!
+        </h4>
+        <p className="text-muted-foreground text-center text-sm max-w-sm mb-4">
+          Ask on WhatsApp for samples and to have yours built!
+        </p>
+        <Button 
+          onClick={handleWhatsAppClick}
+          size="sm"
+          className="rounded-full shadow-romantic hover:shadow-lg transition-all hover:-translate-y-1"
+        >
+          <MessageCircle className="w-4 h-4 mr-2" />
+          Ask on WhatsApp
+        </Button>
+      </div>
+    );
+  }
 
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-2xl bg-gradient-to-br from-background via-rose-light/10 to-peach-light/10 border-rose-light/30">
-        <DialogHeader>
-          <DialogTitle className="font-serif text-2xl text-foreground flex items-center gap-2">
-            {type === "video" ? <Play className="w-6 h-6 text-primary" /> : <FileText className="w-6 h-6 text-primary" />}
-            {sample.title}
-          </DialogTitle>
-        </DialogHeader>
-        
-        <div className="py-8">
-          {type === "video" ? (
-            <div className="aspect-video rounded-2xl bg-gradient-to-br from-rose-light/30 via-peach-light/20 to-gold-light/30 border border-rose-light/30 flex items-center justify-center relative overflow-hidden">
-              {/* Mock Video Player */}
-              <div className="text-center space-y-4">
-                <div className="w-16 h-16 mx-auto rounded-full bg-primary/20 flex items-center justify-center">
-                  <Play className="w-8 h-8 text-primary" />
-                </div>
-                <p className="text-muted-foreground">
-                  Sample video preview will be displayed here
-                </p>
-                <span className="inline-block px-3 py-1 bg-rose-light/30 rounded-full text-sm text-primary">
-                  {sample.category} • Video
-                </span>
-              </div>
-              
-              {/* Decorative Elements */}
-              <Heart className="absolute top-4 right-4 w-5 h-5 text-rose-light/50 fill-rose-light/25 animate-float" />
-              <Sparkles className="absolute bottom-4 left-4 w-5 h-5 text-gold/50 animate-sparkle" />
-            </div>
-          ) : (
-            <div className="aspect-[3/4] max-w-xs mx-auto rounded-2xl bg-gradient-to-br from-gold-light/30 via-white to-rose-light/30 border border-gold/20 flex items-center justify-center relative overflow-hidden p-6">
-              {/* Mock PDF Preview */}
-              <div className="text-center space-y-4">
-                <div className="w-16 h-16 mx-auto rounded-full bg-gold/10 flex items-center justify-center">
-                  <FileText className="w-8 h-8 text-primary" />
-                </div>
-                <p className="text-muted-foreground text-sm">
-                  Sample PDF preview will be displayed here
-                </p>
-                <span className="inline-block px-3 py-1 bg-gold-light/30 rounded-full text-xs text-primary">
-                  {sample.category} • PDF
-                </span>
-              </div>
-              
-              {/* Decorative Elements */}
-              <Heart className="absolute top-4 left-4 w-4 h-4 text-rose-light/50 fill-rose-light/25 animate-float-slow" />
-            </div>
-          )}
+    <div className="flex gap-4 overflow-x-auto scrollbar-hide px-2 snap-x snap-mandatory pb-4" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
+      {videos.map((video) => (
+        <div
+          key={video.id}
+          className="flex-shrink-0 w-[280px] md:w-[350px] snap-center"
+        >
+          <div className="aspect-video rounded-xl overflow-hidden shadow-romantic bg-gradient-to-br from-rose-light/30 to-peach-light/30">
+            <iframe
+              src={`https://www.youtube.com/embed/${video.id}`}
+              title={video.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            />
+          </div>
+          <p className="mt-2 text-center font-medium text-foreground text-sm">{video.title}</p>
         </div>
-
-        <div className="text-center space-y-4 pb-4">
-          <p className="text-muted-foreground text-sm">
-            This is a placeholder for the {type} sample. 
-            Full previews will be available soon!
-          </p>
-          <Button asChild className="rounded-full">
-            <Link to="/contact">
-              Create Similar Invitation
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </Link>
-          </Button>
-        </div>
-      </DialogContent>
-    </Dialog>
+      ))}
+    </div>
   );
 };
 
 const Samples = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedSample, setSelectedSample] = useState<{ id: number; title: string; category: string } | null>(null);
-  const [sampleType, setSampleType] = useState<"video" | "card">("video");
-
-  const openModal = (sample: { id: number; title: string; category: string }, type: "video" | "card") => {
-    setSelectedSample(sample);
-    setSampleType(type);
-    setModalOpen(true);
-  };
-
   return (
     <Layout>
       <SEO
-        title="Sample Gallery | Video & PDF Invitation Examples | Shyara Digital"
+        title="Sample Gallery | Video Invitation Examples | Shyara Digital"
         description="Browse our sample gallery of beautiful digital invitations. See examples of wedding videos, birthday cards, pooja invitations, and more. Get inspired for your celebration."
         keywords="invitation samples, wedding video samples, digital card examples, invitation gallery, wedding invitation preview, birthday card samples, invitation portfolio"
         canonicalUrl="https://shyaradigital.com/samples"
@@ -132,15 +131,16 @@ const Samples = () => {
           "@context": "https://schema.org",
           "@type": "CollectionPage",
           "name": "Sample Gallery - Shyara Digital",
-          "description": "Browse our collection of beautiful digital invitation samples including wedding videos and PDF cards",
+          "description": "Browse our collection of beautiful digital invitation samples including wedding videos and celebration invitations",
           "url": "https://shyaradigital.com/samples",
           "mainEntity": {
             "@type": "ImageGallery",
             "name": "Digital Invitation Samples",
-            "description": "Examples of video invitations and PDF invitation cards for weddings, birthdays, and celebrations"
+            "description": "Examples of video invitations for weddings, birthdays, and celebrations"
           }
         }}
       />
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
         <div className="absolute inset-0">
@@ -157,118 +157,49 @@ const Samples = () => {
               Sample <span className="text-gradient">Gallery</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed opacity-0 animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
-              Explore our collection of beautifully crafted invitations — 
-              from motion-rich videos to elegant digital cards
+              Explore our collection of beautifully crafted video invitations for every celebration
             </p>
           </div>
         </div>
       </section>
 
-      {/* Video Samples Section */}
-      <section className="py-16 md:py-20">
+      {/* Sample Categories - Accordion */}
+      <section className="py-8 md:py-12">
         <div className="container mx-auto px-4">
-          <SectionHeading
-            title="Video Invitations"
-            subtitle="Motion-rich, music-enhanced invitation videos that capture hearts"
-          >
-            <span className="inline-flex items-center gap-2 mt-4 px-4 py-2 bg-rose-light/30 rounded-full text-primary text-sm font-medium">
-              <Play className="w-4 h-4" />
-              Click to preview
-            </span>
-          </SectionHeading>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-            {videoSamples.map((sample, index) => (
-              <ScrollReveal key={sample.id} delay={index * 100}>
-                <AnimatedCard 
-                  className="p-0 overflow-hidden cursor-pointer group" 
-                  hoverEffect="lift"
+          <Accordion type="single" collapsible className="space-y-6">
+            {sampleCategories.map((category, index) => (
+              <ScrollReveal key={category.id} delay={index * 50}>
+                <AccordionItem 
+                  value={category.id}
+                  className="border-none"
                 >
-                  <div 
-                    onClick={() => openModal(sample, "video")}
-                    className="relative"
-                  >
-                    {/* Thumbnail */}
-                    <div className={`aspect-video bg-gradient-to-br ${sample.gradient} flex items-center justify-center relative`}>
-                      <div className="w-14 h-14 rounded-full bg-white/80 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                        <Play className="w-6 h-6 text-primary fill-primary ml-0.5" />
-                      </div>
-                      
-                      {/* Hover Overlay */}
-                      <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-                        <span className="flex items-center gap-2 px-4 py-2 bg-white/90 rounded-full text-foreground text-sm font-medium shadow-lg">
-                          <Eye className="w-4 h-4" />
-                          Preview
-                        </span>
+                  <AccordionTrigger className="py-6 px-6 md:px-8 rounded-2xl bg-gradient-to-r from-white/60 via-white/40 to-white/60 backdrop-blur-sm border border-white/50 shadow-soft hover:shadow-romantic transition-all duration-500 hover:no-underline group data-[state=open]:rounded-b-none data-[state=open]:border-b-0">
+                    <div className="flex items-center gap-4 text-left">
+                      <span className="text-3xl md:text-4xl transition-transform duration-300 group-hover:scale-110 group-data-[state=open]:animate-bounce">
+                        {category.emoji}
+                      </span>
+                      <div className="flex flex-col gap-0.5">
+                        <h2 className="font-serif text-xl md:text-2xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+                          {category.title}
+                        </h2>
+                        <p className="text-sm text-muted-foreground font-normal hidden sm:block">
+                          {category.description}
+                        </p>
                       </div>
                     </div>
-                    
-                    {/* Info */}
-                    <div className="p-4">
-                      <h3 className="font-serif text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-                        {sample.title}
-                      </h3>
-                      <span className="text-sm text-muted-foreground">{sample.category}</span>
+                  </AccordionTrigger>
+                  <AccordionContent className="overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+                    <div className="bg-gradient-to-b from-rose-light/20 to-transparent rounded-b-2xl border border-t-0 border-white/50 p-6 md:p-8">
+                      <p className="text-sm text-muted-foreground mb-6 sm:hidden">
+                        {category.description}
+                      </p>
+                      <VideoCarouselContent videos={category.videos} />
                     </div>
-                  </div>
-                </AnimatedCard>
+                  </AccordionContent>
+                </AccordionItem>
               </ScrollReveal>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Card Samples Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-transparent via-lavender-light/10 to-transparent">
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            title="Invitation Cards (PDF)"
-            subtitle="Elegant, printable designs that work beautifully everywhere"
-          >
-            <span className="inline-flex items-center gap-2 mt-4 px-4 py-2 bg-gold-light/30 rounded-full text-primary text-sm font-medium">
-              <FileText className="w-4 h-4" />
-              Click to preview
-            </span>
-          </SectionHeading>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-            {cardSamples.map((sample, index) => (
-              <ScrollReveal key={sample.id} delay={index * 100}>
-                <AnimatedCard 
-                  className="p-0 overflow-hidden cursor-pointer group" 
-                  hoverEffect="lift"
-                >
-                  <div 
-                    onClick={() => openModal(sample, "card")}
-                    className="relative"
-                  >
-                    {/* Thumbnail */}
-                    <div className={`aspect-[4/5] bg-gradient-to-br ${sample.gradient} flex items-center justify-center relative p-6`}>
-                      <div className="w-full h-full bg-white/50 rounded-xl flex items-center justify-center">
-                        <FileText className="w-12 h-12 text-primary/50" />
-                      </div>
-                      
-                      {/* Hover Overlay */}
-                      <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-                        <span className="flex items-center gap-2 px-4 py-2 bg-white/90 rounded-full text-foreground text-sm font-medium shadow-lg">
-                          <Eye className="w-4 h-4" />
-                          Preview
-                        </span>
-                      </div>
-                    </div>
-                    
-                    {/* Info */}
-                    <div className="p-4">
-                      <h3 className="font-serif text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-                        {sample.title}
-                      </h3>
-                      <span className="text-sm text-muted-foreground">{sample.category}</span>
-                    </div>
-                  </div>
-                </AnimatedCard>
-              </ScrollReveal>
-            ))}
-          </div>
+          </Accordion>
         </div>
       </section>
 
@@ -305,14 +236,6 @@ const Samples = () => {
           </ScrollReveal>
         </div>
       </section>
-
-      {/* Modal */}
-      <SampleModal 
-        isOpen={modalOpen} 
-        onClose={() => setModalOpen(false)} 
-        type={sampleType} 
-        sample={selectedSample} 
-      />
     </Layout>
   );
 };
