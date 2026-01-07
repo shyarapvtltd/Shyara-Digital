@@ -1,4 +1,5 @@
-import { useRef, useState } from "react";
+import { useCallback } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight, Play, FileText, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -25,28 +26,20 @@ const YouTubeCarousel = ({
   scriptText = "Beautiful Invitations Gallery",
   showPDFSection = true
 }: YouTubeCarouselProps) => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    loop: false, 
+    align: "start",
+    dragFree: true,
+    containScroll: "trimSnaps"
+  });
 
-  const checkScrollButtons = () => {
-    if (scrollRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
-    }
-  };
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
 
-  const scroll = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      const scrollAmount = 320;
-      scrollRef.current.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth"
-      });
-      setTimeout(checkScrollButtons, 300);
-    }
-  };
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
 
   const handleWhatsAppClick = () => {
     window.open("https://wa.me/919584661610?text=Hi! I would like to see some sample invitations.", "_blank");
@@ -68,50 +61,49 @@ const YouTubeCarousel = ({
           {videos.length > 0 ? (
             <>
               {/* Navigation Buttons */}
-              {canScrollLeft && (
-                <button
-                  onClick={() => scroll("left")}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/90 shadow-lg flex items-center justify-center hover:bg-white transition-all hover:scale-110"
-                  aria-label="Scroll left"
-                >
-                  <ChevronLeft className="w-5 h-5 text-foreground" />
-                </button>
-              )}
-              {canScrollRight && (
-                <button
-                  onClick={() => scroll("right")}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/90 shadow-lg flex items-center justify-center hover:bg-white transition-all hover:scale-110"
-                  aria-label="Scroll right"
-                >
-                  <ChevronRight className="w-5 h-5 text-foreground" />
-                </button>
-              )}
-
-              {/* Carousel Container */}
-              <div
-                ref={scrollRef}
-                className="flex gap-6 overflow-x-auto scrollbar-hide px-4 snap-x snap-mandatory"
-                onScroll={checkScrollButtons}
-                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+              <button
+                onClick={scrollPrev}
+                className="absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/90 shadow-lg flex items-center justify-center hover:bg-white transition-all hover:scale-110"
+                aria-label="Scroll left"
               >
-                {videos.map((video, index) => (
-                  <div
-                    key={video.id}
-                    className="flex-shrink-0 w-[300px] md:w-[400px] snap-center"
-                  >
-                    <div className="aspect-video rounded-2xl overflow-hidden shadow-romantic bg-gradient-to-br from-rose-light/30 to-peach-light/30">
-                      <iframe
-                        src={`https://www.youtube.com/embed/${video.id}`}
-                        title={video.title}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="w-full h-full"
-                      />
+                <ChevronLeft className="w-5 h-5 text-foreground" />
+              </button>
+              <button
+                onClick={scrollNext}
+                className="absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/90 shadow-lg flex items-center justify-center hover:bg-white transition-all hover:scale-110"
+                aria-label="Scroll right"
+              >
+                <ChevronRight className="w-5 h-5 text-foreground" />
+              </button>
+
+              {/* Embla Carousel Container */}
+              <div className="overflow-hidden mx-6 md:mx-8" ref={emblaRef}>
+                <div className="flex gap-6 touch-pan-y">
+                  {videos.map((video) => (
+                    <div
+                      key={video.id}
+                      className="flex-shrink-0 w-[300px] md:w-[400px] select-none"
+                    >
+                      <div className="aspect-video rounded-2xl overflow-hidden shadow-romantic bg-gradient-to-br from-rose-light/30 to-peach-light/30">
+                        <iframe
+                          src={`https://www.youtube.com/embed/${video.id}?rel=0`}
+                          title={video.title}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="w-full h-full pointer-events-auto"
+                          loading="lazy"
+                        />
+                      </div>
+                      <p className="mt-3 text-center font-medium text-foreground">{video.title}</p>
                     </div>
-                    <p className="mt-3 text-center font-medium text-foreground">{video.title}</p>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
+
+              {/* Swipe hint for mobile */}
+              <p className="text-center text-sm text-muted-foreground mt-4 md:hidden">
+                ← Swipe to see more →
+              </p>
             </>
           ) : (
             /* Empty state - No videos configured yet */

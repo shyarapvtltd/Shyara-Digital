@@ -1,68 +1,116 @@
+import { useCallback } from "react";
 import { Link } from "react-router-dom";
-import { Heart, Sparkles, ArrowRight, Play, MessageCircle } from "lucide-react";
+import useEmblaCarousel from "embla-carousel-react";
+import { Heart, Sparkles, ArrowRight, Play, MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
-import SectionHeading from "@/components/SectionHeading";
 import SEO from "@/components/SEO";
 import type { VideoItem } from "@/components/YouTubeCarousel";
 
+// Sample YouTube videos for demonstration - Replace with actual wedding invitation videos
+const sampleVideos = {
+  wedding: [
+    { id: "3JZ_D3ELwOQ", title: "Royal Wedding Invitation" },
+    { id: "kJQP7kiw5Fk", title: "Romantic Wedding Video" },
+    { id: "RgKAFK5djSk", title: "Classic Wedding Card" },
+  ],
+  engagement: [
+    { id: "09R8_2nJtjg", title: "Golden Engagement" },
+    { id: "JGwWNGJdvx8", title: "Love Story Engagement" },
+  ],
+  birthday: [
+    { id: "3JZ_D3ELwOQ", title: "Birthday Bash Video" },
+    { id: "kJQP7kiw5Fk", title: "Kids Birthday Fun" },
+  ],
+  anniversary: [
+    { id: "RgKAFK5djSk", title: "25th Anniversary" },
+    { id: "09R8_2nJtjg", title: "Golden Jubilee" },
+  ],
+  pooja: [
+    { id: "JGwWNGJdvx8", title: "Grih Pravesh Invitation" },
+    { id: "3JZ_D3ELwOQ", title: "Mata Ki Chowki" },
+  ],
+  romantic: [
+    { id: "kJQP7kiw5Fk", title: "Proposal Card" },
+    { id: "RgKAFK5djSk", title: "Valentine Special" },
+  ],
+  special: [
+    { id: "09R8_2nJtjg", title: "Mother's Day" },
+    { id: "JGwWNGJdvx8", title: "Father's Day" },
+  ],
+};
+
 // Configurable video samples for each category
-// Add YouTube video IDs here to populate each section
 const sampleCategories = [
   {
     id: "wedding",
     emoji: "💍",
     title: "Wedding Invitations",
     description: "Complete wedding invitation videos including Engagement, Mehndi, Haldi, Sangeet, Wedding, and Reception",
-    videos: [] as VideoItem[],
+    videos: sampleVideos.wedding,
   },
   {
     id: "engagement",
     emoji: "💎",
     title: "Engagement Invitations",
     description: "Beautiful engagement ceremony invitation videos",
-    videos: [] as VideoItem[],
+    videos: sampleVideos.engagement,
   },
   {
     id: "birthday",
     emoji: "🎂",
     title: "Birthday Invitations",
     description: "Fun and creative birthday invitation videos for all ages",
-    videos: [] as VideoItem[],
+    videos: sampleVideos.birthday,
   },
   {
     id: "anniversary",
     emoji: "💕",
     title: "Anniversary Invitations",
     description: "Celebrate years of love with beautiful anniversary invitations",
-    videos: [] as VideoItem[],
+    videos: sampleVideos.anniversary,
   },
   {
     id: "pooja",
     emoji: "🪔",
     title: "Pooja & Religious Invitations",
     description: "Grih Pravesh, Jagran, Mata Ki Chowki, Ram Katha, Bhagwat Katha",
-    videos: [] as VideoItem[],
+    videos: sampleVideos.pooja,
   },
   {
     id: "romantic",
     emoji: "❤️",
     title: "Romantic Moments",
     description: "Proposal Cards, Valentine's Day, Long-distance Surprises",
-    videos: [] as VideoItem[],
+    videos: sampleVideos.romantic,
   },
   {
     id: "special",
     emoji: "🌼",
     title: "Special Days",
     description: "Father's Day, Mother's Day, Children's Day, Friendship Day",
-    videos: [] as VideoItem[],
+    videos: sampleVideos.special,
   },
 ];
 
 const VideoCarouselContent = ({ videos }: { videos: VideoItem[] }) => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    loop: false, 
+    align: "start",
+    dragFree: true,
+    containScroll: "trimSnaps"
+  });
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
   const handleWhatsAppClick = () => {
     window.open("https://wa.me/919584661610?text=Hi! I would like to see some sample invitations.", "_blank");
   };
@@ -92,24 +140,51 @@ const VideoCarouselContent = ({ videos }: { videos: VideoItem[] }) => {
   }
 
   return (
-    <div className="flex gap-4 overflow-x-auto scrollbar-hide px-2 snap-x snap-mandatory pb-4" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
-      {videos.map((video) => (
-        <div
-          key={video.id}
-          className="flex-shrink-0 w-[280px] md:w-[350px] snap-center"
-        >
-          <div className="aspect-video rounded-xl overflow-hidden shadow-romantic bg-gradient-to-br from-rose-light/30 to-peach-light/30">
-            <iframe
-              src={`https://www.youtube.com/embed/${video.id}`}
-              title={video.title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-full h-full"
-            />
-          </div>
-          <p className="mt-2 text-center font-medium text-foreground text-sm">{video.title}</p>
+    <div className="relative">
+      {/* Navigation Buttons */}
+      <button
+        onClick={scrollPrev}
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white/90 shadow-lg flex items-center justify-center hover:bg-white transition-all hover:scale-110"
+        aria-label="Scroll left"
+      >
+        <ChevronLeft className="w-4 h-4 text-foreground" />
+      </button>
+      <button
+        onClick={scrollNext}
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white/90 shadow-lg flex items-center justify-center hover:bg-white transition-all hover:scale-110"
+        aria-label="Scroll right"
+      >
+        <ChevronRight className="w-4 h-4 text-foreground" />
+      </button>
+
+      {/* Embla Carousel */}
+      <div className="overflow-hidden mx-6" ref={emblaRef}>
+        <div className="flex gap-4 touch-pan-y">
+          {videos.map((video) => (
+            <div
+              key={video.id + video.title}
+              className="flex-shrink-0 w-[280px] md:w-[350px] select-none"
+            >
+              <div className="aspect-video rounded-xl overflow-hidden shadow-romantic bg-gradient-to-br from-rose-light/30 to-peach-light/30">
+                <iframe
+                  src={`https://www.youtube.com/embed/${video.id}?rel=0`}
+                  title={video.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full pointer-events-auto"
+                  loading="lazy"
+                />
+              </div>
+              <p className="mt-2 text-center font-medium text-foreground text-sm">{video.title}</p>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
+
+      {/* Swipe hint for mobile */}
+      <p className="text-center text-xs text-muted-foreground mt-3 md:hidden">
+        ← Swipe to see more →
+      </p>
     </div>
   );
 };
