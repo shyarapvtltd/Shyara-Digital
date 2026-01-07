@@ -100,10 +100,13 @@ const benefits = [
   },
 ];
 
-// Configure your YouTube videos here
+// Configure your YouTube videos here - Sample wedding invitation videos
 const homePageVideos = [
-  // Add your YouTube video IDs here like:
-  // { id: "dQw4w9WgXcQ", title: "Royal Wedding Invitation" },
+  { id: "3JZ_D3ELwOQ", title: "Royal Wedding Invitation" },
+  { id: "kJQP7kiw5Fk", title: "Romantic Couple Video" },
+  { id: "RgKAFK5djSk", title: "Beautiful Engagement" },
+  { id: "09R8_2nJtjg", title: "Traditional Wedding" },
+  { id: "JGwWNGJdvx8", title: "Modern Love Story" },
 ];
 
 const Index = () => {
