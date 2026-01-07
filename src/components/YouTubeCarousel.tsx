@@ -82,9 +82,9 @@ const YouTubeCarousel = ({
                   {videos.map((video) => (
                     <div
                       key={video.id}
-                      className="flex-shrink-0 w-[300px] md:w-[400px] select-none"
+                      className="flex-shrink-0 w-[200px] md:w-[280px] select-none"
                     >
-                      <div className="aspect-video rounded-2xl overflow-hidden shadow-romantic bg-gradient-to-br from-rose-light/30 to-peach-light/30">
+                      <div className="aspect-[9/16] rounded-2xl overflow-hidden shadow-romantic bg-gradient-to-br from-rose-light/30 to-peach-light/30">
                         <iframe
                           src={`https://www.youtube.com/embed/${video.id}?rel=0`}
                           title={video.title}

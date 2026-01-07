@@ -100,7 +100,7 @@ const benefits = [
   },
 ];
 
-// Configure your YouTube videos here - Sample wedding invitation videos
+// Configure your YouTube videos here - Vertical invitation videos (9:16 format)
 const homePageVideos = [
   { id: "3JZ_D3ELwOQ", title: "Royal Wedding Invitation" },
   { id: "kJQP7kiw5Fk", title: "Romantic Couple Video" },

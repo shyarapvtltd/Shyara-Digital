@@ -9,7 +9,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import SEO from "@/components/SEO";
 import type { VideoItem } from "@/components/YouTubeCarousel";
 
-// Sample YouTube videos for demonstration - Replace with actual wedding invitation videos
+// Sample YouTube videos for demonstration - Replace with actual vertical invitation videos (9:16 format)
 const sampleVideos = {
   wedding: [
     { id: "3JZ_D3ELwOQ", title: "Royal Wedding Invitation" },
@@ -163,9 +163,9 @@ const VideoCarouselContent = ({ videos }: { videos: VideoItem[] }) => {
           {videos.map((video) => (
             <div
               key={video.id + video.title}
-              className="flex-shrink-0 w-[280px] md:w-[350px] select-none"
+              className="flex-shrink-0 w-[200px] md:w-[280px] select-none"
             >
-              <div className="aspect-video rounded-xl overflow-hidden shadow-romantic bg-gradient-to-br from-rose-light/30 to-peach-light/30">
+              <div className="aspect-[9/16] rounded-xl overflow-hidden shadow-romantic bg-gradient-to-br from-rose-light/30 to-peach-light/30">
                 <iframe
                   src={`https://www.youtube.com/embed/${video.id}?rel=0`}
                   title={video.title}
