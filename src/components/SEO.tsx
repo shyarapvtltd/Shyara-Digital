@@ -126,7 +126,7 @@ const SEO = ({
   description = "Create beautiful, emotional digital invitation cards and videos for weddings, celebrations, and moments that matter. Share joy with Shyara Digital.",
   keywords = "digital invitations, wedding invitations, digital cards, celebration invitations, video invitations, shaadi cards, online wedding cards, e-invitations India",
   canonicalUrl = "https://shyaradigital.com",
-  ogImage = "https://lovable.dev/opengraph-image-p98pqg.png",
+  ogImage = "https://shyaradigital.com/shyara.png",
   ogType = "website",
   structuredData,
   breadcrumbs,
