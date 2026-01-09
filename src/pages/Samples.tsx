@@ -12,34 +12,41 @@ import type { VideoItem } from "@/components/YouTubeCarousel";
 // Sample YouTube videos for demonstration - Replace with actual vertical invitation videos (9:16 format)
 const sampleVideos = {
   wedding: [
-    { id: "3JZ_D3ELwOQ", title: "Royal Wedding Invitation" },
-    { id: "kJQP7kiw5Fk", title: "Romantic Wedding Video" },
-    { id: "RgKAFK5djSk", title: "Classic Wedding Card" },
+    { id: "MErRHbJ6qqk", title: "Wedding Invitation Video 1" },
+    { id: "HkGKHzATaxw", title: "Wedding Invitation Video 2" },
+    { id: "i3GvQEV3ifs", title: "Wedding Invitation Video 3" },
+    { id: "QpiB8MYm2hA", title: "Wedding Invitation Video 4" },
+    { id: "F4Jn243qJTM", title: "Wedding Invitation Video 5" },
   ],
   engagement: [
-    { id: "09R8_2nJtjg", title: "Golden Engagement" },
-    { id: "JGwWNGJdvx8", title: "Love Story Engagement" },
+    { id: "8YQ7vYSeSWU", title: "Engagement Invitation Video" },
   ],
-  birthday: [
-    { id: "3JZ_D3ELwOQ", title: "Birthday Bash Video" },
-    { id: "kJQP7kiw5Fk", title: "Kids Birthday Fun" },
-  ],
-  anniversary: [
-    { id: "RgKAFK5djSk", title: "25th Anniversary" },
-    { id: "09R8_2nJtjg", title: "Golden Jubilee" },
-  ],
-  pooja: [
-    { id: "JGwWNGJdvx8", title: "Grih Pravesh Invitation" },
-    { id: "3JZ_D3ELwOQ", title: "Mata Ki Chowki" },
-  ],
-  romantic: [
-    { id: "kJQP7kiw5Fk", title: "Proposal Card" },
-    { id: "RgKAFK5djSk", title: "Valentine Special" },
-  ],
-  special: [
-    { id: "09R8_2nJtjg", title: "Mother's Day" },
-    { id: "JGwWNGJdvx8", title: "Father's Day" },
-  ],
+  // Commented out - no videos available yet
+  // birthday: [
+  //   { id: "3JZ_D3ELwOQ", title: "Birthday Bash Video" },
+  //   { id: "kJQP7kiw5Fk", title: "Kids Birthday Fun" },
+  // ],
+  // anniversary: [
+  //   { id: "RgKAFK5djSk", title: "25th Anniversary" },
+  //   { id: "09R8_2nJtjg", title: "Golden Jubilee" },
+  // ],
+  // pooja: [
+  //   { id: "JGwWNGJdvx8", title: "Grih Pravesh Invitation" },
+  //   { id: "3JZ_D3ELwOQ", title: "Mata Ki Chowki" },
+  // ],
+  // romantic: [
+  //   { id: "kJQP7kiw5Fk", title: "Proposal Card" },
+  //   { id: "RgKAFK5djSk", title: "Valentine Special" },
+  // ],
+  // special: [
+  //   { id: "09R8_2nJtjg", title: "Mother's Day" },
+  //   { id: "JGwWNGJdvx8", title: "Father's Day" },
+  // ],
+  birthday: [],
+  anniversary: [],
+  pooja: [],
+  romantic: [],
+  special: [],
 };
 
 // Configurable video samples for each category

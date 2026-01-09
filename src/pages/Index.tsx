@@ -102,11 +102,11 @@ const benefits = [
 
 // Configure your YouTube videos here - Vertical invitation videos (9:16 format)
 const homePageVideos = [
-  { id: "3JZ_D3ELwOQ", title: "Royal Wedding Invitation" },
-  { id: "kJQP7kiw5Fk", title: "Romantic Couple Video" },
-  { id: "RgKAFK5djSk", title: "Beautiful Engagement" },
-  { id: "09R8_2nJtjg", title: "Traditional Wedding" },
-  { id: "JGwWNGJdvx8", title: "Modern Love Story" },
+  { id: "MErRHbJ6qqk", title: "Wedding Invitation Video 1" },
+  { id: "HkGKHzATaxw", title: "Wedding Invitation Video 2" },
+  { id: "i3GvQEV3ifs", title: "Wedding Invitation Video 3" },
+  { id: "QpiB8MYm2hA", title: "Wedding Invitation Video 4" },
+  { id: "F4Jn243qJTM", title: "Wedding Invitation Video 5" },
 ];
 
 const Index = () => {
