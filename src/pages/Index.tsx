@@ -149,7 +149,8 @@ const Index = () => {
           },
           "sameAs": [
             "https://www.instagram.com/shyaradigital",
-            "https://www.facebook.com/shyaradigital"
+            "https://www.facebook.com/shyaradigital",
+            "https://www.youtube.com/@Shyaradigital"
           ]
         }}
       />

@@ -22,13 +22,13 @@ const Footer = () => {
               Creating beautiful, emotional digital invitations for your most precious moments. Made with love.
             </p>
             <div className="flex gap-4 pt-2">
-              <a href="#" className="p-2 rounded-full bg-rose-light/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all hover:scale-110">
+              <a href="https://www.instagram.com/shyaradigital" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-rose-light/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all hover:scale-110">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="p-2 rounded-full bg-rose-light/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all hover:scale-110">
+              <a href="https://www.facebook.com/shyaradigital" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-rose-light/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all hover:scale-110">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="p-2 rounded-full bg-rose-light/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all hover:scale-110">
+              <a href="https://www.youtube.com/@Shyaradigital" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-rose-light/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all hover:scale-110">
                 <Youtube className="w-5 h-5" />
               </a>
             </div>
