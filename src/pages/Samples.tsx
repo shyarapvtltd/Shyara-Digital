@@ -19,7 +19,8 @@ const sampleVideos = {
     { id: "F4Jn243qJTM", title: "Wedding Invitation Video 5" },
   ],
   engagement: [
-    { id: "8YQ7vYSeSWU", title: "Engagement Invitation Video" },
+    { id: "8YQ7vYSeSWU", title: "Engagement Invitation Video 1" },
+    { id: "xxewEgsOBoI", title: "Engagement Invitation Video 2" },
   ],
   // Commented out - no videos available yet
   // birthday: [
