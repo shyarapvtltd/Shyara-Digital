@@ -1,9 +1,9 @@
 services:
   - type: web
     name: shyara-digital
-    env: static
+    env: node
     buildCommand: npm install && npm run build
-    staticPublishPath: ./dist
+    startCommand: node server.js
     envVars:
       - key: NODE_VERSION
         value: 18.x
