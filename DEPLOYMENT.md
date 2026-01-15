@@ -46,6 +46,8 @@ Fill in the following configuration:
   dist
   ```
 
+**Important:** The project includes a `_redirects` file in the `public` folder that ensures all routes work correctly. This file is automatically copied to the `dist` folder during build and tells Render to serve `index.html` for all routes, allowing React Router to handle client-side routing properly.
+
 ### Step 5: Environment Variables (Optional)
 
 If you have any environment variables, add them here:
