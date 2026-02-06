@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 import useEmblaCarousel from "embla-carousel-react";
 import { Heart, Sparkles, ArrowRight, Play, MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
@@ -111,6 +111,9 @@ const VideoCarouselContent = ({ videos }: { videos: VideoItem[] }) => {
     containScroll: "trimSnaps"
   });
 
+  // Track which video is active (tapped) to allow interaction
+  const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
+
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
   }, [emblaApi]);
@@ -173,15 +176,25 @@ const VideoCarouselContent = ({ videos }: { videos: VideoItem[] }) => {
               key={video.id + video.title}
               className="flex-shrink-0 w-[200px] md:w-[280px] select-none"
             >
-              <div className="aspect-[9/16] rounded-xl overflow-hidden shadow-romantic bg-gradient-to-br from-rose-light/30 to-peach-light/30">
+              <div 
+                className="aspect-[9/16] rounded-xl overflow-hidden shadow-romantic bg-gradient-to-br from-rose-light/30 to-peach-light/30 relative"
+                onClick={() => setActiveVideoId(video.id)}
+              >
                 <iframe
                   src={`https://www.youtube.com/embed/${video.id}?rel=0`}
                   title={video.title}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  className="w-full h-full pointer-events-auto"
+                  className={`w-full h-full ${activeVideoId === video.id ? 'pointer-events-auto' : 'pointer-events-none'}`}
                   loading="lazy"
                 />
+                {activeVideoId !== video.id && (
+                  <div className="absolute inset-0 bg-transparent cursor-pointer flex items-center justify-center">
+                    <div className="w-14 h-14 rounded-full bg-black/30 flex items-center justify-center">
+                      <Play className="w-7 h-7 text-white fill-white" />
+                    </div>
+                  </div>
+                )}
               </div>
               <p className="mt-2 text-center font-medium text-foreground text-sm">{video.title}</p>
             </div>
