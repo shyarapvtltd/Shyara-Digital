@@ -213,6 +213,15 @@ const VideoCarouselContent = ({ videos }: { videos: VideoItem[] }) => {
                 )}
               </div>
               <p className="mt-2 text-center font-medium text-foreground text-sm">{video.title}</p>
+              <a
+                href={`https://wa.me/919584661610?text=${encodeURIComponent(`Hi! I loved this sample: "${video.title}" (https://youtube.com/shorts/${video.id}). I'd like to get one like this made for my event!`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 w-full inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-full bg-green-500 hover:bg-green-600 text-white text-xs font-medium transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg"
+              >
+                <MessageCircle className="w-3.5 h-3.5" />
+                I Want This!
+              </a>
             </div>
           ))}
         </div>

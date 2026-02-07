@@ -100,13 +100,17 @@ const benefits = [
   },
 ];
 
-// Configure your YouTube videos here - Vertical invitation videos (9:16 format)
+// Configure your YouTube videos here - A mix of samples from different categories (9:16 format)
 const homePageVideos = [
-  { id: "MErRHbJ6qqk", title: "Wedding Invitation Video 1" },
-  { id: "HkGKHzATaxw", title: "Wedding Invitation Video 2" },
-  { id: "i3GvQEV3ifs", title: "Wedding Invitation Video 3" },
-  { id: "QpiB8MYm2hA", title: "Wedding Invitation Video 4" },
-  { id: "F4Jn243qJTM", title: "Wedding Invitation Video 5" },
+  { id: "MErRHbJ6qqk", title: "Wedding Sample" },
+  { id: "8YQ7vYSeSWU", title: "Engagement Sample" },
+  { id: "oNF0q5J6lu0", title: "Save the Date Sample" },
+  { id: "i-gCaiwOdOA", title: "Wedding Sample" },
+  { id: "RspeXB05CZM", title: "Engagement Sample" },
+  { id: "MuxUm6ccuEw", title: "Wedding Sample" },
+  { id: "egMJ2xIWOYI", title: "Save the Date Sample" },
+  { id: "F4Jn243qJTM", title: "Wedding Sample" },
+  { id: "xxewEgsOBoI", title: "Engagement Sample" },
 ];
 
 const Index = () => {

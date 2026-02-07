@@ -108,6 +108,15 @@ const YouTubeCarousel = ({
                         )}
                       </div>
                       <p className="mt-3 text-center font-medium text-foreground">{video.title}</p>
+                      <a
+                        href={`https://wa.me/919584661610?text=${encodeURIComponent(`Hi! I loved this sample: "${video.title}" (https://youtube.com/shorts/${video.id}). I'd like to get one like this made for my event!`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-2 w-full inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full bg-green-500 hover:bg-green-600 text-white text-sm font-medium transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg"
+                      >
+                        <MessageCircle className="w-4 h-4" />
+                        I Want This!
+                      </a>
                     </div>
                   ))}
                 </div>
