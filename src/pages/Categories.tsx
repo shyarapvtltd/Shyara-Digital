@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Heart, Flower2, Gift, Star, Sparkles, ArrowRight, Church, PartyPopper, Calendar, Music, Cake, Users, Home as HomeIcon, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
@@ -124,13 +125,48 @@ const CategorySection = ({ id, emoji, title, description, events, bgColor, delay
   </ScrollReveal>
 );
 
+// Service schemas for each invitation category (SEO)
+const serviceSchemas = [
+  { name: "Wedding Invitation Design", type: "Wedding Invitations", desc: "Custom digital wedding invitation videos and cards including engagement, mehndi, haldi, sangeet, wedding, and reception" },
+  { name: "Pooja & Religious Invitation Design", type: "Religious Invitations", desc: "Digital invitations for grih pravesh, jagran, mata ki chowki, ram katha, and bhagwat katha ceremonies" },
+  { name: "Birthday Invitation Design", type: "Birthday Invitations", desc: "Creative digital birthday invitation videos and cards for all ages and milestones" },
+  { name: "Engagement Invitation Design", type: "Engagement Invitations", desc: "Beautiful digital engagement ceremony invitation videos and save the date cards" },
+  { name: "Anniversary Invitation Design", type: "Anniversary Invitations", desc: "Elegant digital anniversary celebration invitation videos and cards" },
+].map((svc) => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": svc.name,
+  "serviceType": svc.type,
+  "description": svc.desc,
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Shyara Digital",
+    "url": "https://shyaradigital.com",
+    "telephone": "+91-95846-61610"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "India"
+  },
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://shyaradigital.com/contact",
+    "servicePhone": "+91-95846-61610"
+  }
+}));
+
 const Categories = () => {
   return (
     <Layout>
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(serviceSchemas)}
+        </script>
+      </Helmet>
       <SEO
         title="Digital Invitation Categories | Wedding, Birthday, Pooja & More | Shyara Digital"
         description="Explore our collection of digital invitations for weddings, engagements, birthdays, pooja ceremonies, anniversaries, and special celebrations. Find the perfect invitation for every occasion."
-        keywords="wedding invitations, birthday invitations, pooja invitations, engagement cards, sangeet invitation, mehndi invitation, haldi ceremony card, grih pravesh invitation, anniversary cards, digital shaadi card"
+        keywords="wedding invitations, birthday invitations, pooja invitations, engagement cards, sangeet invitation, mehndi invitation, haldi ceremony card, grih pravesh invitation, anniversary cards, digital shaadi card, nimantran patra, sagai card, shubh vivah, save the date card India, WhatsApp invitation card, video nimantran, Patna invitation maker, Bihar wedding card, jagran invitation, mata ki chowki card, reception invitation video"
         canonicalUrl="https://shyaradigital.com/categories"
         pageType="category"
         breadcrumbs={[

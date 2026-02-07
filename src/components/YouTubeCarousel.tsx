@@ -1,4 +1,5 @@
 import { useCallback, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight, Play, FileText, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -48,8 +49,35 @@ const YouTubeCarousel = ({
     window.open("https://wa.me/919584661610?text=Hi! I would like to see some sample invitations.", "_blank");
   };
 
+  // Generate VideoObject schema for SEO
+  const videoSchemas = videos.map((video) => ({
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": video.title,
+    "description": `${video.title} - Beautiful digital invitation video by Shyara Digital. Order custom invitations for your special celebration.`,
+    "thumbnailUrl": `https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`,
+    "uploadDate": "2026-01-01",
+    "contentUrl": `https://www.youtube.com/shorts/${video.id}`,
+    "embedUrl": `https://www.youtube.com/embed/${video.id}`,
+    "publisher": {
+      "@type": "Organization",
+      "name": "Shyara Digital",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://shyaradigital.com/shyara.png"
+      }
+    }
+  }));
+
   return (
     <section className="py-16 md:py-24 relative overflow-hidden">
+      {videos.length > 0 && (
+        <Helmet>
+          <script type="application/ld+json">
+            {JSON.stringify(videoSchemas)}
+          </script>
+        </Helmet>
+      )}
       <div className="container mx-auto px-4">
         <ScrollReveal>
           <SectionHeading

@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import useEmblaCarousel from "embla-carousel-react";
 import { Heart, Sparkles, ArrowRight, Play, MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -235,13 +236,39 @@ const VideoCarouselContent = ({ videos }: { videos: VideoItem[] }) => {
   );
 };
 
+// Collect all videos for VideoObject schema
+const allSampleVideos = Object.values(sampleVideos).flat().filter(v => v.id);
+const sampleVideoSchemas = allSampleVideos.map((video) => ({
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": video.title,
+  "description": `${video.title} - Beautiful digital invitation video by Shyara Digital. Order custom invitations for your special celebration.`,
+  "thumbnailUrl": `https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`,
+  "uploadDate": "2026-01-01",
+  "contentUrl": `https://www.youtube.com/shorts/${video.id}`,
+  "embedUrl": `https://www.youtube.com/embed/${video.id}`,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Shyara Digital",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://shyaradigital.com/shyara.png"
+    }
+  }
+}));
+
 const Samples = () => {
   return (
     <Layout>
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(sampleVideoSchemas)}
+        </script>
+      </Helmet>
       <SEO
         title="Sample Gallery | Video Invitation Examples | Shyara Digital"
         description="Browse our sample gallery of beautiful digital invitations. See examples of wedding videos, birthday cards, pooja invitations, and more. Get inspired for your celebration."
-        keywords="invitation samples, wedding video samples, digital card examples, invitation gallery, wedding invitation preview, birthday card samples, invitation portfolio"
+        keywords="invitation samples, wedding video samples, digital card examples, invitation gallery, wedding invitation preview, birthday card samples, invitation portfolio, shaadi card samples, engagement video invitation, save the date video sample, WhatsApp invitation examples, e-invitation demo India, nimantran video, sagai invitation sample, wedding card design preview"
         canonicalUrl="https://shyaradigital.com/samples"
         pageType="gallery"
         breadcrumbs={[

@@ -49,7 +49,7 @@ const Contact = () => {
       <SEO
         title="Contact Us | Shyara Digital - Create Your Perfect Invitation"
         description="Get in touch with Shyara Digital to create beautiful digital invitations for your wedding, birthday, pooja, or any special celebration. Contact us via WhatsApp, email, or phone."
-        keywords="contact shyara digital, digital invitation enquiry, wedding card contact, custom invitation India, event invitation order, WhatsApp invitation order"
+        keywords="contact shyara digital, digital invitation enquiry, wedding card contact, custom invitation India, event invitation order, WhatsApp invitation order, order shaadi card, book wedding invitation Patna, Bihar invitation maker contact, custom video invitation order, nimantran order online"
         canonicalUrl="https://shyaradigital.com/contact"
         pageType="contact"
         breadcrumbs={[

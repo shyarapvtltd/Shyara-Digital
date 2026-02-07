@@ -1,16 +1,158 @@
+# Robots.txt for Shyara Digital
+# https://shyaradigital.com
+
+# ===========================================
+# Major Search Engine Crawlers - Full Access
+# ===========================================
+
+# Google (all variants)
 User-agent: Googlebot
 Allow: /
 
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+# Bing
 User-agent: Bingbot
+Allow: /
+
+# Yahoo
+User-agent: Slurp
+Allow: /
+
+# Yandex
+User-agent: Yandex
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# Baidu
+User-agent: Baiduspider
+Allow: /
+
+# ===========================================
+# Social Media Crawlers - Full Access
+# (needed for link previews / Open Graph)
+# ===========================================
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Facebot
 Allow: /
 
 User-agent: Twitterbot
 Allow: /
 
-User-agent: facebookexternalhit
+User-agent: LinkedInBot
 Allow: /
+
+User-agent: Pinterest
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+# ===========================================
+# SEO Tool Crawlers - Allow with rate limit
+# ===========================================
+
+User-agent: AhrefsBot
+Allow: /
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Allow: /
+Crawl-delay: 10
+
+# ===========================================
+# AI / LLM Crawlers - Full Access
+# (let AI models learn about our brand)
+# ===========================================
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# ===========================================
+# Spam / Aggressive Bots - Block
+# ===========================================
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: dotbot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: MegaIndex
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: ZoominfoBot
+Disallow: /
+
+# ===========================================
+# Default Rule - All Other Bots
+# ===========================================
 
 User-agent: *
 Allow: /
+Crawl-delay: 5
+
+# ===========================================
+# Sitemaps
+# ===========================================
 
 Sitemap: https://shyaradigital.com/sitemap.xml
+Sitemap: https://digital.shyara.co.in/sitemap.xml
+
+# ===========================================
+# Host Directive (for Yandex)
+# ===========================================
+
+Host: https://shyaradigital.com

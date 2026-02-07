@@ -119,7 +119,7 @@ const Index = () => {
       <SEO
         title="Shyara Digital | Beautiful Digital Invitations for Weddings & Celebrations"
         description="Create stunning digital invitation cards and videos for weddings, birthdays, pooja ceremonies, and special celebrations. Invite with love, share with joy. Made in India."
-        keywords="digital invitations India, wedding invitation cards, video invitations, e-invitations, online wedding cards, shaadi cards, pooja invitation, birthday invitation, celebration cards, WhatsApp wedding invitation"
+        keywords="digital invitations India, wedding invitation cards, video invitations, e-invitations, online wedding cards, shaadi cards, pooja invitation, birthday invitation, celebration cards, WhatsApp wedding invitation, nimantran patra, sagai card, shubh vivah card, digital shaadi card India, Patna wedding invitation, Bihar e-invitation, wedding video invitation maker, save the date video, engagement invitation video, haldi invitation, mehndi invitation, sangeet invitation"
         canonicalUrl="https://shyaradigital.com"
         pageType="home"
         reviews={[
@@ -132,8 +132,9 @@ const Index = () => {
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           "name": "Shyara Digital",
-          "image": "https://shyaradigital.com/logo.png",
-          "description": "Create beautiful, emotional digital invitation cards and videos for weddings, celebrations, and moments that matter.",
+          "alternateName": "Shyara Digital Invitations",
+          "image": "https://shyaradigital.com/shyara.png",
+          "description": "Create beautiful, emotional digital invitation cards and videos for weddings, celebrations, and moments that matter. Serving all of India from Patna, Bihar.",
           "@id": "https://shyaradigital.com",
           "url": "https://shyaradigital.com",
           "telephone": "+91-95846-61610",
@@ -144,12 +145,52 @@ const Index = () => {
             "addressRegion": "Bihar",
             "addressCountry": "IN"
           },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "25.6093",
+            "longitude": "85.1376"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "India"
+          },
+          "knowsLanguage": ["en", "hi"],
           "priceRange": "$$",
+          "currenciesAccepted": "INR",
+          "paymentAccepted": "UPI, Bank Transfer, Cash",
           "openingHoursSpecification": {
             "@type": "OpeningHoursSpecification",
             "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
             "opens": "09:00",
             "closes": "21:00"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Digital Invitation Services",
+            "itemListElement": [
+              {
+                "@type": "OfferCatalog",
+                "name": "Wedding Invitations",
+                "itemListElement": [
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wedding Video Invitation" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Save the Date Video" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Engagement Invitation Video" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mehndi & Haldi Invitation" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sangeet Invitation" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Reception Invitation" } }
+                ]
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Other Invitations",
+                "itemListElement": [
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Birthday Invitation Video" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pooja & Religious Invitation" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Anniversary Invitation" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "PDF Invitation Card" } }
+                ]
+              }
+            ]
           },
           "sameAs": [
             "https://www.instagram.com/shyaradigital",

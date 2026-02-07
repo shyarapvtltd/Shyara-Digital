@@ -1,33 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+  <!-- Homepage -->
   <url>
     <loc>https://shyaradigital.com/</loc>
-    <lastmod>2025-12-26</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://shyaradigital.com/shyara.png</image:loc>
+      <image:title>Shyara Digital - Beautiful Digital Invitations</image:title>
+      <image:caption>Shyara Digital creates stunning digital invitation cards and videos for weddings, birthdays, and celebrations</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/MErRHbJ6qqk/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Wedding Sample - Shyara Digital</video:title>
+      <video:description>Beautiful digital wedding invitation video by Shyara Digital. Order custom invitations for your special celebration.</video:description>
+      <video:content_loc>https://www.youtube.com/shorts/MErRHbJ6qqk</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/MErRHbJ6qqk</video:player_loc>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/8YQ7vYSeSWU/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Engagement Sample - Shyara Digital</video:title>
+      <video:description>Beautiful digital engagement invitation video by Shyara Digital. Order custom invitations for your special celebration.</video:description>
+      <video:content_loc>https://www.youtube.com/shorts/8YQ7vYSeSWU</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/8YQ7vYSeSWU</video:player_loc>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/oNF0q5J6lu0/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Save the Date Sample - Shyara Digital</video:title>
+      <video:description>Elegant save the date announcement video by Shyara Digital. Order custom invitations for your special celebration.</video:description>
+      <video:content_loc>https://www.youtube.com/shorts/oNF0q5J6lu0</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/oNF0q5J6lu0</video:player_loc>
+    </video:video>
   </url>
+
+  <!-- Categories / Invitations Page -->
   <url>
     <loc>https://shyaradigital.com/categories</loc>
-    <lastmod>2025-12-26</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <!-- Samples Page -->
   <url>
     <loc>https://shyaradigital.com/samples</loc>
-    <lastmod>2025-12-26</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+    <!-- Wedding Samples -->
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/MErRHbJ6qqk/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Wedding Invitation Sample 1 - Shyara Digital</video:title>
+      <video:description>Beautiful digital wedding invitation video sample. Order your custom wedding invitation from Shyara Digital.</video:description>
+      <video:content_loc>https://www.youtube.com/shorts/MErRHbJ6qqk</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/MErRHbJ6qqk</video:player_loc>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/i-gCaiwOdOA/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Wedding Invitation Sample 2 - Shyara Digital</video:title>
+      <video:description>Stunning wedding invitation video with beautiful animations. Custom-made by Shyara Digital.</video:description>
+      <video:content_loc>https://www.youtube.com/shorts/i-gCaiwOdOA</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/i-gCaiwOdOA</video:player_loc>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/i3GvQEV3ifs/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Wedding Invitation Sample 3 - Shyara Digital</video:title>
+      <video:description>Elegant wedding invitation video for your special day. Crafted with love by Shyara Digital.</video:description>
+      <video:content_loc>https://www.youtube.com/shorts/i3GvQEV3ifs</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/i3GvQEV3ifs</video:player_loc>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/MuxUm6ccuEw/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Wedding Invitation Sample 7 - Shyara Digital</video:title>
+      <video:description>Royal wedding invitation video with traditional Indian design. Custom digital invitations by Shyara Digital.</video:description>
+      <video:content_loc>https://www.youtube.com/shorts/MuxUm6ccuEw</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/MuxUm6ccuEw</video:player_loc>
+    </video:video>
+    <!-- Engagement Samples -->
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/8YQ7vYSeSWU/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Engagement Invitation Sample 1 - Shyara Digital</video:title>
+      <video:description>Beautiful engagement ceremony invitation video. Order your custom sagai card from Shyara Digital.</video:description>
+      <video:content_loc>https://www.youtube.com/shorts/8YQ7vYSeSWU</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/8YQ7vYSeSWU</video:player_loc>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/xxewEgsOBoI/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Engagement Invitation Sample 2 - Shyara Digital</video:title>
+      <video:description>Elegant engagement invitation video with modern design. Custom digital invitations by Shyara Digital.</video:description>
+      <video:content_loc>https://www.youtube.com/shorts/xxewEgsOBoI</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/xxewEgsOBoI</video:player_loc>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/RspeXB05CZM/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Engagement Invitation Sample 3 - Shyara Digital</video:title>
+      <video:description>Creative engagement ceremony invitation video by Shyara Digital.</video:description>
+      <video:content_loc>https://www.youtube.com/shorts/RspeXB05CZM</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/RspeXB05CZM</video:player_loc>
+    </video:video>
+    <!-- Save the Date Samples -->
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/oNF0q5J6lu0/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Save the Date Sample 1 - Shyara Digital</video:title>
+      <video:description>Elegant save the date announcement video for your wedding. Custom digital invitations by Shyara Digital.</video:description>
+      <video:content_loc>https://www.youtube.com/shorts/oNF0q5J6lu0</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/oNF0q5J6lu0</video:player_loc>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/egMJ2xIWOYI/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Save the Date Sample 2 - Shyara Digital</video:title>
+      <video:description>Beautiful save the date video announcement. Crafted with love by Shyara Digital.</video:description>
+      <video:content_loc>https://www.youtube.com/shorts/egMJ2xIWOYI</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/egMJ2xIWOYI</video:player_loc>
+    </video:video>
   </url>
+
+  <!-- FAQ Page -->
   <url>
     <loc>https://shyaradigital.com/faq</loc>
-    <lastmod>2025-12-26</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Contact Page -->
   <url>
     <loc>https://shyaradigital.com/contact</loc>
-    <lastmod>2025-12-26</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
+
 </urlset>

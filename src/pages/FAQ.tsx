@@ -40,7 +40,7 @@ const FAQ = () => {
       <SEO
         title="Frequently Asked Questions | Shyara Digital"
         description="Find answers to common questions about our digital invitation services. Learn about delivery times, customization options, pricing, and how to get started with your celebration invitations."
-        keywords="digital invitation FAQ, wedding card questions, invitation delivery time, custom invitation help, Shyara Digital support"
+        keywords="digital invitation FAQ, wedding card questions, invitation delivery time, custom invitation help, Shyara Digital support, how to order digital invitation, WhatsApp invitation cost, shaadi card price, e-invitation delivery time India, custom video invitation questions"
         canonicalUrl="https://shyaradigital.com/faq"
         pageType="service"
         breadcrumbs={[
@@ -48,21 +48,6 @@ const FAQ = () => {
           { name: "FAQ", url: "https://shyaradigital.com/faq" }
         ]}
         faqItems={faqs.map(faq => ({ question: faq.question, answer: faq.answer }))}
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "name": "Frequently Asked Questions - Shyara Digital",
-          "description": "Common questions about our digital invitation services",
-          "url": "https://shyaradigital.com/faq",
-          "mainEntity": faqs.map(faq => ({
-            "@type": "Question",
-            "name": faq.question,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": faq.answer
-            }
-          }))
-        }}
       />
 
       {/* Hero Section */}
