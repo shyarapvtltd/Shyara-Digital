@@ -128,11 +128,7 @@ const YouTubeCarousel = ({
                           loading="lazy"
                         />
                         {activeVideoId !== video.id && (
-                          <div className="absolute inset-0 bg-transparent cursor-pointer flex items-center justify-center">
-                            <div className="w-16 h-16 rounded-full bg-black/30 flex items-center justify-center">
-                              <Play className="w-8 h-8 text-white fill-white" />
-                            </div>
-                          </div>
+                          <div className="absolute inset-0 bg-transparent cursor-pointer" />
                         )}
                       </div>
                       <p className="mt-3 text-center font-medium text-foreground">{video.title}</p>

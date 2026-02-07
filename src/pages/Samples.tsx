@@ -206,11 +206,7 @@ const VideoCarouselContent = ({ videos }: { videos: VideoItem[] }) => {
                   loading="lazy"
                 />
                 {activeVideoId !== video.id && (
-                  <div className="absolute inset-0 bg-transparent cursor-pointer flex items-center justify-center">
-                    <div className="w-14 h-14 rounded-full bg-black/30 flex items-center justify-center">
-                      <Play className="w-7 h-7 text-white fill-white" />
-                    </div>
-                  </div>
+                  <div className="absolute inset-0 bg-transparent cursor-pointer" />
                 )}
               </div>
               <p className="mt-2 text-center font-medium text-foreground text-sm">{video.title}</p>
