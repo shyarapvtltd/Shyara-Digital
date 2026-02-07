@@ -252,7 +252,7 @@ const sampleVideoSchemas = allSampleVideos.map((video) => ({
     "name": "Shyara Digital",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://shyaradigital.com/shyara.png"
+      "url": "https://digital.shyara.co.in/shyara.png"
     }
   }
 }));
@@ -269,18 +269,18 @@ const Samples = () => {
         title="Sample Gallery | Video Invitation Examples | Shyara Digital"
         description="Browse our sample gallery of beautiful digital invitations. See examples of wedding videos, birthday cards, pooja invitations, and more. Get inspired for your celebration."
         keywords="invitation samples, wedding video samples, digital card examples, invitation gallery, wedding invitation preview, birthday card samples, invitation portfolio, shaadi card samples, engagement video invitation, save the date video sample, WhatsApp invitation examples, e-invitation demo India, nimantran video, sagai invitation sample, wedding card design preview"
-        canonicalUrl="https://shyaradigital.com/samples"
+        canonicalUrl="https://digital.shyara.co.in/samples"
         pageType="gallery"
         breadcrumbs={[
-          { name: "Home", url: "https://shyaradigital.com" },
-          { name: "Samples", url: "https://shyaradigital.com/samples" }
+          { name: "Home", url: "https://digital.shyara.co.in" },
+          { name: "Samples", url: "https://digital.shyara.co.in/samples" }
         ]}
         structuredData={{
           "@context": "https://schema.org",
           "@type": "CollectionPage",
           "name": "Sample Gallery - Shyara Digital",
           "description": "Browse our collection of beautiful digital invitation samples including wedding videos and celebration invitations",
-          "url": "https://shyaradigital.com/samples",
+          "url": "https://digital.shyara.co.in/samples",
           "mainEntity": {
             "@type": "ImageGallery",
             "name": "Digital Invitation Samples",

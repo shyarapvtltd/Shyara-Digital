@@ -141,7 +141,7 @@ const serviceSchemas = [
   "provider": {
     "@type": "LocalBusiness",
     "name": "Shyara Digital",
-    "url": "https://shyaradigital.com",
+    "url": "https://digital.shyara.co.in",
     "telephone": "+91-95846-61610"
   },
   "areaServed": {
@@ -150,7 +150,7 @@ const serviceSchemas = [
   },
   "availableChannel": {
     "@type": "ServiceChannel",
-    "serviceUrl": "https://shyaradigital.com/contact",
+    "serviceUrl": "https://digital.shyara.co.in/contact",
     "servicePhone": "+91-95846-61610"
   }
 }));
@@ -167,11 +167,11 @@ const Categories = () => {
         title="Digital Invitation Categories | Wedding, Birthday, Pooja & More | Shyara Digital"
         description="Explore our collection of digital invitations for weddings, engagements, birthdays, pooja ceremonies, anniversaries, and special celebrations. Find the perfect invitation for every occasion."
         keywords="wedding invitations, birthday invitations, pooja invitations, engagement cards, sangeet invitation, mehndi invitation, haldi ceremony card, grih pravesh invitation, anniversary cards, digital shaadi card, nimantran patra, sagai card, shubh vivah, save the date card India, WhatsApp invitation card, video nimantran, Patna invitation maker, Bihar wedding card, jagran invitation, mata ki chowki card, reception invitation video"
-        canonicalUrl="https://shyaradigital.com/categories"
+        canonicalUrl="https://digital.shyara.co.in/categories"
         pageType="category"
         breadcrumbs={[
-          { name: "Home", url: "https://shyaradigital.com" },
-          { name: "Categories", url: "https://shyaradigital.com/categories" }
+          { name: "Home", url: "https://digital.shyara.co.in" },
+          { name: "Categories", url: "https://digital.shyara.co.in/categories" }
         ]}
         structuredData={{
           "@context": "https://schema.org",
@@ -180,11 +180,11 @@ const Categories = () => {
           "description": "Browse all categories of digital invitations for weddings, religious ceremonies, birthdays, and special occasions",
           "numberOfItems": 5,
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Wedding Invitations", "url": "https://shyaradigital.com/categories#weddings" },
-            { "@type": "ListItem", "position": 2, "name": "Pooja & Religious Invitations", "url": "https://shyaradigital.com/categories#pooja" },
-            { "@type": "ListItem", "position": 3, "name": "Birthday Invitations", "url": "https://shyaradigital.com/categories#birthdays" },
-            { "@type": "ListItem", "position": 4, "name": "Romantic Invitations", "url": "https://shyaradigital.com/categories#romantic" },
-            { "@type": "ListItem", "position": 5, "name": "Special Day Invitations", "url": "https://shyaradigital.com/categories#special" }
+            { "@type": "ListItem", "position": 1, "name": "Wedding Invitations", "url": "https://digital.shyara.co.in/categories#weddings" },
+            { "@type": "ListItem", "position": 2, "name": "Pooja & Religious Invitations", "url": "https://digital.shyara.co.in/categories#pooja" },
+            { "@type": "ListItem", "position": 3, "name": "Birthday Invitations", "url": "https://digital.shyara.co.in/categories#birthdays" },
+            { "@type": "ListItem", "position": 4, "name": "Romantic Invitations", "url": "https://digital.shyara.co.in/categories#romantic" },
+            { "@type": "ListItem", "position": 5, "name": "Special Day Invitations", "url": "https://digital.shyara.co.in/categories#special" }
           ]
         }}
       />

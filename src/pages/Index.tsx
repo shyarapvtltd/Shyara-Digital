@@ -120,7 +120,7 @@ const Index = () => {
         title="Shyara Digital | Beautiful Digital Invitations for Weddings & Celebrations"
         description="Create stunning digital invitation cards and videos for weddings, birthdays, pooja ceremonies, and special celebrations. Invite with love, share with joy. Made in India."
         keywords="digital invitations India, wedding invitation cards, video invitations, e-invitations, online wedding cards, shaadi cards, pooja invitation, birthday invitation, celebration cards, WhatsApp wedding invitation, nimantran patra, sagai card, shubh vivah card, digital shaadi card India, Patna wedding invitation, Bihar e-invitation, wedding video invitation maker, save the date video, engagement invitation video, haldi invitation, mehndi invitation, sangeet invitation"
-        canonicalUrl="https://shyaradigital.com"
+        canonicalUrl="https://digital.shyara.co.in"
         pageType="home"
         reviews={[
           { author: "Priya & Rahul", rating: 5, reviewBody: "Our wedding invitation video was beyond beautiful! Every guest called to say how touched they were." },
@@ -133,10 +133,10 @@ const Index = () => {
           "@type": "LocalBusiness",
           "name": "Shyara Digital",
           "alternateName": "Shyara Digital Invitations",
-          "image": "https://shyaradigital.com/shyara.png",
+          "image": "https://digital.shyara.co.in/shyara.png",
           "description": "Create beautiful, emotional digital invitation cards and videos for weddings, celebrations, and moments that matter. Serving all of India from Patna, Bihar.",
-          "@id": "https://shyaradigital.com",
-          "url": "https://shyaradigital.com",
+          "@id": "https://digital.shyara.co.in",
+          "url": "https://digital.shyara.co.in",
           "telephone": "+91-95846-61610",
           "email": "shyaradigital@gmail.com",
           "address": {

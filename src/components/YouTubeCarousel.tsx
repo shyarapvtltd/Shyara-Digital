@@ -64,7 +64,7 @@ const YouTubeCarousel = ({
       "name": "Shyara Digital",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://shyaradigital.com/shyara.png"
+        "url": "https://digital.shyara.co.in/shyara.png"
       }
     }
   }));

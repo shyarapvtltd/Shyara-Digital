@@ -91,8 +91,8 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Shyara Digital",
-  "url": "https://shyaradigital.com",
-  "logo": "https://shyaradigital.com/logo.png",
+  "url": "https://digital.shyara.co.in",
+  "logo": "https://digital.shyara.co.in/logo.png",
   "description": "Create beautiful, emotional digital invitation cards and videos for weddings, celebrations, and moments that matter.",
   "contactPoint": {
     "@type": "ContactPoint",
@@ -113,11 +113,11 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Shyara Digital",
-  "url": "https://shyaradigital.com",
+  "url": "https://digital.shyara.co.in",
   "description": "Beautiful digital invitation cards and videos for weddings, celebrations, and moments that matter.",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://shyaradigital.com/categories?search={search_term_string}",
+    "target": "https://digital.shyara.co.in/categories?search={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 };
@@ -126,8 +126,8 @@ const SEO = ({
   title = "Shyara Digital | Beautiful Digital Invitations",
   description = "Create beautiful, emotional digital invitation cards and videos for weddings, celebrations, and moments that matter. Share joy with Shyara Digital.",
   keywords = "digital invitations, wedding invitations, digital cards, celebration invitations, video invitations, shaadi cards, online wedding cards, e-invitations India",
-  canonicalUrl = "https://shyaradigital.com",
-  ogImage = "https://shyaradigital.com/shyara.png",
+  canonicalUrl = "https://digital.shyara.co.in",
+  ogImage = "https://digital.shyara.co.in/shyara.png",
   ogType = "website",
   structuredData,
   breadcrumbs,
@@ -170,8 +170,8 @@ const SEO = ({
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Shyara Digital",
-      "image": "https://shyaradigital.com/logo.png",
-      "url": "https://shyaradigital.com",
+      "image": "https://digital.shyara.co.in/logo.png",
+      "url": "https://digital.shyara.co.in",
       "telephone": "+91-95846-61610",
       "email": "shyaradigital@gmail.com",
       "address": {

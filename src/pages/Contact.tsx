@@ -50,24 +50,24 @@ const Contact = () => {
         title="Contact Us | Shyara Digital - Create Your Perfect Invitation"
         description="Get in touch with Shyara Digital to create beautiful digital invitations for your wedding, birthday, pooja, or any special celebration. Contact us via WhatsApp, email, or phone."
         keywords="contact shyara digital, digital invitation enquiry, wedding card contact, custom invitation India, event invitation order, WhatsApp invitation order, order shaadi card, book wedding invitation Patna, Bihar invitation maker contact, custom video invitation order, nimantran order online"
-        canonicalUrl="https://shyaradigital.com/contact"
+        canonicalUrl="https://digital.shyara.co.in/contact"
         pageType="contact"
         breadcrumbs={[
-          { name: "Home", url: "https://shyaradigital.com" },
-          { name: "Contact", url: "https://shyaradigital.com/contact" }
+          { name: "Home", url: "https://digital.shyara.co.in" },
+          { name: "Contact", url: "https://digital.shyara.co.in/contact" }
         ]}
         structuredData={{
           "@context": "https://schema.org",
           "@type": "ContactPage",
           "name": "Contact Shyara Digital",
           "description": "Get in touch with Shyara Digital to create beautiful digital invitations",
-          "url": "https://shyaradigital.com/contact",
+          "url": "https://digital.shyara.co.in/contact",
           "mainEntity": {
             "@type": "LocalBusiness",
             "name": "Shyara Digital",
             "telephone": "+91-95846-61610",
             "email": "shyaradigital@gmail.com",
-            "url": "https://shyaradigital.com",
+            "url": "https://digital.shyara.co.in",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Patna",

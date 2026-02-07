@@ -148,11 +148,10 @@ Crawl-delay: 5
 # Sitemaps
 # ===========================================
 
-Sitemap: https://shyaradigital.com/sitemap.xml
 Sitemap: https://digital.shyara.co.in/sitemap.xml
 
 # ===========================================
 # Host Directive (for Yandex)
 # ===========================================
 
-Host: https://shyaradigital.com
+Host: https://digital.shyara.co.in
