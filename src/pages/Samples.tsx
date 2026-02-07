@@ -12,15 +12,24 @@ import type { VideoItem } from "@/components/YouTubeCarousel";
 // Sample YouTube videos for demonstration - Replace with actual vertical invitation videos (9:16 format)
 const sampleVideos = {
   wedding: [
-    { id: "MErRHbJ6qqk", title: "Wedding Invitation Video 1" },
-    { id: "HkGKHzATaxw", title: "Wedding Invitation Video 2" },
-    { id: "i3GvQEV3ifs", title: "Wedding Invitation Video 3" },
-    { id: "QpiB8MYm2hA", title: "Wedding Invitation Video 4" },
-    { id: "F4Jn243qJTM", title: "Wedding Invitation Video 5" },
+    { id: "MErRHbJ6qqk", title: "Wedding Sample 1" },
+    { id: "i-gCaiwOdOA", title: "Wedding Sample 2" },
+    { id: "i3GvQEV3ifs", title: "Wedding Sample 3" },
+    { id: "F4Jn243qJTM", title: "Wedding Sample 4" },
+    { id: "QpiB8MYm2hA", title: "Wedding Sample 5" },
+    { id: "HkGKHzATaxw", title: "Wedding Sample 6" },
+    { id: "MuxUm6ccuEw", title: "Wedding Sample 7" },
+    { id: "1H1neLoUBhc", title: "Wedding Sample 8" },
+    { id: "0uoR__qE0R0", title: "Wedding Sample 9" },
   ],
   engagement: [
-    { id: "8YQ7vYSeSWU", title: "Engagement Invitation Video 1" },
-    { id: "xxewEgsOBoI", title: "Engagement Invitation Video 2" },
+    { id: "8YQ7vYSeSWU", title: "Engagement Sample 1" },
+    { id: "xxewEgsOBoI", title: "Engagement Sample 2" },
+    { id: "RspeXB05CZM", title: "Engagement Sample 3" },
+  ],
+  saveTheDate: [
+    { id: "oNF0q5J6lu0", title: "Save the Date Sample 1" },
+    { id: "egMJ2xIWOYI", title: "Save the Date Sample 2" },
   ],
   // Commented out - no videos available yet
   // birthday: [
@@ -65,6 +74,13 @@ const sampleCategories = [
     title: "Engagement Invitations",
     description: "Beautiful engagement ceremony invitation videos",
     videos: sampleVideos.engagement,
+  },
+  {
+    id: "saveTheDate",
+    emoji: "📅",
+    title: "Save the Date",
+    description: "Elegant save the date announcement videos for your special day",
+    videos: sampleVideos.saveTheDate,
   },
   {
     id: "birthday",

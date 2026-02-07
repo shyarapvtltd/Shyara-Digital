@@ -241,6 +241,38 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Trust Stats Section */}
+      <section className="py-16 md:py-20 bg-gradient-to-b from-transparent via-rose-light/10 to-transparent">
+        <div className="container mx-auto px-4">
+          <ScrollReveal>
+            <div className="max-w-3xl mx-auto text-center">
+              <span className="font-script text-xl text-primary mb-4 block">
+                Why families trust us
+              </span>
+              <h2 className="font-serif text-2xl md:text-3xl font-semibold text-foreground mb-8">
+                Creating Beautiful Memories Since Day One
+              </h2>
+              
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                {[
+                  { number: "500+", label: "Happy Families" },
+                  { number: "1000+", label: "Invitations Created" },
+                  { number: "50+", label: "Event Types" },
+                  { number: "4.9", label: "Average Rating" },
+                ].map((stat) => (
+                  <div key={stat.label} className="p-4">
+                    <div className="font-serif text-3xl md:text-4xl font-bold text-primary mb-1">
+                      {stat.number}
+                    </div>
+                    <p className="text-sm text-muted-foreground">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* YouTube Carousel Section */}
       <YouTubeCarousel 
         videos={homePageVideos}

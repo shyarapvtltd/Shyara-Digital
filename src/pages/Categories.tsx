@@ -15,6 +15,7 @@ import {
 
 const weddingEvents = [
   { name: "All Events Combined", icon: Heart, description: "Complete wedding invitation package" },
+  { name: "Save the Date", icon: Calendar, description: "Announce your special day" },
   { name: "Engagement", icon: Sparkles, description: "The beautiful beginning" },
   { name: "Mehndi", icon: Flower2, description: "Colors of tradition" },
   { name: "Haldi", icon: Star, description: "Golden blessings" },

@@ -110,8 +110,9 @@ const Contact = () => {
       {/* Contact Form Section */}
       <section className="py-16 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            {/* Form */}
+          <div className="max-w-2xl mx-auto">
+            {/* Contact Form - Commented out for now, uncomment when needed */}
+            {/*
             <ScrollReveal direction="left">
               <AnimatedCard className="p-8 md:p-10" hoverEffect="glow">
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -205,9 +206,10 @@ const Contact = () => {
                 </form>
               </AnimatedCard>
             </ScrollReveal>
+            */}
 
             {/* Contact Info & Decorative */}
-            <ScrollReveal direction="right" delay={200}>
+            <ScrollReveal direction="up" delay={200}>
               <div className="space-y-8">
                 {/* Decorative Message */}
                 <div className="relative bg-gradient-to-br from-rose-light/30 via-peach-light/20 to-lavender-light/30 rounded-3xl p-8 overflow-hidden">
@@ -274,6 +276,12 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
+      {/* To restore the contact form:
+          1. Uncomment the form block above
+          2. Change the wrapper div back to: <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          3. Change ScrollReveal direction back to "right" with delay={200}
+      */}
 
       {/* Trust Section */}
       <section className="py-16 md:py-20 bg-gradient-to-b from-transparent via-rose-light/10 to-transparent">
