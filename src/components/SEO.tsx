@@ -117,7 +117,7 @@ const websiteSchema = {
   "description": "Beautiful digital invitation cards and videos for weddings, celebrations, and moments that matter.",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://digital.shyara.co.in/categories?search={search_term_string}",
+    "target": "https://digital.shyara.co.in/invitations?search={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 };

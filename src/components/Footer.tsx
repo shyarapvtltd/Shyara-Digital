@@ -40,9 +40,9 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 { name: "Home", path: "/" },
-                { name: "Invitations", path: "/categories" },
+                { name: "Invitations", path: "/invitations" },
                 { name: "Samples", path: "/samples" },
-                { name: "FAQs", path: "/faq" },
+                { name: "FAQs", path: "/faqs" },
                 { name: "Contact", path: "/contact" },
               ].map((item) => (
                 <li key={item.name}>
@@ -65,7 +65,7 @@ const Footer = () => {
               {["Weddings", "Pooja & Religious", "Birthdays", "Romantic Moments", "Special Days"].map((item) => (
                 <li key={item}>
                   <Link 
-                    to="/categories"
+                    to="/invitations"
                     className="text-muted-foreground hover:text-primary transition-colors inline-flex items-center gap-2 group"
                   >
                     <span className="w-0 group-hover:w-2 h-0.5 bg-primary transition-all" />

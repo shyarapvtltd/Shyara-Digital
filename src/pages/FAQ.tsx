@@ -41,11 +41,11 @@ const FAQ = () => {
         title="Frequently Asked Questions | Shyara Digital"
         description="Find answers to common questions about our digital invitation services. Learn about delivery times, customization options, pricing, and how to get started with your celebration invitations."
         keywords="digital invitation FAQ, wedding card questions, invitation delivery time, custom invitation help, Shyara Digital support, how to order digital invitation, WhatsApp invitation cost, shaadi card price, e-invitation delivery time India, custom video invitation questions"
-        canonicalUrl="https://digital.shyara.co.in/faq"
+        canonicalUrl="https://digital.shyara.co.in/faqs"
         pageType="service"
         breadcrumbs={[
           { name: "Home", url: "https://digital.shyara.co.in" },
-          { name: "FAQ", url: "https://digital.shyara.co.in/faq" }
+          { name: "FAQs", url: "https://digital.shyara.co.in/faqs" }
         ]}
         faqItems={faqs.map(faq => ({ question: faq.question, answer: faq.answer }))}
       />

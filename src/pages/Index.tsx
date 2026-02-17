@@ -239,7 +239,7 @@ const Index = () => {
                 size="lg" 
                 className="rounded-full px-8 py-6 text-lg shadow-romantic hover:shadow-lg transition-all hover:-translate-y-1 group"
               >
-                <Link to="/categories">
+                <Link to="/invitations">
                   Explore Invitations
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -368,7 +368,7 @@ const Index = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mt-12">
             {invitationTypes.map((type, index) => (
               <ScrollReveal key={type.title} delay={index * 100}>
-                <Link to="/categories">
+                <Link to="/invitations">
                   <AnimatedCard 
                     className="text-center group cursor-pointer h-full" 
                     hoverEffect="lift"
