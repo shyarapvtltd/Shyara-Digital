@@ -1,5 +1,5 @@
-import { useCallback, useState } from "react";
-import { Link } from "react-router-dom";
+import { useCallback, useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import useEmblaCarousel from "embla-carousel-react";
 import { Heart, Sparkles, ArrowRight, Play, MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
@@ -254,6 +254,25 @@ const sampleVideoSchemas = allSampleVideos.map((video) => ({
 }));
 
 const Samples = () => {
+  const location = useLocation();
+  const hashCategory = location.hash ? location.hash.replace("#", "") : "";
+  const [openCategory, setOpenCategory] = useState<string | undefined>(
+    hashCategory || undefined
+  );
+
+  useEffect(() => {
+    if (hashCategory) {
+      setOpenCategory(hashCategory);
+      const timer = setTimeout(() => {
+        const element = document.getElementById(`sample-${hashCategory}`);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 500);
+      return () => clearTimeout(timer);
+    }
+  }, [hashCategory]);
+
   return (
     <Layout>
       <Helmet>
@@ -310,11 +329,12 @@ const Samples = () => {
       {/* Sample Categories - Accordion */}
       <section className="py-8 md:py-12">
         <div className="container mx-auto px-4">
-          <Accordion type="single" collapsible className="space-y-6">
+          <Accordion type="single" collapsible className="space-y-6" value={openCategory} onValueChange={setOpenCategory}>
             {sampleCategories.map((category, index) => (
               <ScrollReveal key={category.id} delay={index * 50}>
                 <AccordionItem 
                   value={category.id}
+                  id={`sample-${category.id}`}
                   className="border-none"
                 >
                   <AccordionTrigger className="py-6 px-6 md:px-8 rounded-2xl bg-gradient-to-r from-white/60 via-white/40 to-white/60 backdrop-blur-sm border border-white/50 shadow-soft hover:shadow-romantic transition-all duration-500 hover:no-underline group data-[state=open]:rounded-b-none data-[state=open]:border-b-0">
