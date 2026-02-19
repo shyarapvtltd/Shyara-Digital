@@ -27,6 +27,8 @@ const sampleVideos = {
     { id: "8YQ7vYSeSWU", title: "Engagement Sample 1" },
     { id: "xxewEgsOBoI", title: "Engagement Sample 2" },
     { id: "RspeXB05CZM", title: "Engagement Sample 3" },
+    { id: "3js7zRSXBDM", title: "Engagement Sample 4" },
+    { id: "tPZMUhiklV0", title: "Engagement Sample 5" },
   ],
   saveTheDate: [
     { id: "oNF0q5J6lu0", title: "Save the Date Sample 1" },
