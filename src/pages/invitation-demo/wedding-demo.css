@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+/* Wedding-themed decorative elements */
+.wedding-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #D4AF37, transparent);
+  margin: 1.5rem 0;
+}
+
+@media (min-width: 640px) {
+  .wedding-divider {
+    margin: 2rem 0;
+  }
+}
+
+.wedding-divider-thick {
+  height: 2px;
+  background: linear-gradient(to right, transparent, #E8B4B8, #D4AF37, #E8B4B8, transparent);
+  margin: 1.5rem 0;
+  border-radius: 2px;
+}
+
+@media (min-width: 640px) {
+  .wedding-divider-thick {
+    height: 3px;
+    margin: 2rem 0;
+  }
+}
+
+.wedding-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+@media (min-width: 640px) {
+  .wedding-card {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.floral-border {
+  position: relative;
+  padding: 1.5rem;
+}
+
+.floral-border::before {
+  content: '❀';
+  position: absolute;
+  top: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  color: #D4AF37;
+  background: white;
+  padding: 0 0.5rem;
+}
+
+/* Gold Ornamental Divider */
+.ornamental-divider {
+  position: relative;
+  height: 2px;
+  margin: 2rem 0;
+  background: linear-gradient(to right, transparent, #D4AF37 20%, #D4AF37 80%, transparent);
+}
+
+.ornamental-divider::before,
+.ornamental-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: #D4AF37;
+  border-radius: 50%;
+}
+
+.ornamental-divider::before {
+  left: 15%;
+}
+
+.ornamental-divider::after {
+  right: 15%;
+}
+
+/* Floating Petals Animation */
+@keyframes weddingFloat {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.15;
+  }
+  90% {
+    opacity: 0.15;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.petal {
+  animation: weddingFloat linear infinite;
+}
+
+/* Star Particles Animation for Reception */
+@keyframes weddingSparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0) translateY(0);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1) translateY(-10px);
+  }
+}
+
+.star-particle {
+  animation: weddingSparkle 3s ease-in-out infinite;
+  position: absolute;
+  color: #D4AF37;
+}
+
+.star-particle:nth-child(2n) {
+  animation-delay: 0.5s;
+  animation-duration: 4s;
+}
+
+.star-particle:nth-child(3n) {
+  animation-delay: 1s;
+  animation-duration: 5s;
+}
+
+/* Twinkling star animation */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.15);
+  }
+}
+
+.star-twinkle {
+  animation: twinkle 1.5s ease-in-out infinite;
+}
+
+.star-twinkle:nth-child(2n) {
+  animation-delay: 0.3s;
+  animation-duration: 2s;
+}
+
+.star-twinkle:nth-child(3n) {
+  animation-delay: 0.6s;
+  animation-duration: 1.8s;
+}
+
+.star-twinkle:nth-child(4n) {
+  animation-delay: 0.9s;
+  animation-duration: 2.2s;
+}
+
+.star-twinkle:nth-child(5n) {
+  animation-delay: 0.2s;
+  animation-duration: 1.6s;
+}
+
+/* Script Font Styling */
+.font-script-title {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.font-display-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* Decorative corner fade-in animation */
+@keyframes cornerFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+}
+
+.corner-decoration {
+  animation: cornerFadeIn 0.8s ease-out;
+}
+
+/* Subtle background patterns for event pages */
+.event-card-pattern {
+  background-image:
+    radial-gradient(circle at 2px 2px, rgba(212, 175, 55, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.event-card-pattern-floral {
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.05'%3E%3Cpath d='M20 5 Q25 10 20 15 Q15 10 20 5' fill='%23D4AF37'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 40px 40px;
+}
+
+/* Mehndi background pattern */
+.mehndi-background-pattern {
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='150' height='150' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='mehndi' x='0' y='0' width='150' height='150' patternUnits='userSpaceOnUse'%3E%3Cg opacity='0.24' fill='%231A4A0F' stroke='%231A4A0F' stroke-width='1' fill-rule='evenodd'%3E%3Cpath d='M75 20 Q80 25 78 30 Q75 28 72 30 Q70 25 75 20'/%3E%3Cpath d='M75 30 Q80 35 78 40 Q75 38 72 40 Q70 35 75 30'/%3E%3Cpath d='M75 40 Q80 45 78 50 Q75 48 72 50 Q70 45 75 40'/%3E%3Cpath d='M75 50 Q80 55 78 60 Q75 58 72 60 Q70 55 75 50'/%3E%3Ccircle cx='75' cy='60' r='3'/%3E%3Cpath d='M50 40 Q40 50 50 60 Q60 55 50 40' fill='none'/%3E%3Cpath d='M100 40 Q110 50 100 60 Q90 55 100 40' fill='none'/%3E%3Cpath d='M50 50 Q45 55 50 60 Q55 58 50 50'/%3E%3Cpath d='M100 50 Q105 55 100 60 Q95 58 100 50'/%3E%3Ccircle cx='25' cy='25' r='2.5'/%3E%3Ccircle cx='125' cy='25' r='2.5'/%3E%3Ccircle cx='25' cy='125' r='2.5'/%3E%3Ccircle cx='125' cy='125' r='2.5'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='150' height='150' fill='url(%23mehndi)'/%3E%3C/svg%3E");
+  background-size: 150px 150px;
+  background-repeat: repeat;
+}
+
+.mehndi-page-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/wedding-demo/images/mehndi-ornament.svg');
+  background-size: 350px 585px;
+  background-repeat: repeat;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 1;
+}
