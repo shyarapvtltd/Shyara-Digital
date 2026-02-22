@@ -166,7 +166,7 @@ const Categories = () => {
       <SEO
         title="Digital Invitation Categories | Wedding, Birthday, Pooja & More | Shyara Digital"
         description="Explore our collection of digital invitations for weddings, engagements, birthdays, pooja ceremonies, anniversaries, and special celebrations. Find the perfect invitation for every occasion."
-        keywords="wedding invitations, birthday invitations, pooja invitations, engagement cards, sangeet invitation, mehndi invitation, haldi ceremony card, grih pravesh invitation, anniversary cards, digital shaadi card, nimantran patra, sagai card, shubh vivah, save the date card India, WhatsApp invitation card, video nimantran, Patna invitation maker, Bihar wedding card, jagran invitation, mata ki chowki card, reception invitation video"
+        keywords="wedding invitations, birthday invitations, pooja invitations, engagement cards, sangeet invitation card, mehndi ceremony invitation, haldi ceremony invitation video, grih pravesh invitation, anniversary cards, digital shaadi card, nimantran patra, sagai card, shubh vivah, save the date card, WhatsApp invitation card, video nimantran, wedding reception card online, baraat invitation, ring ceremony invitation video, roka ceremony card, baby shower invitation video, housewarming invitation digital, jagran invitation, mata ki chowki card, reception invitation video, namkaran invitation, godh bharai invitation"
         canonicalUrl="https://digital.shyara.co.in/invitations"
         pageType="category"
         breadcrumbs={[

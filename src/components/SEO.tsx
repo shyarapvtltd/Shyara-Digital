@@ -125,7 +125,7 @@ const websiteSchema = {
 const SEO = ({
   title = "Shyara Digital | Beautiful Digital Invitations",
   description = "Create beautiful, emotional digital invitation cards and videos for weddings, celebrations, and moments that matter. Share joy with Shyara Digital.",
-  keywords = "digital invitations, wedding invitations, digital cards, celebration invitations, video invitations, shaadi cards, online wedding cards, e-invitations India",
+  keywords = "digital invitations, wedding invitations, digital cards, celebration invitations, video invitations, shaadi cards, online wedding cards, e-invitations, custom wedding card online",
   canonicalUrl = "https://digital.shyara.co.in",
   ogImage = "https://digital.shyara.co.in/shyara.png",
   ogType = "website",
@@ -141,7 +141,11 @@ const SEO = ({
   
   // Add custom structured data if provided
   if (structuredData) {
-    schemas.push(structuredData);
+    if (Array.isArray(structuredData)) {
+      schemas.push(...structuredData);
+    } else {
+      schemas.push(structuredData);
+    }
   }
   
   // Add organization schema for all pages
@@ -198,10 +202,6 @@ const SEO = ({
       <meta name="language" content="English" />
       <meta name="revisit-after" content="7 days" />
       
-      {/* Geo Tags for Local SEO */}
-      <meta name="geo.region" content="IN-BR" />
-      <meta name="geo.placename" content="Patna" />
-      
       {/* Canonical URL */}
       <link rel="canonical" href={canonicalUrl} />
       
@@ -214,7 +214,7 @@ const SEO = ({
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:site_name" content="Shyara Digital" />
-      <meta property="og:locale" content="en_IN" />
+      <meta property="og:locale" content="en_US" />
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />

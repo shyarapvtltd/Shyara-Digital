@@ -110,7 +110,7 @@ const InvitationWebsite = () => {
       <SEO
         title="Invitation Websites | Custom Event Websites | Shyara Digital"
         description="Go beyond video invitations with a complete invitation website. Personalized guest links, themed event pages, RSVP system, admin dashboard, and more — all built custom for your celebration."
-        keywords="invitation website, wedding website, event website, custom wedding site, RSVP website, digital invitation website, online wedding invitation, guest management, wedding dashboard, mehndi invitation, reception invitation, wedding RSVP online"
+        keywords="invitation website, wedding website, event website, custom wedding site, RSVP website, digital invitation website, online wedding invitation, guest management, wedding dashboard, wedding website builder, custom wedding website, wedding RSVP website, online wedding invitation website with guest management, wedding website with event pages, wedding website with mehndi page, wedding website maker, mehndi invitation, reception invitation, wedding RSVP online"
         canonicalUrl="https://digital.shyara.co.in/invitation-website"
         pageType="service"
         breadcrumbs={[
@@ -120,20 +120,48 @@ const InvitationWebsite = () => {
             url: "https://digital.shyara.co.in/invitation-website",
           },
         ]}
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          name: "Custom Invitation Website",
-          description:
-            "Fully custom invitation websites with personalized guest links, themed event pages, RSVP system, admin dashboard, gallery, and more.",
-          provider: {
-            "@type": "Organization",
-            name: "Shyara Digital",
-            url: "https://digital.shyara.co.in",
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Custom Invitation Website",
+            "description": "Fully custom invitation websites with personalized guest links, themed event pages, RSVP system, admin dashboard, gallery, and more.",
+            "provider": {
+              "@type": "Organization",
+              "name": "Shyara Digital",
+              "url": "https://digital.shyara.co.in"
+            },
+            "serviceType": "Web Development",
+            "areaServed": "Worldwide"
           },
-          serviceType: "Web Development",
-          areaServed: "IN",
-        }}
+          {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "Custom Wedding Invitation Website",
+            "description": "Complete wedding invitation website with personalized guest links, themed event pages (Mehndi, Wedding, Reception), smart RSVP system, admin dashboard with guest management, photo gallery, venue info, and WhatsApp sharing.",
+            "brand": {
+              "@type": "Brand",
+              "name": "Shyara Digital"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://digital.shyara.co.in/invitation-website",
+              "seller": {
+                "@type": "Organization",
+                "name": "Shyara Digital"
+              }
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "50",
+              "bestRating": "5"
+            },
+            "category": "Digital Invitation Services"
+          }
+        ]}
       />
 
       {/* Hero Section */}

@@ -1,5 +1,5 @@
 # Robots.txt for Shyara Digital
-# https://shyaradigital.com
+# https://digital.shyara.co.in
 
 # ===========================================
 # Major Search Engine Crawlers - Full Access
@@ -83,33 +83,58 @@ Crawl-delay: 10
 
 User-agent: GPTBot
 Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
 
 User-agent: ChatGPT-User
 Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
 
 User-agent: CCBot
 Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
 
 User-agent: anthropic-ai
 Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
 
 User-agent: Claude-Web
 Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
 
 User-agent: Google-Extended
 Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
 
 User-agent: PerplexityBot
 Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
 
 User-agent: Bytespider
 Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
 
 User-agent: Amazonbot
 Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
 
 User-agent: cohere-ai
 Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: Google-InspectionTool
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
 
 # ===========================================
 # Spam / Aggressive Bots - Block
@@ -142,13 +167,22 @@ Disallow: /
 
 User-agent: *
 Allow: /
+Disallow: /invitation-website/demo/save-the-date
+Disallow: /invitation-website/demo/venue-travel
+Disallow: /invitation-website/demo/gallery
+Disallow: /invitation-website/demo/rsvp
+Disallow: /invitation-website/demo/dashboard
 Crawl-delay: 5
 
 # ===========================================
-# Sitemaps
+# Sitemaps & AI Discovery
 # ===========================================
 
 Sitemap: https://digital.shyara.co.in/sitemap.xml
+
+# LLM discovery files
+# llms.txt: https://digital.shyara.co.in/llms.txt
+# llms-full.txt: https://digital.shyara.co.in/llms-full.txt
 
 # ===========================================
 # Host Directive (for Yandex)

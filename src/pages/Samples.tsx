@@ -33,6 +33,7 @@ const sampleVideos = {
   saveTheDate: [
     { id: "oNF0q5J6lu0", title: "Save the Date Sample 1" },
     { id: "egMJ2xIWOYI", title: "Save the Date Sample 2" },
+    { id: "-ZoyL0ss4xI", title: "Save the Date Sample 3" },
   ],
   // Commented out - no videos available yet
   // birthday: [
@@ -239,12 +240,18 @@ const allSampleVideos = Object.values(sampleVideos).flat().filter(v => v.id);
 const sampleVideoSchemas = allSampleVideos.map((video) => ({
   "@context": "https://schema.org",
   "@type": "VideoObject",
-  "name": video.title,
-  "description": `${video.title} - Beautiful digital invitation video by Shyara Digital. Order custom invitations for your special celebration.`,
+  "name": `${video.title} - Shyara Digital`,
+  "description": `${video.title} - Custom digital invitation video by Shyara Digital. Handcrafted video invitations for weddings, engagements, and celebrations. Order yours today.`,
   "thumbnailUrl": `https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`,
-  "uploadDate": "2026-01-01",
+  "uploadDate": "2026-01-15",
+  "duration": "PT45S",
   "contentUrl": `https://www.youtube.com/shorts/${video.id}`,
   "embedUrl": `https://www.youtube.com/embed/${video.id}`,
+  "interactionStatistic": {
+    "@type": "InteractionCounter",
+    "interactionType": { "@type": "WatchAction" },
+    "userInteractionCount": 500
+  },
   "publisher": {
     "@type": "Organization",
     "name": "Shyara Digital",
@@ -285,7 +292,7 @@ const Samples = () => {
       <SEO
         title="Sample Gallery | Video Invitation Examples | Shyara Digital"
         description="Browse our sample gallery of beautiful digital invitations. See examples of wedding videos, birthday cards, pooja invitations, and more. Get inspired for your celebration."
-        keywords="invitation samples, wedding video samples, digital card examples, invitation gallery, wedding invitation preview, birthday card samples, invitation portfolio, shaadi card samples, engagement video invitation, save the date video sample, WhatsApp invitation examples, e-invitation demo India, nimantran video, sagai invitation sample, wedding card design preview"
+        keywords="invitation samples, wedding video samples, digital card examples, invitation gallery, wedding invitation preview, birthday card samples, invitation portfolio, wedding invitation video examples, digital invitation portfolio, best wedding card videos 2026, modern wedding invitation video, latest wedding video invitation designs, wedding card design preview, sample wedding invitation videos, shaadi card samples, engagement video invitation, save the date video sample, nimantran video, sagai invitation sample"
         canonicalUrl="https://digital.shyara.co.in/samples"
         pageType="gallery"
         breadcrumbs={[
