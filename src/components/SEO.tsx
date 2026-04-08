@@ -92,7 +92,7 @@ const organizationSchema = {
   "@type": "Organization",
   "name": "Shyara Digital",
   "url": "https://digital.shyara.co.in",
-  "logo": "https://digital.shyara.co.in/logo.png",
+  "logo": "https://digital.shyara.co.in/android-chrome-s-20260408-512x512.png",
   "description": "Create beautiful, emotional digital invitation cards and videos for weddings, celebrations, and moments that matter.",
   "contactPoint": {
     "@type": "ContactPoint",
@@ -174,7 +174,7 @@ const SEO = ({
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Shyara Digital",
-      "image": "https://digital.shyara.co.in/logo.png",
+      "image": "https://digital.shyara.co.in/android-chrome-s-20260408-512x512.png",
       "url": "https://digital.shyara.co.in",
       "telephone": "+91-95846-61610",
       "email": "shyaradigital@gmail.com",

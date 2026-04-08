@@ -134,7 +134,7 @@ const Index = () => {
           "@type": "LocalBusiness",
           "name": "Shyara Digital",
           "alternateName": "Shyara Digital Invitations",
-          "image": "https://digital.shyara.co.in/shyara.png",
+          "image": "https://digital.shyara.co.in/android-chrome-s-20260408-512x512.png",
           "description": "Create beautiful, emotional digital invitation cards and videos for weddings, celebrations, and moments that matter. Serving clients worldwide.",
           "@id": "https://digital.shyara.co.in",
           "url": "https://digital.shyara.co.in",
