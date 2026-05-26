@@ -2,102 +2,89 @@
 
 Beautiful digital invitation cards and videos for weddings, celebrations, and moments that matter.
 
-## Project Overview
+## Repository layout (monorepo)
 
-Shyara Digital is a modern web application for creating and sharing beautiful digital invitations. Built with React, TypeScript, and Vite, it provides an elegant platform for crafting personalized invitation cards and videos.
+```
+├── frontend/                    # React marketing site + invitation portal demo
+│   └── src/
+│       ├── app/                 # Router, providers
+│       ├── features/
+│       │   ├── marketing/       # Public pages (home, samples, contact, …)
+│       │   └── invitation-portal/  # Guest wedding-site demo (/invitation-website/demo)
+│       └── components/
+│           ├── layout/          # Navbar, footer, WhatsApp CTA
+│           ├── marketing/       # SEO, carousel, shared marketing UI
+│           └── ui/              # shadcn components in use
+├── backend/                     # Express static host (optional local use; not used by Render Static Site today)
+│   └── server.js
+└── package.json                 # npm workspaces root
+```
 
-## Technologies
+**Product zones**
 
-This project is built with:
+| Zone | Location | Purpose |
+|------|----------|---------|
+| Marketing | `frontend/src/features/marketing` | SEO site, samples, WhatsApp lead gen |
+| Invitation portal | `frontend/src/features/invitation-portal` | Guest-facing wedding demo (RSVP, events) |
+| Backend | `backend/` | Future API (payments, editor, render). Today: optional static file server only |
 
-- **Vite** - Fast build tool and development server
-- **TypeScript** - Type-safe JavaScript
-- **React** - UI library
-- **React Router** - Client-side routing
-- **shadcn-ui** - Beautiful UI components
-- **Tailwind CSS** - Utility-first CSS framework
-- **Framer Motion** - Animation library
+Studio (self-serve PDF/video editor) and payment APIs are **not implemented yet** — add under `frontend/src/features/` and `backend/` when architecture is decided.
 
-## Getting Started
+## Getting started
 
 ### Prerequisites
 
-- Node.js (v18 or higher recommended)
-- npm or yarn
+- Node.js 18+
+- npm
 
-### Installation
+### Install and run
 
-1. Clone the repository:
-```bash
-git clone https://github.com/shyarademo/shyara-digital-demo.git
-cd shyara-digital-demo
-```
+From the repository root:
 
-2. Install dependencies:
 ```bash
 npm install
-```
-
-3. Start the development server:
-```bash
 npm run dev
 ```
 
-The application will be available at `http://localhost:8080` (or the port specified in `vite.config.ts`).
+Open **http://localhost:8080**
 
-### Alternative: Using PowerShell Script
+### Scripts (root)
 
-On Windows, you can use the provided PowerShell script:
+| Script | Description |
+|--------|-------------|
+| `npm run dev` | Start Vite dev server (`frontend`) |
+| `npm run build` | Production build → `frontend/dist` |
+| `npm run lint` | ESLint (`frontend`) |
+| `npm run start:backend` | Serve `frontend/dist` via Express (local parity only) |
+
+### Windows
 
 ```powershell
 .\run-local.ps1
 ```
 
-This script will automatically check for Node.js/npm, install dependencies if needed, and start the development server.
+## Deployment (Render Static Site)
 
-## Available Scripts
+Production is a **Render Static Site** (`Shyara-Digital`), not the Express server.
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run build:dev` - Build in development mode
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
+After this monorepo layout is on `main`, set in the Render dashboard:
 
-## Project Structure
+| Setting | Value |
+|---------|--------|
+| **Root Directory** | `frontend` |
+| **Build Command** | `npm install && npm run build` |
+| **Publish Directory** | `dist` |
 
-```
-├── public/          # Static assets
-├── src/
-│   ├── components/  # React components
-│   ├── pages/       # Page components
-│   ├── hooks/       # Custom React hooks
-│   ├── lib/         # Utility functions
-│   └── main.tsx     # Application entry point
-├── index.html       # HTML template
-└── vite.config.ts   # Vite configuration
-```
+Optional build filters: include `frontend/**`, ignore `backend/**`.
 
-## Features
+Custom domain: **https://digital.shyara.co.in**
 
-- Beautiful, responsive design
-- Smooth page transitions
-- SEO optimized
-- Social media sharing support
-- WhatsApp integration
-- YouTube carousel integration
-- Contact form
-- FAQ section
-- Sample gallery
+## Technologies
 
-## Deployment
-
-Build the project for production:
-
-```bash
-npm run build
-```
-
-The `dist` folder will contain the production-ready files that can be deployed to any static hosting service.
+- Vite, React 18, TypeScript
+- React Router, Framer Motion
+- Tailwind CSS, shadcn/ui
+- react-helmet-async (SEO)
 
 ## License
 

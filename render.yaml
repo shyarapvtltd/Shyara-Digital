@@ -1,10 +1,14 @@
+# Production uses Render Static Site (Shyara-Digital) — see README for dashboard settings.
+# Optional: backend Web Service when API is added (not required for the marketing site today).
+
 services:
   - type: web
-    name: shyara-digital
-    env: node
+    name: shyara-digital-static
+    runtime: static
+    rootDir: frontend
     buildCommand: npm install && npm run build
-    startCommand: node server.js
-    envVars:
-      - key: NODE_VERSION
-        value: 18.x
-
+    staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
