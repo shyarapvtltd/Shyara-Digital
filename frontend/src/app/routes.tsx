@@ -8,6 +8,8 @@ import Samples from "@/features/marketing/pages/Samples";
 import FAQ from "@/features/marketing/pages/FAQ";
 import Contact from "@/features/marketing/pages/Contact";
 import InvitationWebsite from "@/features/marketing/pages/InvitationWebsite";
+import PrivacyPolicy from "@/features/marketing/pages/PrivacyPolicy";
+import TermsOfService from "@/features/marketing/pages/TermsOfService";
 import NotFound from "@/features/marketing/pages/NotFound";
 
 const DemoHome = lazy(() => import("@/features/invitation-portal/DemoHome"));
@@ -101,6 +103,10 @@ export function AppRoutes() {
           <Route path="/faqs" element={<FAQ />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/terms" element={<TermsOfService />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </AnimatePresence>

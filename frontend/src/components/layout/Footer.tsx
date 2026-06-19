@@ -98,16 +98,27 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-rose-light/30 pt-8 pb-16 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-muted-foreground text-sm text-center md:text-left">
-            © {new Date().getFullYear()} Shyara Digital. Crafted with{" "}
-            <Heart className="inline w-4 h-4 text-primary fill-primary animate-heart-pulse" />{" "}
-            for your special moments.
-          </p>
-          <p className="text-muted-foreground text-sm pr-20">
-            A brand by{" "}
-            <span className="text-primary font-medium">Shyara Tech Solutions</span>
-          </p>
+        <div className="border-t border-rose-light/30 pt-8 pb-16 space-y-4">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm">
+            <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">
+              Privacy Policy
+            </Link>
+            <span className="text-rose-light/50 hidden sm:inline" aria-hidden="true">|</span>
+            <Link to="/terms-of-service" className="text-muted-foreground hover:text-primary transition-colors">
+              Terms of Service
+            </Link>
+          </div>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-muted-foreground text-sm text-center md:text-left">
+              © {new Date().getFullYear()} Shyara Digital. Crafted with{" "}
+              <Heart className="inline w-4 h-4 text-primary fill-primary animate-heart-pulse" />{" "}
+              for your special moments.
+            </p>
+            <p className="text-muted-foreground text-sm md:pr-20 text-center md:text-right">
+              A brand by{" "}
+              <span className="text-primary font-medium">Shyara Tech Solutions</span>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
