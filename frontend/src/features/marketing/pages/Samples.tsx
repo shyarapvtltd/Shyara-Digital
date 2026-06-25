@@ -21,6 +21,7 @@ const sampleVideos = {
     { id: "MuxUm6ccuEw", title: "Wedding Sample 7" },
     { id: "1H1neLoUBhc", title: "Wedding Sample 8" },
     { id: "0uoR__qE0R0", title: "Wedding Sample 9" },
+    { id: "ZaMcTGUsWgk", title: "Wedding Sample 10" },
   ],
   engagement: [
     { id: "8YQ7vYSeSWU", title: "Engagement Sample 1" },
