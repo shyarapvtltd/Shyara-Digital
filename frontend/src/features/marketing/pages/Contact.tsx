@@ -14,11 +14,11 @@ import SEO from "@/components/marketing/SEO";
 const eventTypes = [
   { value: "wedding", label: "Wedding" },
   { value: "engagement", label: "Engagement" },
-  { value: "pooja", label: "Pooja & Religious" },
-  { value: "birthday", label: "Birthday" },
-  { value: "anniversary", label: "Anniversary" },
-  { value: "romantic", label: "Romantic Moment" },
-  { value: "special", label: "Special Day" },
+  { value: "saveTheDate", label: "Save the Date" },
+  { value: "houseWarming", label: "House Warming" },
+  { value: "boyBirthday", label: "Boy Birthday" },
+  { value: "girlBirthday", label: "Girl Birthday" },
+  { value: "proposal", label: "Proposal Ideas" },
   { value: "other", label: "Other" },
 ];
 
@@ -48,8 +48,8 @@ const Contact = () => {
     <Layout>
       <SEO
         title="Contact Us | Shyara Digital - Create Your Perfect Invitation"
-        description="Get in touch with Shyara Digital to create beautiful digital invitations for your wedding, birthday, pooja, or any special celebration. Serving clients worldwide via WhatsApp, email, or phone."
-        keywords="contact shyara digital, digital invitation enquiry, wedding card contact, custom invitation order, event invitation order, WhatsApp invitation order, order wedding card online, book digital invitation, wedding card maker, custom invitation order WhatsApp, hire wedding invitation designer, custom video invitation order, nimantran order online"
+        description="Get in touch with Shyara Digital to create beautiful digital invitations for your wedding, birthday, house warming, proposal, or any celebration. Serving clients worldwide via WhatsApp, email, or phone."
+        keywords="contact shyara digital, digital invitation enquiry, wedding card contact, custom invitation order, house warming invitation order, birthday invitation order, proposal invitation order, WhatsApp invitation order, order wedding card online, book digital invitation, wedding card maker, custom video invitation order, nimantran order online"
         canonicalUrl="https://digital.shyara.co.in/contact"
         pageType="contact"
         breadcrumbs={[
@@ -295,12 +295,11 @@ const Contact = () => {
                 Creating Beautiful Memories Since Day One
               </h2>
               
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {[
                   { number: "500+", label: "Happy Families" },
                   { number: "1000+", label: "Invitations Created" },
-                  { number: "50+", label: "Event Types" },
-                  { number: "4.9", label: "Average Rating" },
+                  { number: "5.0", label: "Average Rating" },
                 ].map((stat) => (
                   <div key={stat.label} className="p-4">
                     <div className="font-serif text-3xl md:text-4xl font-bold text-primary mb-1">

@@ -66,13 +66,27 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-s-20260408-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-s-20260408-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-s-20260408.png" />
+
+    <!-- Critical paint: match site background so the first frame never looks "broken" -->
+    <style>
+      html, body {
+        margin: 0;
+        min-height: 100%;
+        background-color: hsl(30 40% 98%);
+      }
+      #root {
+        min-height: 100vh;
+      }
+    </style>
   </head>
 
   <body>
-    <div id="root">
+    <!-- Keep #root empty until React mounts — visible SEO text here caused FOUC -->
+    <div id="root"></div>
+    <noscript>
       <h1>Shyara Digital — Beautiful Digital Invitations for Weddings &amp; Celebrations</h1>
-      <p>Custom digital invitation cards and videos for weddings, engagements, birthdays, pooja ceremonies, and special celebrations. Invite with love, share with joy. Serving clients worldwide.</p>
-    </div>
+      <p>Custom digital invitation cards and videos for weddings, engagements, birthdays, house warming, proposals, and celebrations. Invite with love, share with joy. Serving clients worldwide.</p>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

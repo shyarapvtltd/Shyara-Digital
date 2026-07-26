@@ -41,7 +41,6 @@ const Footer = () => {
               {[
                 { name: "Home", path: "/" },
                 { name: "Invitations", path: "/invitations" },
-                { name: "Samples", path: "/samples" },
                 { name: "Invitation Website", path: "/invitation-website" },
                 { name: "FAQs", path: "/faqs" },
                 { name: "Contact", path: "/contact" },
@@ -63,14 +62,20 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-serif text-lg font-semibold text-foreground">Invitation Types</h4>
             <ul className="space-y-3">
-              {["Weddings", "Pooja & Religious", "Birthdays", "Romantic Moments", "Special Days"].map((item) => (
-                <li key={item}>
+              {[
+                { name: "Weddings", path: "/invitations#wedding" },
+                { name: "House Warming", path: "/invitations#houseWarming" },
+                { name: "Boy Birthday", path: "/invitations#boyBirthday" },
+                { name: "Girl Birthday", path: "/invitations#girlBirthday" },
+                { name: "Proposal Ideas", path: "/invitations#proposal" },
+              ].map((item) => (
+                <li key={item.name}>
                   <Link 
-                    to="/invitations"
+                    to={item.path}
                     className="text-muted-foreground hover:text-primary transition-colors inline-flex items-center gap-2 group"
                   >
                     <span className="w-0 group-hover:w-2 h-0.5 bg-primary transition-all" />
-                    {item}
+                    {item.name}
                   </Link>
                 </li>
               ))}

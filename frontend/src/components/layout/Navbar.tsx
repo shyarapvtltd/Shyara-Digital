@@ -7,7 +7,6 @@ import { cn } from "@/lib/utils";
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "Invitations", path: "/invitations" },
-  { name: "Samples", path: "/samples" },
   { name: "Invitation Website", path: "/invitation-website" },
   { name: "FAQs", path: "/faqs" },
   { name: "Contact", path: "/contact" },
@@ -77,7 +76,7 @@ const Navbar = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button asChild className="rounded-full px-6 shadow-romantic hover:shadow-lg transition-all hover:-translate-y-0.5">
-              <Link to="/contact">Get Started</Link>
+              <Link to="/invitations">Get Started</Link>
             </Button>
           </div>
 
@@ -137,7 +136,7 @@ const Navbar = () => {
               animation: isOpen ? "fade-in-up 0.5s ease-out forwards" : "none"
             }}
           >
-            <Link to="/contact">Get Started</Link>
+            <Link to="/invitations">Get Started</Link>
           </Button>
         </div>
       </div>

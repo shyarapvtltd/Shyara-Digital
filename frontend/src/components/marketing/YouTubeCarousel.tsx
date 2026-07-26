@@ -128,17 +128,17 @@ const YouTubeCarousel = ({
                 <Play className="w-10 h-10 text-primary" />
               </div>
               <h3 className="font-serif text-xl md:text-2xl font-semibold text-foreground mb-3 text-center">
-                Video Samples Coming Soon!
+                Video Invitations Coming Soon!
               </h3>
               <p className="text-muted-foreground text-center max-w-md mb-6">
-                We're adding our best video invitations here. In the meantime, ask us on WhatsApp for samples!
+                We're adding our best video invitations here. In the meantime, ask us on WhatsApp for examples!
               </p>
               <Button 
                 onClick={handleWhatsAppClick}
                 className="rounded-full px-6 shadow-romantic hover:shadow-lg transition-all hover:-translate-y-1"
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
-                Ask for Samples on WhatsApp
+                Ask on WhatsApp
               </Button>
             </div>
           )}
@@ -150,7 +150,7 @@ const YouTubeCarousel = ({
             <ScrollReveal>
               <div className="text-center mb-8">
                 <h3 className="font-serif text-2xl md:text-3xl font-semibold text-foreground mb-2">
-                  PDF Invitation Cards
+                  Invitation Cards
                 </h3>
                 <p className="text-muted-foreground">Elegant, printable designs for every occasion</p>
               </div>
@@ -161,17 +161,17 @@ const YouTubeCarousel = ({
                 <FileText className="w-10 h-10 text-primary" />
               </div>
               <h3 className="font-serif text-xl md:text-2xl font-semibold text-foreground mb-3 text-center">
-                PDF Samples Coming Soon!
+                Invitation Cards Coming Soon!
               </h3>
               <p className="text-muted-foreground text-center max-w-md mb-6">
-                Ask on WhatsApp for samples and to have yours built!
+                Ask on WhatsApp for examples and to have yours built!
               </p>
               <Button 
                 onClick={handleWhatsAppClick}
                 className="rounded-full px-6 shadow-romantic hover:shadow-lg transition-all hover:-translate-y-1"
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
-                Ask for Samples on WhatsApp
+                Ask on WhatsApp
               </Button>
             </div>
           </div>

@@ -46,25 +46,17 @@
     </video:video>
   </url>
 
-  <!-- Categories / Invitations Page -->
+  <!-- Invitation Gallery with ALL videos -->
   <url>
     <loc>https://digital.shyara.co.in/invitations</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://digital.shyara.co.in/shyara.png</image:loc>
-      <image:title>Digital Invitation Categories - Wedding, Birthday, Pooja and More</image:title>
-      <image:caption>Explore digital invitation categories for weddings, engagements, birthdays, pooja ceremonies, and special celebrations</image:caption>
+      <image:title>Digital Invitation Gallery - Wedding, Birthday, House Warming and More</image:title>
+      <image:caption>Explore digital invitations for weddings, engagements, birthdays, house warming, and proposal ideas</image:caption>
     </image:image>
-  </url>
-
-  <!-- Samples Page with ALL 17 videos -->
-  <url>
-    <loc>https://digital.shyara.co.in/samples</loc>
-    <lastmod>2026-02-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
     <!-- Wedding Sample 1 -->
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/MErRHbJ6qqk/maxresdefault.jpg</video:thumbnail_loc>
@@ -219,17 +211,6 @@
       <video:family_friendly>yes</video:family_friendly>
       <video:category>Engagement</video:category>
     </video:video>
-    <!-- Engagement Sample 5 -->
-    <video:video>
-      <video:thumbnail_loc>https://img.youtube.com/vi/tPZMUhiklV0/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>Engagement Invitation Video Sample 5 - Shyara Digital</video:title>
-      <video:description>Premium engagement invitation video with beautiful design and personalized details. By Shyara Digital.</video:description>
-      <video:content_loc>https://www.youtube.com/shorts/tPZMUhiklV0</video:content_loc>
-      <video:player_loc>https://www.youtube.com/embed/tPZMUhiklV0</video:player_loc>
-      <video:duration>40</video:duration>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:category>Engagement</video:category>
-    </video:video>
     <!-- Save the Date Sample 1 -->
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/oNF0q5J6lu0/maxresdefault.jpg</video:thumbnail_loc>
@@ -259,6 +240,17 @@
       <video:description>Stunning save the date video with creative animations and elegant typography. Custom digital invitations by Shyara Digital.</video:description>
       <video:content_loc>https://www.youtube.com/shorts/-ZoyL0ss4xI</video:content_loc>
       <video:player_loc>https://www.youtube.com/embed/-ZoyL0ss4xI</video:player_loc>
+      <video:duration>40</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:category>Save the Date</video:category>
+    </video:video>
+    <!-- Save the Date Sample 4 -->
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/tPZMUhiklV0/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Save the Date Video Sample 4 - Shyara Digital</video:title>
+      <video:description>Premium save the date announcement video with beautiful design and personalized details. By Shyara Digital.</video:description>
+      <video:content_loc>https://www.youtube.com/shorts/tPZMUhiklV0</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/tPZMUhiklV0</video:player_loc>
       <video:duration>40</video:duration>
       <video:family_friendly>yes</video:family_friendly>
       <video:category>Save the Date</video:category>

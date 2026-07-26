@@ -7,6 +7,8 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    // Cloudflare quick tunnels rotate subdomains; allow all *.trycloudflare.com
+    allowedHosts: [".trycloudflare.com"],
   },
   plugins: [react()],
   resolve: {

@@ -27,7 +27,7 @@ const TermsOfService = () => {
       <p>Shyara Digital provides custom digital invitation services, including but not limited to:</p>
       <ul>
         <li>Animated video invitations (delivered as MP4 files)</li>
-        <li>Digital PDF invitation cards</li>
+        <li>Digital invitation cards</li>
         <li>Custom invitation websites with RSVP, guest management, and related features</li>
         <li>Design revisions as agreed per order</li>
       </ul>
@@ -127,7 +127,7 @@ const TermsOfService = () => {
           permission.
         </li>
         <li>
-          We may showcase completed work (with your consent) in our portfolio, samples gallery,
+          We may showcase completed work (with your consent) in our portfolio, invitation gallery,
           or marketing materials. You may opt out by informing us in writing.
         </li>
       </ul>

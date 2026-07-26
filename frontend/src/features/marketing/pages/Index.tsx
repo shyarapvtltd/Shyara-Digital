@@ -11,32 +11,32 @@ import { buildVideoObjectSchemas } from "@/lib/video-schemas";
 
 const testimonials = [
   {
-    name: "Priya & Rahul",
-    event: "Wedding",
+    name: "Vipin Kumar Saini",
+    source: "Google Review",
     rating: 5,
-    quote: "Our wedding invitation video was beyond beautiful! Every guest called to say how touched they were. Shyara Digital made our special day even more memorable.",
-    location: "Mumbai"
+    quote:
+      "Great experience overall. Clear communication, quick edits, and timely delivery. The invitation looked premium and professional. Would definitely recommend Shyara Digital.",
   },
   {
-    name: "Sunita Sharma",
-    event: "Son's Birthday",
+    name: "Pankaj Kumar",
+    source: "Google Review",
     rating: 5,
-    quote: "The birthday invitation for my son was so creative and fun! He loved showing it to all his friends. Quick delivery and amazing quality!",
-    location: "Delhi"
+    quote:
+      "We needed a digital invitation on short notice, and Shyara Digital handled it perfectly. Fast delivery without compromising on quality. Truly appreciated.",
   },
   {
-    name: "Amit & Family",
-    event: "Grih Pravesh",
+    name: "Nikita Chaudhary",
+    source: "Google Review",
     rating: 5,
-    quote: "We wanted something traditional yet modern for our housewarming. They understood exactly what we needed. The invitation was elegant and heartfelt.",
-    location: "Jaipur"
+    quote:
+      "Thank you so much Shyara Digital for making such a beautiful e-invite. So professional and cooperative. Such a good experience. Highly recommended. So easy to work.",
   },
   {
-    name: "Neha Gupta",
-    event: "Engagement",
+    name: "Aarya Patil",
+    source: "Google Review",
     rating: 5,
-    quote: "From the first message to final delivery, the experience was wonderful. Our engagement video had everyone emotional. Truly talented team!",
-    location: "Bangalore"
+    quote:
+      "The video perfectly met my expectations. It was delivered on time, and the quality is excellent. Really impressed with the work!",
   },
 ];
 
@@ -45,36 +45,29 @@ const invitationTypes = [
     icon: Heart,
     title: "Weddings",
     description: "Every vow, every ritual, beautifully invited",
-    color: "from-rose to-rose-light",
     bgColor: "bg-rose-light/20",
+    href: "/invitations#wedding",
   },
   {
     icon: Flower2,
-    title: "Pooja & Religious",
-    description: "Sacred moments with graceful invitations",
-    color: "from-gold to-gold-light",
+    title: "House Warming",
+    description: "Welcome guests to your new home with warmth",
     bgColor: "bg-gold-light/20",
+    href: "/invitations#houseWarming",
   },
   {
     icon: Gift,
     title: "Birthdays",
-    description: "Celebrate life's milestones in style",
-    color: "from-peach to-peach-light",
+    description: "Boy & girl birthday invitations for every age",
     bgColor: "bg-peach-light/20",
+    href: "/invitations#birthday",
   },
   {
-    icon: Heart,
-    title: "Romantic Moments",
-    description: "Express love in the most beautiful way",
-    color: "from-primary to-rose-light",
+    icon: Sparkles,
+    title: "Proposal Ideas",
+    description: "Ask the big question in the most beautiful way",
     bgColor: "bg-rose-light/20",
-  },
-  {
-    icon: Star,
-    title: "Special Days",
-    description: "Small gestures, big emotions",
-    color: "from-lavender to-lavender-light",
-    bgColor: "bg-lavender-light/20",
+    href: "/invitations#proposal",
   },
 ];
 
@@ -120,15 +113,15 @@ const Index = () => {
     <Layout>
       <SEO
         title="Shyara Digital | Beautiful Digital Invitations for Weddings & Celebrations"
-        description="Create stunning digital invitation cards and videos for weddings, birthdays, pooja ceremonies, and special celebrations. Invite with love, share with joy. Serving celebrations worldwide."
-        keywords="digital wedding invitation, wedding invitation video, custom wedding card online, video invitation maker, WhatsApp wedding invitation, affordable wedding invitation video, wedding e-invitation, digital invitations, video invitations, e-invitations, online wedding cards, shaadi cards, shadi card video, vivah nimantran, shaadi card online, video nimantran patra, pooja invitation, birthday invitation, celebration cards, nimantran patra, sagai card, shubh vivah card, save the date video, engagement invitation video, haldi invitation, mehndi invitation, sangeet invitation, digital invitation for celebrations"
+        description="Create stunning digital invitation cards and videos for weddings, birthdays, house warming, proposals, and celebrations. Invite with love, share with joy. Serving celebrations worldwide."
+        keywords="digital wedding invitation, wedding invitation video, custom wedding card online, video invitation maker, WhatsApp wedding invitation, affordable wedding invitation video, wedding e-invitation, digital invitations, video invitations, e-invitations, online wedding cards, shaadi cards, house warming invitation, birthday invitation, boy birthday invitation, girl birthday invitation, proposal invitation, celebration cards, nimantran patra, sagai card, shubh vivah card, save the date video, engagement invitation video, digital invitation for celebrations"
         canonicalUrl="https://digital.shyara.co.in"
         pageType="home"
         reviews={[
-          { author: "Priya & Rahul", rating: 5, reviewBody: "Our wedding invitation video was beyond beautiful! Every guest called to say how touched they were." },
-          { author: "Sunita Sharma", rating: 5, reviewBody: "The birthday invitation for my son was so creative and fun! Quick delivery and amazing quality!" },
-          { author: "Amit & Family", rating: 5, reviewBody: "We wanted something traditional yet modern for our housewarming. The invitation was elegant and heartfelt." },
-          { author: "Neha Gupta", rating: 5, reviewBody: "From the first message to final delivery, the experience was wonderful. Truly talented team!" },
+          { author: "Vipin Kumar Saini", rating: 5, reviewBody: "Great experience overall. Clear communication, quick edits, and timely delivery. The invitation looked premium and professional. Would definitely recommend Shyara Digital." },
+          { author: "Pankaj Kumar", rating: 5, reviewBody: "We needed a digital invitation on short notice, and Shyara Digital handled it perfectly. Fast delivery without compromising on quality. Truly appreciated." },
+          { author: "Nikita Chaudhary", rating: 5, reviewBody: "Thank you so much Shyara Digital for making such a beautiful e-invite. So professional and cooperative. Such a good experience. Highly recommended. So easy to work." },
+          { author: "Aarya Patil", rating: 5, reviewBody: "The video perfectly met my expectations. It was delivered on time, and the quality is excellent. Really impressed with the work!" },
         ]}
         additionalStructuredData={buildVideoObjectSchemas(homePageVideos)}
         structuredData={{
@@ -184,10 +177,11 @@ const Index = () => {
                 "@type": "OfferCatalog",
                 "name": "Other Invitations",
                 "itemListElement": [
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Birthday Invitation Video" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pooja & Religious Invitation" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Anniversary Invitation" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "PDF Invitation Card" } }
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Boy Birthday Invitation Video" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Girl Birthday Invitation Video" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "House Warming Invitation" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Proposal Ideas Invitation" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Invitation Card" } }
                 ]
               }
             ]
@@ -240,7 +234,7 @@ const Index = () => {
                 className="rounded-full px-8 py-6 text-lg shadow-romantic hover:shadow-lg transition-all hover:-translate-y-1 group"
               >
                 <Link to="/invitations">
-                  Explore Invitations
+                  Browse Invitations
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
@@ -250,8 +244,8 @@ const Index = () => {
                 size="lg" 
                 className="rounded-full px-8 py-6 text-lg border-2 border-rose-light hover:bg-rose-light/20 transition-all hover:-translate-y-1"
               >
-                <Link to="/samples">
-                  View Samples
+                <Link to="/invitations">
+                  Get Started
                   <Sparkles className="ml-2 w-5 h-5" />
                 </Link>
               </Button>
@@ -298,12 +292,11 @@ const Index = () => {
                 Creating Beautiful Memories Since Day One
               </h2>
               
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {[
                   { number: "500+", label: "Happy Families" },
                   { number: "1000+", label: "Invitations Created" },
-                  { number: "50+", label: "Event Types" },
-                  { number: "4.9", label: "Average Rating" },
+                  { number: "5.0", label: "Average Rating" },
                 ].map((stat) => (
                   <div key={stat.label} className="p-4">
                     <div className="font-serif text-3xl md:text-4xl font-bold text-primary mb-1">
@@ -365,10 +358,10 @@ const Index = () => {
             subtitle="From traditional ceremonies to modern celebrations, we have the perfect invitation for you"
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mt-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             {invitationTypes.map((type, index) => (
               <ScrollReveal key={type.title} delay={index * 100}>
-                <Link to="/invitations">
+                <Link to={type.href}>
                   <AnimatedCard 
                     className="text-center group cursor-pointer h-full" 
                     hoverEffect="lift"
@@ -400,7 +393,7 @@ const Index = () => {
           <SectionHeading
             script="Happy Families"
             title="What Our Clients Say"
-            subtitle="Real stories from families who trusted us with their special moments"
+            subtitle="Real 5-star Google reviews from clients who trusted us with their celebrations"
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 max-w-5xl mx-auto">
@@ -428,7 +421,7 @@ const Index = () => {
                     </div>
                     <div>
                       <p className="font-serif font-semibold text-foreground">{testimonial.name}</p>
-                      <p className="text-sm text-muted-foreground">{testimonial.event} - {testimonial.location}</p>
+                      <p className="text-sm text-muted-foreground">{testimonial.source}</p>
                     </div>
                   </div>
                 </AnimatedCard>
@@ -441,7 +434,7 @@ const Index = () => {
             <div className="flex flex-wrap justify-center gap-8 mt-12 pt-8 border-t border-rose-light/20 max-w-3xl mx-auto">
               {[
                 { number: "500+", label: "Happy Families" },
-                { number: "4.9★", label: "Average Rating" },
+                { number: "5.0★", label: "Average Rating" },
                 { number: "1000+", label: "Invitations Created" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
@@ -479,7 +472,7 @@ const Index = () => {
                 size="lg" 
                 className="rounded-full px-10 py-6 text-lg shadow-romantic hover:shadow-lg transition-all hover:-translate-y-1 group"
               >
-                <Link to="/contact">
+                <Link to="/invitations">
                   Get Started Today
                   <Heart className="ml-2 w-5 h-5 group-hover:animate-heart-pulse fill-primary-foreground/30" />
                 </Link>

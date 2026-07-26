@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     question: "How much does a digital wedding invitation cost?",
-    answer: "Our pricing is affordable and varies based on the complexity of the design and the type of invitation (video, PDF card, or a full invitation website). Contact us via WhatsApp for a personalized quote — we have options for every budget."
+    answer: "Our pricing is affordable and varies based on the complexity of the design and the type of invitation (video, invitation card, or a full invitation website). Contact us via WhatsApp for a personalized quote — we have options for every budget."
   },
   {
     question: "Can I add music or songs to my invitation video?",
@@ -45,8 +45,8 @@ const faqs = [
     answer: "Yes! We regularly create invitations in Hindi, English, or a mix of both. We can also accommodate other languages — just let us know your preference."
   },
   {
-    question: "Can I get a sample before ordering?",
-    answer: "Of course! Browse our sample gallery at digital.shyara.co.in/samples to see examples of our work across different event types. You can also view a live demo of our invitation website service."
+    question: "Can I see invitation examples before ordering?",
+    answer: "Of course! Browse our invitations gallery at digital.shyara.co.in/invitations to see examples of our work across different event types. You can also view a live demo of our invitation website service."
   },
   {
     question: "What is the difference between a video invitation and an invitation website?",
@@ -62,7 +62,7 @@ const faqs = [
   },
   {
     question: "What file formats do you deliver the invitation in?",
-    answer: "Video invitations are delivered as high-quality MP4 files in 9:16 vertical format. PDF invitation cards are delivered as print-ready PDFs. For invitation websites, you get a live URL that you can share with your guests."
+    answer: "Video invitations are delivered as high-quality MP4 files in 9:16 vertical format. Invitation cards are delivered as print-ready PDFs. For invitation websites, you get a live URL that you can share with your guests."
   },
 ];
 

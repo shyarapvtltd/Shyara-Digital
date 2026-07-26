@@ -14,7 +14,7 @@ const PrivacyPolicy = () => {
       <p>
         Shyara Digital (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is a brand operated by{" "}
         <strong>Shyara Tech Solutions</strong>, based in Patna, Bihar, India. We create custom
-        digital invitation videos, PDF cards, and invitation websites for weddings and
+        digital invitation videos, invitation cards, and invitation websites for weddings and
         celebrations.
       </p>
       <p>

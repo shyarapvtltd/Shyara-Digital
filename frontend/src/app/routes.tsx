@@ -1,10 +1,9 @@
 import { lazy, Suspense } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import ScrollToTop from "@/components/layout/ScrollToTop";
 import Index from "@/features/marketing/pages/Index";
-import Categories from "@/features/marketing/pages/Categories";
-import Samples from "@/features/marketing/pages/Samples";
+import Invitations from "@/features/marketing/pages/Invitations";
 import FAQ from "@/features/marketing/pages/FAQ";
 import Contact from "@/features/marketing/pages/Contact";
 import InvitationWebsite from "@/features/marketing/pages/InvitationWebsite";
@@ -29,6 +28,12 @@ const DemoLoader = () => (
   </div>
 );
 
+/** Preserve hash when redirecting legacy sample/category URLs. */
+function LegacyRedirect({ to }: { to: string }) {
+  const location = useLocation();
+  return <Navigate to={`${to}${location.hash}`} replace />;
+}
+
 export function AppRoutes() {
   const location = useLocation();
 
@@ -39,10 +44,11 @@ export function AppRoutes() {
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Index />} />
           <Route path="/index.html" element={<Index />} />
-          <Route path="/invitations" element={<Categories />} />
-          {/* Legacy SEO alias — same page as /invitations */}
-          <Route path="/categories" element={<Categories />} />
-          <Route path="/samples" element={<Samples />} />
+          <Route path="/invitations" element={<Invitations />} />
+          {/* Legacy aliases */}
+          <Route path="/invitation" element={<LegacyRedirect to="/invitations" />} />
+          <Route path="/samples" element={<LegacyRedirect to="/invitations" />} />
+          <Route path="/categories" element={<LegacyRedirect to="/invitations" />} />
           <Route path="/invitation-website" element={<InvitationWebsite />} />
           <Route
             path="/invitation-website/demo"

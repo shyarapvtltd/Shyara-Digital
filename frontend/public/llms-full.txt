@@ -14,7 +14,7 @@ A brand by Shyara Tech Solutions.
 ### 1. Digital Invitation Videos
 Custom-designed video invitations in 9:16 vertical format, optimized for WhatsApp, Instagram Stories, and social media sharing. Each video features custom animations, music, and personalized text. Delivery within 24-48 hours. Rush orders available.
 
-### 2. PDF Invitation Cards
+### 2. Invitation Cards
 High-quality static invitation cards delivered as PDFs, suitable for printing or digital sharing.
 
 ### 3. Custom Invitation Websites
@@ -43,26 +43,15 @@ Full-featured wedding websites built from scratch for each client. Features incl
 - Baraat
 - Reception
 
-### Pooja & Religious Invitations
-- Grih Pravesh (housewarming)
-- Jagran (night of devotion)
-- Mata Ki Chowki (divine blessings)
-- Ram Katha (sacred storytelling)
-- Bhagwat Katha (spiritual discourse)
+### House Warming Invitations
+- Grih Pravesh / new home celebrations
 
 ### Birthday Invitations
-- Milestone birthdays: 18th, 21st, 25th, 30th, 40th, 50th, 60+
-- Kids' birthdays
+- Boy Birthday Invitations
+- Girl Birthday Invitations
 
-### Other Celebrations
-- Anniversaries
-- Ring Ceremony / Roka
-- Proposals
-- Valentine's Day
-- Godh Bharai (baby shower)
-- Mundan (first haircut ceremony)
-- Namkaran (naming ceremony)
-- Father's Day, Mother's Day, Children's Day, Friendship Day
+### Proposal Ideas
+- Proposal cards and romantic reveals
 
 ## Frequently Asked Questions
 
@@ -99,22 +88,22 @@ A: Absolutely. Personal photos and video clips are encouraged and can be incorpo
 Q: What file formats do you deliver?
 A: Videos are delivered in MP4 format (9:16 vertical). Cards are delivered as high-resolution PDFs.
 
-Q: Can I get a sample before ordering?
-A: Yes. Browse the sample gallery at https://digital.shyara.co.in/samples to see previous work.
+Q: Can I see invitation examples before ordering?
+A: Yes. Browse the invitations gallery at https://digital.shyara.co.in/invitations to see previous work.
 
-## Sample Work
+## Invitations Gallery
 
-### Wedding Invitation Videos (10 samples)
-Browse at: https://digital.shyara.co.in/samples
+### Wedding Invitation Videos (10)
+Browse at: https://digital.shyara.co.in/invitations#wedding
 
-### Engagement Invitation Videos (5 samples)
-Browse at: https://digital.shyara.co.in/samples
+### Engagement Invitation Videos (4)
+Browse at: https://digital.shyara.co.in/invitations#engagement
 
-### Save the Date Videos (2 samples)
-Browse at: https://digital.shyara.co.in/samples
+### Save the Date Videos (4)
+Browse at: https://digital.shyara.co.in/invitations#saveTheDate
 
 ### YouTube Channel
-All samples available at: https://www.youtube.com/@Shyaradigital
+All invitations available at: https://www.youtube.com/@Shyaradigital
 
 ### Invitation Website Demo
 Live interactive demo: https://digital.shyara.co.in/invitation-website/demo
@@ -122,10 +111,10 @@ Features demonstrated: Home page, Mehndi event page, Wedding event page, Recepti
 
 ## Customer Testimonials
 
-- Priya & Rahul (Wedding, Mumbai): "Our wedding invitation video was beyond beautiful! Every guest called to say how touched they were." — 5/5 stars
-- Sunita Sharma (Birthday, Delhi): "The birthday invitation for my son was so creative and fun! Quick delivery and amazing quality!" — 5/5 stars
-- Amit & Family (Grih Pravesh, Jaipur): "We wanted something traditional yet modern for our housewarming. The invitation was elegant and heartfelt." — 5/5 stars
-- Neha Gupta (Engagement, Bangalore): "From the first message to final delivery, the experience was wonderful. Truly talented team!" — 5/5 stars
+- Vipin Kumar Saini (Google): "Great experience overall. Clear communication, quick edits, and timely delivery. The invitation looked premium and professional. Would definitely recommend Shyara Digital." — 5/5 stars
+- Pankaj Kumar (Google): "We needed a digital invitation on short notice, and Shyara Digital handled it perfectly. Fast delivery without compromising on quality. Truly appreciated." — 5/5 stars
+- Nikita Chaudhary (Google): "Thank you so much Shyara Digital for making such a beautiful e-invite. So professional and cooperative. Such a good experience. Highly recommended. So easy to work." — 5/5 stars
+- Aarya Patil (Google): "The video perfectly met my expectations. It was delivered on time, and the quality is excellent. Really impressed with the work!" — 5/5 stars
 
 ## Business Details
 
@@ -137,7 +126,7 @@ Features demonstrated: Home page, Mehndi event page, Wedding event page, Recepti
 - Operating Hours: Monday-Sunday, 9:00 AM - 9:00 PM IST
 - Price Range: Affordable ($$)
 - Payment Methods: UPI, Bank Transfer, Cash
-- Statistics: 500+ happy families, 1000+ invitations created, 50+ event types, 4.9/5 rating
+- Statistics: 500+ happy families, 1000+ invitations created, 5.0/5 rating
 
 ## Contact Information
 
@@ -156,8 +145,7 @@ Features demonstrated: Home page, Mehndi event page, Wedding event page, Recepti
 ## Site Pages
 
 - Home: https://digital.shyara.co.in/
-- Invitation Categories: https://digital.shyara.co.in/invitations
-- Sample Gallery: https://digital.shyara.co.in/samples
+- Invitations Gallery: https://digital.shyara.co.in/invitations
 - Invitation Website Service: https://digital.shyara.co.in/invitation-website
 - Invitation Website Demo: https://digital.shyara.co.in/invitation-website/demo
 - FAQs: https://digital.shyara.co.in/faqs

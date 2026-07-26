@@ -155,8 +155,8 @@ const InvitationWebsite = () => {
             },
             "aggregateRating": {
               "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "50",
+              "ratingValue": "5.0",
+              "reviewCount": "20",
               "bestRating": "5"
             },
             "category": "Digital Invitation Services"
