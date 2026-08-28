@@ -27,6 +27,9 @@ const invitationVideos = {
     { id: "xxewEgsOBoI", title: "Engagement Sample 2" },
     { id: "RspeXB05CZM", title: "Engagement Sample 3" },
     { id: "3js7zRSXBDM", title: "Engagement Sample 4" },
+    { id: "kn5i-jXXDP8", title: "Engagement Sample 5" },
+    { id: "IHfyGyLPcXw", title: "Engagement Sample 6" },
+    { id: "FKtDk_KQBjo", title: "Engagement Sample 7" },
   ],
   saveTheDate: [
     { id: "oNF0q5J6lu0", title: "Save the Date Sample 1" },

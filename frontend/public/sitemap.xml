@@ -211,6 +211,39 @@
       <video:family_friendly>yes</video:family_friendly>
       <video:category>Engagement</video:category>
     </video:video>
+    <!-- Engagement Sample 5 -->
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/kn5i-jXXDP8/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Engagement Invitation Video Sample 5 - Shyara Digital</video:title>
+      <video:description>Beautiful digital engagement invitation video. Custom-designed by Shyara Digital.</video:description>
+      <video:content_loc>https://www.youtube.com/shorts/kn5i-jXXDP8</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/kn5i-jXXDP8</video:player_loc>
+      <video:duration>40</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:category>Engagement</video:category>
+    </video:video>
+    <!-- Engagement Sample 6 -->
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/IHfyGyLPcXw/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Engagement Invitation Video Sample 6 - Shyara Digital</video:title>
+      <video:description>Elegant engagement invitation video with modern design. Custom digital invitations by Shyara Digital.</video:description>
+      <video:content_loc>https://www.youtube.com/shorts/IHfyGyLPcXw</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/IHfyGyLPcXw</video:player_loc>
+      <video:duration>40</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:category>Engagement</video:category>
+    </video:video>
+    <!-- Engagement Sample 7 -->
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/FKtDk_KQBjo/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Engagement Invitation Video Sample 7 - Shyara Digital</video:title>
+      <video:description>Premium engagement invitation video with beautiful design and personalized details. By Shyara Digital.</video:description>
+      <video:content_loc>https://www.youtube.com/shorts/FKtDk_KQBjo</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/FKtDk_KQBjo</video:player_loc>
+      <video:duration>40</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:category>Engagement</video:category>
+    </video:video>
     <!-- Save the Date Sample 1 -->
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/oNF0q5J6lu0/maxresdefault.jpg</video:thumbnail_loc>
