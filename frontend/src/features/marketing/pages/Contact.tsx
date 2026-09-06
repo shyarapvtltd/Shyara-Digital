@@ -14,11 +14,12 @@ import SEO from "@/components/marketing/SEO";
 const eventTypes = [
   { value: "wedding", label: "Wedding" },
   { value: "engagement", label: "Engagement" },
-  { value: "saveTheDate", label: "Save the Date" },
-  { value: "houseWarming", label: "House Warming" },
+  { value: "engagementAnnouncement", label: "Engagement Announcement" },
+  { value: "saveTheDate", label: "Save The Date" },
+  { value: "babyShower", label: "Baby Shower" },
   { value: "boyBirthday", label: "Boy Birthday" },
   { value: "girlBirthday", label: "Girl Birthday" },
-  { value: "proposal", label: "Proposal Ideas" },
+  { value: "houseWarming", label: "House Warming" },
   { value: "other", label: "Other" },
 ];
 
@@ -48,8 +49,8 @@ const Contact = () => {
     <Layout>
       <SEO
         title="Contact Us | Shyara Digital - Create Your Perfect Invitation"
-        description="Get in touch with Shyara Digital to create beautiful digital invitations for your wedding, birthday, house warming, proposal, or any celebration. Serving clients worldwide via WhatsApp, email, or phone."
-        keywords="contact shyara digital, digital invitation enquiry, wedding card contact, custom invitation order, house warming invitation order, birthday invitation order, proposal invitation order, WhatsApp invitation order, order wedding card online, book digital invitation, wedding card maker, custom video invitation order, nimantran order online"
+        description="Get in touch with Shyara Digital to create beautiful digital invitations for your wedding, engagement, birthday, baby shower, house warming, or any celebration. Serving clients worldwide via WhatsApp, email, or phone."
+        keywords="contact shyara digital, digital invitation enquiry, wedding card contact, custom invitation order, house warming invitation order, birthday invitation order, baby shower invitation order, engagement announcement order, WhatsApp invitation order, order wedding card online, book digital invitation, wedding card maker, custom video invitation order, nimantran order online"
         canonicalUrl="https://digital.shyara.co.in/contact"
         pageType="contact"
         breadcrumbs={[

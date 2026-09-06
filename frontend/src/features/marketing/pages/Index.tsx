@@ -43,17 +43,17 @@ const testimonials = [
 const invitationTypes = [
   {
     icon: Heart,
-    title: "Weddings",
+    title: "Wedding",
     description: "Every vow, every ritual, beautifully invited",
     bgColor: "bg-rose-light/20",
     href: "/invitations#wedding",
   },
   {
-    icon: Flower2,
-    title: "House Warming",
-    description: "Welcome guests to your new home with warmth",
-    bgColor: "bg-gold-light/20",
-    href: "/invitations#houseWarming",
+    icon: Sparkles,
+    title: "Engagement",
+    description: "Celebrate the beginning of forever",
+    bgColor: "bg-lavender-light/20",
+    href: "/invitations#engagement",
   },
   {
     icon: Gift,
@@ -63,11 +63,11 @@ const invitationTypes = [
     href: "/invitations#birthday",
   },
   {
-    icon: Sparkles,
-    title: "Proposal Ideas",
-    description: "Ask the big question in the most beautiful way",
-    bgColor: "bg-rose-light/20",
-    href: "/invitations#proposal",
+    icon: Flower2,
+    title: "House Warming",
+    description: "Welcome guests to your new home with warmth",
+    bgColor: "bg-gold-light/20",
+    href: "/invitations#houseWarming",
   },
 ];
 
@@ -113,8 +113,8 @@ const Index = () => {
     <Layout>
       <SEO
         title="Shyara Digital | Beautiful Digital Invitations for Weddings & Celebrations"
-        description="Create stunning digital invitation cards and videos for weddings, birthdays, house warming, proposals, and celebrations. Invite with love, share with joy. Serving celebrations worldwide."
-        keywords="digital wedding invitation, wedding invitation video, custom wedding card online, video invitation maker, WhatsApp wedding invitation, affordable wedding invitation video, wedding e-invitation, digital invitations, video invitations, e-invitations, online wedding cards, shaadi cards, house warming invitation, birthday invitation, boy birthday invitation, girl birthday invitation, proposal invitation, celebration cards, nimantran patra, sagai card, shubh vivah card, save the date video, engagement invitation video, digital invitation for celebrations"
+        description="Create stunning digital invitation cards and videos for weddings, engagements, birthdays, baby showers, house warming, and celebrations. Invite with love, share with joy. Serving celebrations worldwide."
+        keywords="digital wedding invitation, wedding invitation video, custom wedding card online, video invitation maker, WhatsApp wedding invitation, affordable wedding invitation video, wedding e-invitation, digital invitations, video invitations, e-invitations, online wedding cards, shaadi cards, house warming invitation, birthday invitation, boy birthday invitation, girl birthday invitation, engagement announcement, baby shower invitation, celebration cards, nimantran patra, sagai card, shubh vivah card, save the date video, engagement invitation video, digital invitation for celebrations"
         canonicalUrl="https://digital.shyara.co.in"
         pageType="home"
         reviews={[
@@ -180,7 +180,8 @@ const Index = () => {
                   { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Boy Birthday Invitation Video" } },
                   { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Girl Birthday Invitation Video" } },
                   { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "House Warming Invitation" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Proposal Ideas Invitation" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Engagement Announcement" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Baby Shower Invitation" } },
                   { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Invitation Card" } }
                 ]
               }

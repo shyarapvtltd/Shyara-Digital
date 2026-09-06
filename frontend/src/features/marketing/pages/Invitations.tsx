@@ -9,45 +9,55 @@ import ScrollReveal from "@/components/marketing/ScrollReveal";
 import SEO from "@/components/marketing/SEO";
 import type { VideoItem } from "@/lib/video-schemas";
 
+type PricedVideoItem = VideoItem & {
+  price: number;
+  originalPrice: number;
+};
+
+const formatInr = (amount: number) => `₹${amount.toLocaleString("en-IN")}`;
+
 const invitationVideos = {
   wedding: [
-    { id: "MErRHbJ6qqk", title: "Wedding Sample 1" },
-    { id: "i-gCaiwOdOA", title: "Wedding Sample 2" },
-    { id: "i3GvQEV3ifs", title: "Wedding Sample 3" },
-    { id: "F4Jn243qJTM", title: "Wedding Sample 4" },
-    { id: "QpiB8MYm2hA", title: "Wedding Sample 5" },
-    { id: "HkGKHzATaxw", title: "Wedding Sample 6" },
-    { id: "MuxUm6ccuEw", title: "Wedding Sample 7" },
-    { id: "1H1neLoUBhc", title: "Wedding Sample 8" },
-    { id: "0uoR__qE0R0", title: "Wedding Sample 9" },
-    { id: "ZaMcTGUsWgk", title: "Wedding Sample 10" },
-  ],
+    { id: "MErRHbJ6qqk", title: "Sample 1", price: 999, originalPrice: 1332 },
+    { id: "i-gCaiwOdOA", title: "Sample 2", price: 999, originalPrice: 1332 },
+    { id: "i3GvQEV3ifs", title: "Sample 3", price: 999, originalPrice: 1332 },
+    { id: "F4Jn243qJTM", title: "Sample 4", price: 999, originalPrice: 1332 },
+    { id: "QpiB8MYm2hA", title: "Sample 5", price: 999, originalPrice: 1332 },
+    { id: "HkGKHzATaxw", title: "Sample 6", price: 1499, originalPrice: 1999 },
+    { id: "MuxUm6ccuEw", title: "Sample 7", price: 1499, originalPrice: 1999 },
+    { id: "1H1neLoUBhc", title: "Sample 8", price: 1499, originalPrice: 1999 },
+    { id: "0uoR__qE0R0", title: "Sample 9", price: 1499, originalPrice: 1999 },
+    { id: "ZaMcTGUsWgk", title: "Sample 10", price: 1499, originalPrice: 1999 },
+  ] as PricedVideoItem[],
   engagement: [
-    { id: "8YQ7vYSeSWU", title: "Engagement Sample 1" },
-    { id: "xxewEgsOBoI", title: "Engagement Sample 2" },
-    { id: "RspeXB05CZM", title: "Engagement Sample 3" },
-    { id: "3js7zRSXBDM", title: "Engagement Sample 4" },
-    { id: "kn5i-jXXDP8", title: "Engagement Sample 5" },
-    { id: "IHfyGyLPcXw", title: "Engagement Sample 6" },
-    { id: "FKtDk_KQBjo", title: "Engagement Sample 7" },
-  ],
-  saveTheDate: [
-    { id: "oNF0q5J6lu0", title: "Save the Date Sample 1" },
-    { id: "egMJ2xIWOYI", title: "Save the Date Sample 2" },
-    { id: "-ZoyL0ss4xI", title: "Save the Date Sample 3" },
-    { id: "tPZMUhiklV0", title: "Save the Date Sample 4" },
-  ],
-  boyBirthday: [] as VideoItem[],
-  girlBirthday: [] as VideoItem[],
-  houseWarming: [] as VideoItem[],
-  proposal: [] as VideoItem[],
+    { id: "8YQ7vYSeSWU", title: "Sample 1", price: 499, originalPrice: 665 },
+    { id: "xxewEgsOBoI", title: "Sample 2", price: 499, originalPrice: 665 },
+    { id: "RspeXB05CZM", title: "Sample 3", price: 499, originalPrice: 665 },
+    { id: "3js7zRSXBDM", title: "Sample 4", price: 499, originalPrice: 665 },
+    { id: "kn5i-jXXDP8", title: "Sample 5", price: 499, originalPrice: 665 },
+    { id: "IHfyGyLPcXw", title: "Sample 6", price: 499, originalPrice: 665 },
+    { id: "FKtDk_KQBjo", title: "Sample 7", price: 499, originalPrice: 665 },
+  ] as PricedVideoItem[],
+  saveTheDateWedding: [
+    { id: "oNF0q5J6lu0", title: "Sample 1", price: 399, originalPrice: 532 },
+    { id: "egMJ2xIWOYI", title: "Sample 2", price: 399, originalPrice: 532 },
+    { id: "-ZoyL0ss4xI", title: "Sample 3", price: 399, originalPrice: 532 },
+  ] as PricedVideoItem[],
+  saveTheDateEngagement: [
+    { id: "tPZMUhiklV0", title: "Sample 4", price: 399, originalPrice: 532 },
+  ] as PricedVideoItem[],
+  boyBirthday: [] as PricedVideoItem[],
+  girlBirthday: [] as PricedVideoItem[],
+  houseWarming: [] as PricedVideoItem[],
+  engagementAnnouncement: [] as PricedVideoItem[],
+  babyShower: [] as PricedVideoItem[],
 };
 
 type Subcategory = {
   id: string;
   title: string;
   description: string;
-  videos: VideoItem[];
+  videos: PricedVideoItem[];
 };
 
 type InvitationCategory = {
@@ -55,7 +65,7 @@ type InvitationCategory = {
   emoji: string;
   title: string;
   description: string;
-  videos?: VideoItem[];
+  videos?: PricedVideoItem[];
   subcategories?: Subcategory[];
 };
 
@@ -63,23 +73,50 @@ const invitationCategories: InvitationCategory[] = [
   {
     id: "wedding",
     emoji: "💍",
-    title: "Wedding Invitations",
-    description: "Complete wedding invitation videos including Engagement, Mehndi, Haldi, Sangeet, Wedding, and Reception",
+    title: "Wedding",
+    description: "Complete wedding invitation videos including Mehndi, Haldi, Sangeet, Wedding, and Reception",
     videos: invitationVideos.wedding,
   },
   {
     id: "engagement",
     emoji: "💎",
-    title: "Engagement Invitations",
+    title: "Engagement",
     description: "Beautiful engagement ceremony invitation videos",
     videos: invitationVideos.engagement,
   },
   {
+    id: "engagementAnnouncement",
+    emoji: "❤️",
+    title: "Engagement Announcement",
+    description: "Share your engagement news with a beautiful announcement video",
+    videos: invitationVideos.engagementAnnouncement,
+  },
+  {
     id: "saveTheDate",
     emoji: "📅",
-    title: "Save the Date",
+    title: "Save The Date",
     description: "Elegant save the date announcement videos for your special day",
-    videos: invitationVideos.saveTheDate,
+    subcategories: [
+      {
+        id: "saveTheDateWedding",
+        title: "Wedding",
+        description: "Save the date videos for wedding celebrations",
+        videos: invitationVideos.saveTheDateWedding,
+      },
+      {
+        id: "saveTheDateEngagement",
+        title: "Engagement",
+        description: "Save the date videos for engagement celebrations",
+        videos: invitationVideos.saveTheDateEngagement,
+      },
+    ],
+  },
+  {
+    id: "babyShower",
+    emoji: "🍼",
+    title: "Baby Shower",
+    description: "Warm, joyful invitations for baby shower celebrations",
+    videos: invitationVideos.babyShower,
   },
   {
     id: "birthday",
@@ -108,16 +145,35 @@ const invitationCategories: InvitationCategory[] = [
     description: "Warm, welcoming invitations for grih pravesh and new home celebrations",
     videos: invitationVideos.houseWarming,
   },
-  {
-    id: "proposal",
-    emoji: "❤️",
-    title: "Proposal Ideas",
-    description: "Proposal cards and romantic reveals to ask the big question beautifully",
-    videos: invitationVideos.proposal,
-  },
 ];
 
-const VideoCarouselContent = ({ videos }: { videos: VideoItem[] }) => {
+const PricePill = ({ price, originalPrice }: { price: number; originalPrice: number }) => (
+  <span
+    className="inline-flex items-center rounded-full bg-[#FFF5F7] pl-1.5 pr-0.5 py-0.5 shrink-0 whitespace-nowrap border border-rose-100/80"
+    aria-label={`Price ${formatInr(price)}, was ${formatInr(originalPrice)}`}
+  >
+    <span className="px-1.5 text-[10px] md:text-xs text-[#8A7A7E] line-through decoration-[#E8A4B8] decoration-1">
+      {formatInr(originalPrice)}
+    </span>
+    <span
+      className="rounded-full px-2.5 py-0.5 text-[11px] md:text-sm font-bold text-[#9D0039] border border-rose-300/40 shadow-sm"
+      style={{
+        background:
+          "radial-gradient(circle at 35% 40%, #FFE8EE 0%, #FFD0DC 55%, #F5A8BE 100%)",
+      }}
+    >
+      {formatInr(price)}
+    </span>
+  </span>
+);
+
+const VideoCarouselContent = ({
+  videos,
+  categoryLabel,
+}: {
+  videos: PricedVideoItem[];
+  categoryLabel: string;
+}) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
     align: "start",
@@ -185,39 +241,50 @@ const VideoCarouselContent = ({ videos }: { videos: VideoItem[] }) => {
 
       <div className="overflow-hidden mx-6" ref={emblaRef}>
         <div className="flex gap-4 touch-pan-y">
-          {videos.map((video) => (
-            <div
-              key={video.id + video.title}
-              className="flex-shrink-0 w-[200px] md:w-[280px] select-none"
-            >
+          {videos.map((video) => {
+            const waLabel = `${categoryLabel} — ${video.title}`;
+            return (
               <div
-                className="aspect-[9/16] rounded-xl overflow-hidden shadow-romantic bg-gradient-to-br from-rose-light/30 to-peach-light/30 relative"
-                onClick={() => setActiveVideoId(video.id)}
+                key={video.id + video.title}
+                className="flex-shrink-0 w-[220px] md:w-[280px] select-none"
               >
-                <iframe
-                  src={`https://www.youtube.com/embed/${video.id}?rel=0`}
-                  title={video.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className={`w-full h-full ${activeVideoId === video.id ? "pointer-events-auto" : "pointer-events-none"}`}
-                  loading="lazy"
-                />
-                {activeVideoId !== video.id && (
-                  <div className="absolute inset-0 bg-transparent cursor-pointer" />
-                )}
+                <div
+                  className="aspect-[9/16] rounded-xl overflow-hidden shadow-romantic bg-gradient-to-br from-rose-light/30 to-peach-light/30 relative"
+                  onClick={() => setActiveVideoId(video.id)}
+                >
+                  <iframe
+                    src={`https://www.youtube.com/embed/${video.id}?rel=0`}
+                    title={waLabel}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className={`w-full h-full ${activeVideoId === video.id ? "pointer-events-auto" : "pointer-events-none"}`}
+                    loading="lazy"
+                  />
+                  {activeVideoId !== video.id && (
+                    <div className="absolute inset-0 bg-transparent cursor-pointer" />
+                  )}
+                </div>
+
+                <div className="mt-2.5 flex items-center justify-center gap-2 whitespace-nowrap">
+                  <p className="font-medium text-foreground text-sm shrink-0">{video.title}</p>
+                  <span className="h-3.5 w-px bg-rose-light/60 shrink-0" aria-hidden="true" />
+                  <PricePill price={video.price} originalPrice={video.originalPrice} />
+                </div>
+
+                <a
+                  href={`https://wa.me/919584661610?text=${encodeURIComponent(
+                    `Hi! I loved this invitation: "${waLabel}" (${formatInr(video.price)}) — https://youtube.com/shorts/${video.id}. I'd like to get one like this made for my event!`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-full bg-[#25D366] hover:bg-[#1ebe57] text-white text-xs font-medium transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg"
+                >
+                  <MessageCircle className="w-3.5 h-3.5" />
+                  I Want This!
+                </a>
               </div>
-              <p className="mt-2 text-center font-medium text-foreground text-sm">{video.title}</p>
-              <a
-                href={`https://wa.me/919584661610?text=${encodeURIComponent(`Hi! I loved this invitation: "${video.title}" (https://youtube.com/shorts/${video.id}). I'd like to get one like this made for my event!`)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 w-full inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-full bg-green-500 hover:bg-green-600 text-white text-xs font-medium transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg"
-              >
-                <MessageCircle className="w-3.5 h-3.5" />
-                I Want This!
-              </a>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
@@ -257,6 +324,8 @@ const invitationVideoSchemas = allInvitationVideos.map((video) => ({
 const resolveOpenCategory = (hash: string) => {
   if (!hash) return undefined;
   if (hash === "boyBirthday" || hash === "girlBirthday") return "birthday";
+  if (hash === "saveTheDateWedding" || hash === "saveTheDateEngagement") return "saveTheDate";
+  if (hash === "proposal") return "engagementAnnouncement";
   return invitationCategories.some((c) => c.id === hash) ? hash : undefined;
 };
 
@@ -274,10 +343,14 @@ const Invitations = () => {
     if (parent) setOpenCategory(parent);
 
     const timer = setTimeout(() => {
-      const targetId =
-        hashCategory === "boyBirthday" || hashCategory === "girlBirthday"
-          ? `invitation-sub-${hashCategory}`
-          : `invitation-${hashCategory}`;
+      const isSubHash =
+        hashCategory === "boyBirthday" ||
+        hashCategory === "girlBirthday" ||
+        hashCategory === "saveTheDateWedding" ||
+        hashCategory === "saveTheDateEngagement";
+      const targetId = isSubHash
+        ? `invitation-sub-${hashCategory}`
+        : `invitation-${hashCategory === "proposal" ? "engagementAnnouncement" : hashCategory}`;
       const element = document.getElementById(targetId);
       if (element) {
         element.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -291,8 +364,8 @@ const Invitations = () => {
     <Layout>
       <SEO
         title="Invitations Gallery | Video Invitation Examples | Shyara Digital"
-        description="Browse our invitations gallery of beautiful digital invitations. See examples of wedding videos, birthday cards, house warming invitations, proposal ideas, and more."
-        keywords="digital invitations, wedding video invitations, invitation gallery, wedding invitation preview, birthday invitation videos, boy birthday invitations, girl birthday invitations, house warming invitation, proposal invitation ideas, engagement video invitation, save the date video, nimantran video, sagai invitation"
+        description="Browse our invitations gallery of beautiful digital invitations. See examples of wedding videos, engagement announcements, birthdays, baby showers, house warming invitations, and more."
+        keywords="digital invitations, wedding video invitations, invitation gallery, wedding invitation preview, birthday invitation videos, boy birthday invitations, girl birthday invitations, house warming invitation, engagement announcement, baby shower invitation, engagement video invitation, save the date video, nimantran video, sagai invitation"
         canonicalUrl="https://digital.shyara.co.in/invitations"
         pageType="gallery"
         breadcrumbs={[
@@ -384,20 +457,34 @@ const Invitations = () => {
 
                       {category.subcategories ? (
                         <div className="space-y-8">
-                          {category.subcategories.map((sub) => (
-                            <div key={sub.id} id={`invitation-sub-${sub.id}`}>
+                          {category.subcategories.map((sub, subIndex) => (
+                            <div
+                              key={sub.id}
+                              id={`invitation-sub-${sub.id}`}
+                              className={
+                                subIndex > 0
+                                  ? "pt-8 border-t border-rose-light/40"
+                                  : undefined
+                              }
+                            >
                               <div className="mb-4">
                                 <h3 className="font-serif text-lg md:text-xl font-semibold text-foreground">
                                   {sub.title}
                                 </h3>
                                 <p className="text-sm text-muted-foreground mt-1">{sub.description}</p>
                               </div>
-                              <VideoCarouselContent videos={sub.videos} />
+                              <VideoCarouselContent
+                                videos={sub.videos}
+                                categoryLabel={`${category.title} — ${sub.title}`}
+                              />
                             </div>
                           ))}
                         </div>
                       ) : (
-                        <VideoCarouselContent videos={category.videos || []} />
+                        <VideoCarouselContent
+                          videos={category.videos || []}
+                          categoryLabel={category.title}
+                        />
                       )}
                     </div>
                   </AccordionContent>

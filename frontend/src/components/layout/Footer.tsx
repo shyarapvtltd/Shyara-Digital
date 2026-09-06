@@ -63,11 +63,13 @@ const Footer = () => {
             <h4 className="font-serif text-lg font-semibold text-foreground">Invitation Types</h4>
             <ul className="space-y-3">
               {[
-                { name: "Weddings", path: "/invitations#wedding" },
-                { name: "House Warming", path: "/invitations#houseWarming" },
-                { name: "Boy Birthday", path: "/invitations#boyBirthday" },
-                { name: "Girl Birthday", path: "/invitations#girlBirthday" },
-                { name: "Proposal Ideas", path: "/invitations#proposal" },
+                { name: "Wedding", path: "/invitations#wedding" },
+                { name: "Engagement", path: "/invitations#engagement" },
+                { name: "Engagement Announcement", path: "/invitations#engagementAnnouncement" },
+                { name: "Save The Date", path: "/invitations#saveTheDate" },
+                { name: "Baby Shower", path: "/invitations#babyShower" },
+                { name: "Birthday Invitations", path: "/invitations#birthday" },
+                { name: "House Warming Invitations", path: "/invitations#houseWarming" },
               ].map((item) => (
                 <li key={item.name}>
                   <Link 
