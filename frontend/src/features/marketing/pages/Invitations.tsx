@@ -72,14 +72,14 @@ type InvitationCategory = {
 const invitationCategories: InvitationCategory[] = [
   {
     id: "wedding",
-    emoji: "💍",
+    emoji: "💎",
     title: "Wedding",
-    description: "Complete wedding invitation videos including Mehndi, Haldi, Sangeet, Wedding, and Reception",
+    description: "We'll include all your events in the video, with the slides arranged chronologically according to each event date.",
     videos: invitationVideos.wedding,
   },
   {
     id: "engagement",
-    emoji: "💎",
+    emoji: "💍",
     title: "Engagement",
     description: "Beautiful engagement ceremony invitation videos",
     videos: invitationVideos.engagement,
