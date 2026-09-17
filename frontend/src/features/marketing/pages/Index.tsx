@@ -98,14 +98,14 @@ const benefits = [
 
 // Configure your YouTube videos here - A mix of samples from different categories (9:16 format)
 const homePageVideos = [
-  { id: "MErRHbJ6qqk", title: "Wedding Sample" },
+  { id: "xoiSgZb_koM", title: "Wedding Sample" },
   { id: "pRk06RiQ0Z4", title: "Engagement Sample" },
   { id: "oNF0q5J6lu0", title: "Save the Date Sample" },
   { id: "i-gCaiwOdOA", title: "Wedding Sample" },
   { id: "DtYHVMl2G8g", title: "Engagement Sample" },
   { id: "Sp8iSlS9gLY", title: "Wedding Sample" },
   { id: "egMJ2xIWOYI", title: "Save the Date Sample" },
-  { id: "F4Jn243qJTM", title: "Wedding Sample" },
+  { id: "GjyJVGfjC5w", title: "Wedding Sample" },
   { id: "S0rKdIAhLUg", title: "Engagement Sample" },
   { id: "-ZoyL0ss4xI", title: "Save the Date Sample" },
 ];

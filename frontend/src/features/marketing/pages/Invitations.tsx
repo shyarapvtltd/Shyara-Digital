@@ -18,16 +18,16 @@ const formatInr = (amount: number) => `₹${amount.toLocaleString("en-IN")}`;
 
 const invitationVideos = {
   wedding: [
-    { id: "MErRHbJ6qqk", title: "Sample 1", price: 999, originalPrice: 1332 },
+    { id: "xoiSgZb_koM", title: "Sample 1", price: 999, originalPrice: 1332 },
     { id: "i-gCaiwOdOA", title: "Sample 2", price: 999, originalPrice: 1332 },
     { id: "jAuJtC9y5KY", title: "Sample 3", price: 999, originalPrice: 1332 },
-    { id: "F4Jn243qJTM", title: "Sample 4", price: 999, originalPrice: 1332 },
+    { id: "GjyJVGfjC5w", title: "Sample 4", price: 999, originalPrice: 1332 },
     { id: "GZURTaBRtv4", title: "Sample 5", price: 999, originalPrice: 1332 },
     { id: "n2_t9OGh3zI", title: "Sample 6", price: 1499, originalPrice: 1999 },
     { id: "Sp8iSlS9gLY", title: "Sample 7", price: 1499, originalPrice: 1999 },
     { id: "1H1neLoUBhc", title: "Sample 8", price: 1499, originalPrice: 1999 },
-    { id: "0uoR__qE0R0", title: "Sample 9", price: 1499, originalPrice: 1999 },
-    { id: "ZaMcTGUsWgk", title: "Sample 10", price: 1499, originalPrice: 1999 },
+    { id: "UsTMCph3W8s", title: "Sample 9", price: 1499, originalPrice: 1999 },
+    { id: "s8OclBV3tmM", title: "Sample 10", price: 1499, originalPrice: 1999 },
   ] as PricedVideoItem[],
   engagement: [
     { id: "pRk06RiQ0Z4", title: "Sample 1", price: 499, originalPrice: 665 },
