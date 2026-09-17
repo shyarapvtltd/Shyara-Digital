@@ -74,14 +74,6 @@ type InvitationCategory = {
 
 const invitationCategories: InvitationCategory[] = [
   {
-    id: "wedding",
-    slug: "wedding",
-    emoji: "💎",
-    title: "Wedding",
-    description: "We'll include all your events in the video, with the slides arranged chronologically according to each event date.",
-    videos: invitationVideos.wedding,
-  },
-  {
     id: "engagement",
     slug: "engagement",
     emoji: "💍",
@@ -90,12 +82,12 @@ const invitationCategories: InvitationCategory[] = [
     videos: invitationVideos.engagement,
   },
   {
-    id: "engagementAnnouncement",
-    slug: "proposal",
-    emoji: "❤️",
-    title: "Engagement Announcement",
-    description: "Share your engagement news with a beautiful announcement video",
-    videos: invitationVideos.engagementAnnouncement,
+    id: "wedding",
+    slug: "wedding",
+    emoji: "💎",
+    title: "Wedding",
+    description: "We'll include all your events in the video, with the slides arranged chronologically according to each event date.",
+    videos: invitationVideos.wedding,
   },
   {
     id: "saveTheDate",
@@ -117,6 +109,14 @@ const invitationCategories: InvitationCategory[] = [
         videos: invitationVideos.saveTheDateEngagement,
       },
     ],
+  },
+  {
+    id: "engagementAnnouncement",
+    slug: "proposal",
+    emoji: "❤️",
+    title: "Engagement Announcement",
+    description: "Share your engagement news with a beautiful announcement video",
+    videos: invitationVideos.engagementAnnouncement,
   },
   {
     id: "babyShower",

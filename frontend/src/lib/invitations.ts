@@ -69,18 +69,6 @@ export const invitationVideos = {
 
 export const invitationCategories: InvitationCategory[] = [
   {
-    id: "wedding",
-    slug: "wedding",
-    emoji: "💎",
-    title: "Wedding",
-    h1: "Custom wedding invitation videos",
-    answer:
-      "We design a custom wedding invitation video with every ceremony in date order. Share names, dates and photos. You receive a WhatsApp-ready 9:16 MP4 in 24 to 48 hours.",
-    description:
-      "We'll include all your events in the video, with the slides arranged chronologically according to each event date.",
-    videos: invitationVideos.wedding,
-  },
-  {
     id: "engagement",
     slug: "engagement",
     emoji: "💍",
@@ -92,15 +80,16 @@ export const invitationCategories: InvitationCategory[] = [
     videos: invitationVideos.engagement,
   },
   {
-    id: "engagementAnnouncement",
-    slug: "proposal",
-    emoji: "❤️",
-    title: "Engagement Announcement",
-    h1: "Engagement announcement and proposal invitation videos",
+    id: "wedding",
+    slug: "wedding",
+    emoji: "💎",
+    title: "Wedding",
+    h1: "Custom wedding invitation videos",
     answer:
-      "We make custom engagement announcement videos for the moment you share the news. Send photos and names on WhatsApp. We design the clip and return a share-ready file.",
-    description: "Share your engagement news with a beautiful announcement video",
-    videos: invitationVideos.engagementAnnouncement,
+      "We design a custom wedding invitation video with every ceremony in date order. Share names, dates and photos. You receive a WhatsApp-ready 9:16 MP4 in 24 to 48 hours.",
+    description:
+      "We'll include all your events in the video, with the slides arranged chronologically according to each event date.",
+    videos: invitationVideos.wedding,
   },
   {
     id: "saveTheDate",
@@ -127,6 +116,17 @@ export const invitationCategories: InvitationCategory[] = [
         videos: invitationVideos.saveTheDateEngagement,
       },
     ],
+  },
+  {
+    id: "engagementAnnouncement",
+    slug: "proposal",
+    emoji: "❤️",
+    title: "Engagement Announcement",
+    h1: "Engagement announcement and proposal invitation videos",
+    answer:
+      "We make custom engagement announcement videos for the moment you share the news. Send photos and names on WhatsApp. We design the clip and return a share-ready file.",
+    description: "Share your engagement news with a beautiful announcement video",
+    videos: invitationVideos.engagementAnnouncement,
   },
   {
     id: "babyShower",
