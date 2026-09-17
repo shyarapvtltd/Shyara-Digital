@@ -7,6 +7,8 @@ import ScrollReveal from "@/components/marketing/ScrollReveal";
 import SectionHeading from "@/components/marketing/SectionHeading";
 import SEO from "@/components/marketing/SEO";
 import YouTubeCarousel from "@/components/marketing/YouTubeCarousel";
+import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, DIGITAL_INVITE_CARDS_URL, DIGITAL_INVITE_TEMPLATES_URL } from "@/lib/site";
+import { howToLd, localBusinessLd } from "@/lib/structuredData";
 import { buildVideoObjectSchemas } from "@/lib/video-schemas";
 
 const testimonials = [
@@ -46,28 +48,28 @@ const invitationTypes = [
     title: "Wedding",
     description: "Every vow, every ritual, beautifully invited",
     bgColor: "bg-rose-light/20",
-    href: "/invitations#wedding",
+    href: "/invitations/wedding",
   },
   {
     icon: Sparkles,
     title: "Engagement",
     description: "Celebrate the beginning of forever",
     bgColor: "bg-lavender-light/20",
-    href: "/invitations#engagement",
+    href: "/invitations/engagement",
   },
   {
     icon: Gift,
     title: "Birthdays",
     description: "Boy & girl birthday invitations for every age",
     bgColor: "bg-peach-light/20",
-    href: "/invitations#birthday",
+    href: "/invitations/birthday",
   },
   {
     icon: Flower2,
     title: "House Warming",
     description: "Welcome guests to your new home with warmth",
     bgColor: "bg-gold-light/20",
-    href: "/invitations#houseWarming",
+    href: "/invitations/house-warming",
   },
 ];
 
@@ -97,14 +99,14 @@ const benefits = [
 // Configure your YouTube videos here - A mix of samples from different categories (9:16 format)
 const homePageVideos = [
   { id: "MErRHbJ6qqk", title: "Wedding Sample" },
-  { id: "8YQ7vYSeSWU", title: "Engagement Sample" },
+  { id: "pRk06RiQ0Z4", title: "Engagement Sample" },
   { id: "oNF0q5J6lu0", title: "Save the Date Sample" },
   { id: "i-gCaiwOdOA", title: "Wedding Sample" },
-  { id: "RspeXB05CZM", title: "Engagement Sample" },
-  { id: "MuxUm6ccuEw", title: "Wedding Sample" },
+  { id: "DtYHVMl2G8g", title: "Engagement Sample" },
+  { id: "Sp8iSlS9gLY", title: "Wedding Sample" },
   { id: "egMJ2xIWOYI", title: "Save the Date Sample" },
   { id: "F4Jn243qJTM", title: "Wedding Sample" },
-  { id: "xxewEgsOBoI", title: "Engagement Sample" },
+  { id: "S0rKdIAhLUg", title: "Engagement Sample" },
   { id: "-ZoyL0ss4xI", title: "Save the Date Sample" },
 ];
 
@@ -112,87 +114,19 @@ const Index = () => {
   return (
     <Layout>
       <SEO
-        title="Shyara Digital | Beautiful Digital Invitations for Weddings & Celebrations"
-        description="Create stunning digital invitation cards and videos for weddings, engagements, birthdays, baby showers, house warming, and celebrations. Invite with love, share with joy. Serving celebrations worldwide."
+        title={DEFAULT_TITLE}
+        description={DEFAULT_DESCRIPTION}
+        path="/"
         keywords="digital wedding invitation, wedding invitation video, custom wedding card online, video invitation maker, WhatsApp wedding invitation, affordable wedding invitation video, wedding e-invitation, digital invitations, video invitations, e-invitations, online wedding cards, shaadi cards, house warming invitation, birthday invitation, boy birthday invitation, girl birthday invitation, engagement announcement, baby shower invitation, celebration cards, nimantran patra, sagai card, shubh vivah card, save the date video, engagement invitation video, digital invitation for celebrations"
-        canonicalUrl="https://digital.shyara.co.in"
-        pageType="home"
-        reviews={[
-          { author: "Vipin Kumar Saini", rating: 5, reviewBody: "Great experience overall. Clear communication, quick edits, and timely delivery. The invitation looked premium and professional. Would definitely recommend Shyara Digital." },
-          { author: "Pankaj Kumar", rating: 5, reviewBody: "We needed a digital invitation on short notice, and Shyara Digital handled it perfectly. Fast delivery without compromising on quality. Truly appreciated." },
-          { author: "Nikita Chaudhary", rating: 5, reviewBody: "Thank you so much Shyara Digital for making such a beautiful e-invite. So professional and cooperative. Such a good experience. Highly recommended. So easy to work." },
-          { author: "Aarya Patil", rating: 5, reviewBody: "The video perfectly met my expectations. It was delivered on time, and the quality is excellent. Really impressed with the work!" },
-        ]}
         additionalStructuredData={buildVideoObjectSchemas(homePageVideos)}
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          "name": "Shyara Digital",
-          "alternateName": "Shyara Digital Invitations",
-          "image": "https://digital.shyara.co.in/android-chrome-s-20260408-512x512.png",
-          "description": "Create beautiful, emotional digital invitation cards and videos for weddings, celebrations, and moments that matter. Serving clients worldwide.",
-          "@id": "https://digital.shyara.co.in",
-          "url": "https://digital.shyara.co.in",
-          "telephone": "+91-95846-61610",
-          "email": "shyaradigital@gmail.com",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Patna",
-            "addressRegion": "Bihar",
-            "addressCountry": "IN"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "25.6093",
-            "longitude": "85.1376"
-          },
-          "areaServed": "Worldwide",
-          "knowsLanguage": ["en", "hi"],
-          "priceRange": "$$",
-          "currenciesAccepted": "INR",
-          "paymentAccepted": "UPI, Bank Transfer, Cash",
-          "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-            "opens": "09:00",
-            "closes": "21:00"
-          },
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Digital Invitation Services",
-            "itemListElement": [
-              {
-                "@type": "OfferCatalog",
-                "name": "Wedding Invitations",
-                "itemListElement": [
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wedding Video Invitation" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Save the Date Video" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Engagement Invitation Video" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mehndi & Haldi Invitation" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sangeet Invitation" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Reception Invitation" } }
-                ]
-              },
-              {
-                "@type": "OfferCatalog",
-                "name": "Other Invitations",
-                "itemListElement": [
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Boy Birthday Invitation Video" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Girl Birthday Invitation Video" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "House Warming Invitation" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Engagement Announcement" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Baby Shower Invitation" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Invitation Card" } }
-                ]
-              }
-            ]
-          },
-          "sameAs": [
-            "https://www.instagram.com/shyaradigital",
-            "https://www.facebook.com/shyaradigital",
-            "https://www.youtube.com/@Shyaradigital"
-          ]
-        }}
+        structuredData={[
+          localBusinessLd(),
+          howToLd("Order a custom invitation video", [
+            { name: "Send the brief", text: "WhatsApp names, dates, venue and photos." },
+            { name: "We design", text: "The studio designs a unique 9:16 video from your details." },
+            { name: "You share", text: "Receive an MP4 in 24 to 48 hours and forward it on WhatsApp." },
+          ]),
+        ]}
       />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-20 pb-16 overflow-hidden">
@@ -210,9 +144,9 @@ const Index = () => {
               className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 opacity-0 animate-fade-in-up"
               style={{ animationDelay: "0.2s" }}
             >
-              Invite with <span className="text-gradient">Love</span>,
+              Custom digital invitation videos
               <br />
-              Share with <span className="text-gradient">Joy</span>
+              for <span className="text-gradient">weddings</span> and celebrations
             </h1>
 
             {/* Subtitle */}
@@ -220,8 +154,8 @@ const Index = () => {
               className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed opacity-0 animate-fade-in-up"
               style={{ animationDelay: "0.4s" }}
             >
-              Digital invitation cards & videos for weddings, celebrations, 
-              and moments that matter. Crafted with emotion, shared with ease.
+              Invite with love, share with joy. Handcrafted 9:16 videos and cards for WhatsApp,
+              ready in 24 to 48 hours. Studio in Patna, serving families worldwide.
             </p>
 
             {/* CTA Buttons */}
@@ -445,6 +379,54 @@ const Index = () => {
               ))}
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <SectionHeading
+            script="Two products"
+            title="Studio video or a DIY wedding website"
+            subtitle="This site is the custom studio. Digital Invite is the self-serve wedding website from the same company."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-10">
+            <ScrollReveal>
+              <AnimatedCard className="h-full p-8" hoverEffect="lift">
+                <h3 className="font-serif text-2xl font-semibold mb-3">Custom videos</h3>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  Designers make a unique invitation video from your brief. Stay here for weddings, birthdays, house warming and baby showers.
+                </p>
+                <Button asChild className="rounded-full">
+                  <Link to="/invitations">
+                    Browse invitations
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Link>
+                </Button>
+              </AnimatedCard>
+            </ScrollReveal>
+            <ScrollReveal delay={80}>
+              <AnimatedCard className="h-full p-8" hoverEffect="lift">
+                <h3 className="font-serif text-2xl font-semibold mb-3">DIY wedding website or card</h3>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  Want to type a wedding invitation website or download a card yourself? That product is Digital Invite, not a template editor on this site.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Button asChild variant="outline" className="rounded-full">
+                    <a href={DIGITAL_INVITE_TEMPLATES_URL}>
+                      Invitation websites
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </a>
+                  </Button>
+                  <Button asChild variant="outline" className="rounded-full">
+                    <a href={DIGITAL_INVITE_CARDS_URL}>
+                      Digital cards
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </a>
+                  </Button>
+                </div>
+              </AnimatedCard>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 

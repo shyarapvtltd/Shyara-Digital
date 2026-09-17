@@ -3,11 +3,14 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { DIGITAL_INVITE_CARDS_URL, DIGITAL_INVITE_TEMPLATES_URL } from "@/lib/site";
 
-const navLinks = [
+const navLinks: Array<{ name: string; path?: string; href?: string }> = [
   { name: "Home", path: "/" },
   { name: "Invitations", path: "/invitations" },
-  { name: "Invitation Website", path: "/invitation-website" },
+  { name: "Invitation Website", href: DIGITAL_INVITE_TEMPLATES_URL },
+  { name: "Cards", href: DIGITAL_INVITE_CARDS_URL },
+  { name: "About", path: "/about" },
   { name: "FAQs", path: "/faqs" },
   { name: "Contact", path: "/contact" },
 ];
@@ -54,23 +57,33 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={cn(
-                  "relative font-medium transition-colors hover:text-primary",
-                  location.pathname === link.path 
-                    ? "text-primary" 
-                    : "text-foreground/80"
-                )}
-              >
-                {link.name}
-                {location.pathname === link.path && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />
-                )}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.href ? (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="relative font-medium transition-colors hover:text-primary text-foreground/80"
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  key={link.path}
+                  to={link.path ?? "/"}
+                  className={cn(
+                    "relative font-medium transition-colors hover:text-primary",
+                    location.pathname === link.path
+                      ? "text-primary"
+                      : "text-foreground/80"
+                  )}
+                >
+                  {link.name}
+                  {location.pathname === link.path && (
+                    <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />
+                  )}
+                </Link>
+              )
+            )}
           </div>
 
           {/* CTA Button */}
@@ -110,22 +123,36 @@ const Navbar = () => {
           <Heart className="absolute top-20 left-10 w-8 h-8 text-rose-light/30 animate-float fill-rose-light/10" />
           <Heart className="absolute bottom-32 right-12 w-6 h-6 text-peach/30 animate-float-slow fill-peach/10" />
           
-          {navLinks.map((link, index) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={cn(
-                "text-3xl font-serif font-medium transition-all hover:text-primary hover:scale-105",
-                location.pathname === link.path ? "text-primary" : "text-foreground/80"
-              )}
-              style={{ 
-                animationDelay: `${index * 0.1}s`,
-                animation: isOpen ? "fade-in-up 0.5s ease-out forwards" : "none"
-              }}
-            >
-              {link.name}
-            </Link>
-          ))}
+          {navLinks.map((link, index) =>
+            link.href ? (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-3xl font-serif font-medium transition-all hover:text-primary hover:scale-105 text-foreground/80"
+                style={{
+                  animationDelay: `${index * 0.1}s`,
+                  animation: isOpen ? "fade-in-up 0.5s ease-out forwards" : "none"
+                }}
+              >
+                {link.name}
+              </a>
+            ) : (
+              <Link
+                key={link.path}
+                to={link.path ?? "/"}
+                className={cn(
+                  "text-3xl font-serif font-medium transition-all hover:text-primary hover:scale-105",
+                  location.pathname === link.path ? "text-primary" : "text-foreground/80"
+                )}
+                style={{
+                  animationDelay: `${index * 0.1}s`,
+                  animation: isOpen ? "fade-in-up 0.5s ease-out forwards" : "none"
+                }}
+              >
+                {link.name}
+              </Link>
+            )
+          )}
           
           <Button 
             asChild 

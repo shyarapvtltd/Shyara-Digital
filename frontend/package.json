@@ -5,10 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/write-seo.mjs",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "node --test src/lib/landing/landing.test.ts",
+    "seo:indexnow": "node scripts/ping-indexnow.mjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.11",

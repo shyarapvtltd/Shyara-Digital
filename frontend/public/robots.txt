@@ -167,11 +167,7 @@ Disallow: /
 
 User-agent: *
 Allow: /
-Disallow: /invitation-website/demo/save-the-date
-Disallow: /invitation-website/demo/venue-travel
-Disallow: /invitation-website/demo/gallery
-Disallow: /invitation-website/demo/rsvp
-Disallow: /invitation-website/demo/dashboard
+Disallow: /invitation-website/demo/
 Crawl-delay: 5
 
 # ===========================================

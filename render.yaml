@@ -1,6 +1,6 @@
-# Production uses Render Static Site (Shyara-Digital) — see README for dashboard settings.
-# Optional: backend Web Service when API is added (not required for the marketing site today).
-
+# Unique HTML files (about/index.html, invitations/wedding/index.html, landing pages)
+# are written by `npm run build`. The catch-all rewrite is only the SPA fallback
+# when a path has no matching file.
 services:
   - type: web
     name: shyara-digital-static

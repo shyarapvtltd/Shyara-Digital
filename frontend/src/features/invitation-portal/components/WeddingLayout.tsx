@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { Helmet } from 'react-helmet-async'
 import WeddingNavigation from './WeddingNavigation'
 import BackToShyara from './BackToShyara'
 
@@ -11,6 +12,9 @@ interface WeddingLayoutProps {
 export default function WeddingLayout({ eventAccess, guestName, children }: WeddingLayoutProps) {
   return (
     <div className="min-h-screen bg-gradient-wedding flex flex-col">
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       <WeddingNavigation eventAccess={eventAccess} guestName={guestName} />
       <main className="flex-1 md:ml-64">
         {children}

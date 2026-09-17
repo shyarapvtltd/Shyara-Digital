@@ -1,4 +1,12 @@
 import { Helmet } from "react-helmet-async";
+import { absoluteUrl, DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from "@/lib/site";
+import {
+  breadcrumbLd,
+  faqLd,
+  jsonLdGraph,
+  organizationLd,
+  webSiteLd,
+} from "@/lib/structuredData";
 
 interface BreadcrumbItem {
   name: string;
@@ -10,237 +18,99 @@ interface FAQItem {
   answer: string;
 }
 
-interface Review {
-  author: string;
-  rating: number;
-  reviewBody: string;
-}
-
 interface SEOProps {
   title?: string;
   description?: string;
   keywords?: string;
   canonicalUrl?: string;
+  path?: string;
   ogImage?: string;
   ogType?: string;
   structuredData?: object | object[];
   additionalStructuredData?: object | object[];
   breadcrumbs?: BreadcrumbItem[];
   faqItems?: FAQItem[];
-  reviews?: Review[];
-  pageType?: "home" | "category" | "service" | "contact" | "gallery";
+  noIndex?: boolean;
+  /** Kept so existing pages compile; not emitted into JSON-LD. */
+  pageType?: string;
+  reviews?: unknown;
 }
 
-// Generate BreadcrumbList schema
-const generateBreadcrumbSchema = (breadcrumbs: BreadcrumbItem[]) => ({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": breadcrumbs.map((item, index) => ({
-    "@type": "ListItem",
-    "position": index + 1,
-    "name": item.name,
-    "item": item.url
-  }))
-});
+function asArray(value: object | object[] | undefined): object[] {
+  if (!value) return [];
+  return Array.isArray(value) ? value : [value];
+}
 
-// Generate FAQPage schema
-const generateFAQSchema = (faqItems: FAQItem[]) => ({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqItems.map(faq => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
+function stripFakeCounts(block: object): object {
+  const copy = JSON.parse(JSON.stringify(block)) as Record<string, unknown>;
+  const walk = (node: unknown) => {
+    if (!node || typeof node !== "object") return;
+    if (Array.isArray(node)) {
+      node.forEach(walk);
+      return;
     }
-  }))
-});
-
-// Generate AggregateRating schema
-const generateAggregateRatingSchema = (reviews: Review[]) => {
-  const avgRating = reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length;
-  return {
-    "@context": "https://schema.org",
-    "@type": "AggregateRating",
-    "ratingValue": avgRating.toFixed(1),
-    "bestRating": "5",
-    "worstRating": "1",
-    "ratingCount": reviews.length,
-    "reviewCount": reviews.length
+    const rec = node as Record<string, unknown>;
+    delete rec.interactionStatistic;
+    delete rec.potentialAction;
+    delete rec.aggregateRating;
+    Object.values(rec).forEach(walk);
   };
-};
-
-// Generate Review schema
-const generateReviewsSchema = (reviews: Review[]) => 
-  reviews.map(review => ({
-    "@type": "Review",
-    "author": {
-      "@type": "Person",
-      "name": review.author
-    },
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": review.rating,
-      "bestRating": "5"
-    },
-    "reviewBody": review.reviewBody
-  }));
-
-// Base organization schema
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Shyara Digital",
-  "url": "https://digital.shyara.co.in",
-  "logo": "https://digital.shyara.co.in/android-chrome-s-20260408-512x512.png",
-  "description": "Create beautiful, emotional digital invitation cards and videos for weddings, celebrations, and moments that matter.",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+91-95846-61610",
-    "contactType": "customer service",
-    "email": "shyaradigital@gmail.com",
-    "availableLanguage": ["English", "Hindi"]
-  },
-  "sameAs": [
-    "https://www.instagram.com/shyaradigital",
-    "https://www.facebook.com/shyaradigital",
-    "https://www.youtube.com/@Shyaradigital"
-  ]
-};
-
-// WebSite schema for homepage
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Shyara Digital",
-  "url": "https://digital.shyara.co.in",
-  "description": "Beautiful digital invitation cards and videos for weddings, celebrations, and moments that matter.",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://digital.shyara.co.in/invitations?search={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-};
+  walk(copy);
+  return copy;
+}
 
 const SEO = ({
-  title = "Shyara Digital | Beautiful Digital Invitations",
-  description = "Create beautiful, emotional digital invitation cards and videos for weddings, celebrations, and moments that matter. Share joy with Shyara Digital.",
-  keywords = "digital invitations, wedding invitations, digital cards, celebration invitations, video invitations, shaadi cards, online wedding cards, e-invitations, custom wedding card online",
-  canonicalUrl = "https://digital.shyara.co.in",
-  ogImage = "https://digital.shyara.co.in/shyara.png",
+  title = `${SITE_NAME} | Custom digital invitations`,
+  description = "Handcrafted digital invitation videos and cards for weddings, birthdays, house warming and baby showers.",
+  keywords,
+  canonicalUrl,
+  path,
+  ogImage = `${SITE_URL}${DEFAULT_OG_IMAGE}`,
   ogType = "website",
   structuredData,
   additionalStructuredData,
   breadcrumbs,
   faqItems,
-  reviews,
-  pageType = "home",
+  noIndex = false,
 }: SEOProps) => {
-  
-  // Build array of structured data schemas
-  const schemas: object[] = [];
-  
-  // Add custom structured data if provided
-  if (structuredData) {
-    if (Array.isArray(structuredData)) {
-      schemas.push(...structuredData);
-    } else {
-      schemas.push(structuredData);
-    }
-  }
+  const url = canonicalUrl || absoluteUrl(path || "/");
+  const extras = [...asArray(structuredData), ...asArray(additionalStructuredData)].map(stripFakeCounts);
 
-  if (additionalStructuredData) {
-    if (Array.isArray(additionalStructuredData)) {
-      schemas.push(...additionalStructuredData);
-    } else {
-      schemas.push(additionalStructuredData);
-    }
-  }
-
-  // Add organization schema for all pages
-  schemas.push(organizationSchema);
-  
-  // Add website schema for homepage
-  if (pageType === "home") {
-    schemas.push(websiteSchema);
-  }
-  
-  // Add breadcrumb schema if provided
-  if (breadcrumbs && breadcrumbs.length > 0) {
-    schemas.push(generateBreadcrumbSchema(breadcrumbs));
-  }
-  
-  // Add FAQ schema if provided
-  if (faqItems && faqItems.length > 0) {
-    schemas.push(generateFAQSchema(faqItems));
-  }
-  
-  // Add review/rating schema if provided
-  if (reviews && reviews.length > 0) {
-    const aggregateRating = generateAggregateRatingSchema(reviews);
-    const reviewsList = generateReviewsSchema(reviews);
-    schemas.push({
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Shyara Digital",
-      "image": "https://digital.shyara.co.in/android-chrome-s-20260408-512x512.png",
-      "url": "https://digital.shyara.co.in",
-      "telephone": "+91-95846-61610",
-      "email": "shyaradigital@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Patna",
-        "addressRegion": "Bihar",
-        "addressCountry": "IN"
-      },
-      "priceRange": "$$",
-      "aggregateRating": aggregateRating,
-      "review": reviewsList
-    });
-  }
+  const graph = jsonLdGraph(
+    organizationLd(),
+    webSiteLd(),
+    breadcrumbs && breadcrumbs.length > 0
+      ? breadcrumbLd(
+          breadcrumbs.map((crumb) => ({
+            name: crumb.name,
+            path: crumb.url.replace(SITE_URL, "") || "/",
+          })),
+        )
+      : null,
+    faqItems && faqItems.length > 0 ? faqLd(faqItems) : null,
+    ...extras,
+  );
 
   return (
-    <Helmet>
-      {/* Primary Meta Tags */}
+    <Helmet prioritizeSeoTags>
+      <html lang="en-IN" />
       <title>{title}</title>
-      <meta name="title" content={title} />
       <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
-      <meta name="author" content="Shyara Digital" />
-      <meta name="robots" content="index, follow" />
-      <meta name="language" content="English" />
-      <meta name="revisit-after" content="7 days" />
-      
-      {/* Canonical URL */}
-      <link rel="canonical" href={canonicalUrl} />
-      
-      {/* Open Graph / Facebook */}
+      {keywords ? <meta name="keywords" content={keywords} /> : null}
+      <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
+      <link rel="canonical" href={url} />
       <meta property="og:type" content={ogType} />
-      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:url" content={url} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-      <meta property="og:site_name" content="Shyara Digital" />
-      <meta property="og:locale" content="en_US" />
-      
-      {/* Twitter */}
+      <meta property="og:site_name" content={SITE_NAME} />
+      <meta property="og:locale" content="en_IN" />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:url" content={canonicalUrl} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
-      <meta name="twitter:site" content="@ShyaraDigital" />
-      <meta name="twitter:creator" content="@ShyaraDigital" />
-      
-      {/* Structured Data - Output all schemas */}
-      {schemas.map((schema, index) => (
-        <script key={index} type="application/ld+json">
-          {JSON.stringify(schema)}
-        </script>
-      ))}
+      <script type="application/ld+json">{graph}</script>
     </Helmet>
   );
 };

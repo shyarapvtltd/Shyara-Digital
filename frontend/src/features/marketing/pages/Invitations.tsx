@@ -20,20 +20,20 @@ const invitationVideos = {
   wedding: [
     { id: "MErRHbJ6qqk", title: "Sample 1", price: 999, originalPrice: 1332 },
     { id: "i-gCaiwOdOA", title: "Sample 2", price: 999, originalPrice: 1332 },
-    { id: "i3GvQEV3ifs", title: "Sample 3", price: 999, originalPrice: 1332 },
+    { id: "jAuJtC9y5KY", title: "Sample 3", price: 999, originalPrice: 1332 },
     { id: "F4Jn243qJTM", title: "Sample 4", price: 999, originalPrice: 1332 },
-    { id: "QpiB8MYm2hA", title: "Sample 5", price: 999, originalPrice: 1332 },
-    { id: "HkGKHzATaxw", title: "Sample 6", price: 1499, originalPrice: 1999 },
-    { id: "MuxUm6ccuEw", title: "Sample 7", price: 1499, originalPrice: 1999 },
+    { id: "GZURTaBRtv4", title: "Sample 5", price: 999, originalPrice: 1332 },
+    { id: "n2_t9OGh3zI", title: "Sample 6", price: 1499, originalPrice: 1999 },
+    { id: "Sp8iSlS9gLY", title: "Sample 7", price: 1499, originalPrice: 1999 },
     { id: "1H1neLoUBhc", title: "Sample 8", price: 1499, originalPrice: 1999 },
     { id: "0uoR__qE0R0", title: "Sample 9", price: 1499, originalPrice: 1999 },
     { id: "ZaMcTGUsWgk", title: "Sample 10", price: 1499, originalPrice: 1999 },
   ] as PricedVideoItem[],
   engagement: [
-    { id: "8YQ7vYSeSWU", title: "Sample 1", price: 499, originalPrice: 665 },
-    { id: "xxewEgsOBoI", title: "Sample 2", price: 499, originalPrice: 665 },
-    { id: "RspeXB05CZM", title: "Sample 3", price: 499, originalPrice: 665 },
-    { id: "3js7zRSXBDM", title: "Sample 4", price: 499, originalPrice: 665 },
+    { id: "pRk06RiQ0Z4", title: "Sample 1", price: 499, originalPrice: 665 },
+    { id: "S0rKdIAhLUg", title: "Sample 2", price: 499, originalPrice: 665 },
+    { id: "DtYHVMl2G8g", title: "Sample 3", price: 499, originalPrice: 665 },
+    { id: "-TN6h54QFkk", title: "Sample 4", price: 499, originalPrice: 665 },
     { id: "kn5i-jXXDP8", title: "Sample 5", price: 499, originalPrice: 665 },
     { id: "IHfyGyLPcXw", title: "Sample 6", price: 499, originalPrice: 665 },
     { id: "FKtDk_KQBjo", title: "Sample 7", price: 499, originalPrice: 665 },
@@ -42,9 +42,11 @@ const invitationVideos = {
     { id: "oNF0q5J6lu0", title: "Sample 1", price: 399, originalPrice: 532 },
     { id: "egMJ2xIWOYI", title: "Sample 2", price: 399, originalPrice: 532 },
     { id: "-ZoyL0ss4xI", title: "Sample 3", price: 399, originalPrice: 532 },
+    { id: "yBpSVL-dNW0", title: "Sample 4", price: 399, originalPrice: 532 },
   ] as PricedVideoItem[],
   saveTheDateEngagement: [
-    { id: "tPZMUhiklV0", title: "Sample 4", price: 399, originalPrice: 532 },
+    { id: "tPZMUhiklV0", title: "Sample 1", price: 399, originalPrice: 532 },
+    { id: "G3XfQKlsIAU", title: "Sample 2", price: 399, originalPrice: 532 },
   ] as PricedVideoItem[],
   boyBirthday: [] as PricedVideoItem[],
   girlBirthday: [] as PricedVideoItem[],
@@ -62,6 +64,7 @@ type Subcategory = {
 
 type InvitationCategory = {
   id: string;
+  slug: string;
   emoji: string;
   title: string;
   description: string;
@@ -72,6 +75,7 @@ type InvitationCategory = {
 const invitationCategories: InvitationCategory[] = [
   {
     id: "wedding",
+    slug: "wedding",
     emoji: "💎",
     title: "Wedding",
     description: "We'll include all your events in the video, with the slides arranged chronologically according to each event date.",
@@ -79,6 +83,7 @@ const invitationCategories: InvitationCategory[] = [
   },
   {
     id: "engagement",
+    slug: "engagement",
     emoji: "💍",
     title: "Engagement",
     description: "Beautiful engagement ceremony invitation videos",
@@ -86,6 +91,7 @@ const invitationCategories: InvitationCategory[] = [
   },
   {
     id: "engagementAnnouncement",
+    slug: "proposal",
     emoji: "❤️",
     title: "Engagement Announcement",
     description: "Share your engagement news with a beautiful announcement video",
@@ -93,6 +99,7 @@ const invitationCategories: InvitationCategory[] = [
   },
   {
     id: "saveTheDate",
+    slug: "save-the-date",
     emoji: "📅",
     title: "Save The Date",
     description: "Elegant save the date announcement videos for your special day",
@@ -113,6 +120,7 @@ const invitationCategories: InvitationCategory[] = [
   },
   {
     id: "babyShower",
+    slug: "baby-shower",
     emoji: "🍼",
     title: "Baby Shower",
     description: "Warm, joyful invitations for baby shower celebrations",
@@ -120,6 +128,7 @@ const invitationCategories: InvitationCategory[] = [
   },
   {
     id: "birthday",
+    slug: "birthday",
     emoji: "🎂",
     title: "Birthday Invitations",
     description: "Fun and creative birthday invitation videos for boys and girls",
@@ -140,6 +149,7 @@ const invitationCategories: InvitationCategory[] = [
   },
   {
     id: "houseWarming",
+    slug: "house-warming",
     emoji: "🏠",
     title: "House Warming Invitations",
     description: "Warm, welcoming invitations for grih pravesh and new home celebrations",
@@ -306,11 +316,6 @@ const invitationVideoSchemas = allInvitationVideos.map((video) => ({
   duration: "PT45S",
   contentUrl: `https://www.youtube.com/shorts/${video.id}`,
   embedUrl: `https://www.youtube.com/embed/${video.id}`,
-  interactionStatistic: {
-    "@type": "InteractionCounter",
-    interactionType: { "@type": "WatchAction" },
-    userInteractionCount: 500,
-  },
   publisher: {
     "@type": "Organization",
     name: "Shyara Digital",
@@ -451,9 +456,15 @@ const Invitations = () => {
                   </AccordionTrigger>
                   <AccordionContent className="overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
                     <div className="bg-gradient-to-b from-rose-light/20 to-transparent rounded-b-2xl border border-t-0 border-white/50 p-6 md:p-8">
-                      <p className="text-sm text-muted-foreground mb-6 sm:hidden">
+                      <p className="text-sm text-muted-foreground mb-4 sm:hidden">
                         {category.description}
                       </p>
+                      <Link
+                        to={`/invitations/${category.slug}`}
+                        className="inline-flex items-center text-sm font-medium text-primary hover:underline mb-6"
+                      >
+                        Open {category.title} page
+                      </Link>
 
                       {category.subcategories ? (
                         <div className="space-y-8">

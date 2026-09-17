@@ -26,8 +26,8 @@ const LegalPageShell = ({
         title={`${title} | Shyara Digital`}
         description={description}
         keywords="Shyara Digital privacy policy, terms of service, legal, data protection, digital invitation terms"
+        path={canonicalPath}
         canonicalUrl={canonicalUrl}
-        pageType="website"
         breadcrumbs={[
           { name: "Home", url: "https://digital.shyara.co.in" },
           { name: title, url: canonicalUrl },

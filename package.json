@@ -5,11 +5,17 @@
     "frontend",
     "backend"
   ],
+  "overrides": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
   "scripts": {
     "dev": "npm run dev --workspace=@shyara/frontend",
     "dev:frontend": "npm run dev --workspace=@shyara/frontend",
     "build": "npm run build --workspace=@shyara/frontend",
     "lint": "npm run lint --workspace=@shyara/frontend",
+    "test": "npm run test --workspace=@shyara/frontend",
+    "seo:indexnow": "npm run seo:indexnow --workspace=@shyara/frontend",
     "start:backend": "npm run start --workspace=@shyara/backend"
   }
 }
